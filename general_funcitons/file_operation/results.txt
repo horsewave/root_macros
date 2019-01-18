@@ -1,0 +1,80 @@
+start of simulation
+file name input:  /data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cubic_phantom_ma/scatterMCS/cubic_phantom_gpuSimu
+number of GPU:  1
+number of runs:  10
+photons:  1000000
+new class Run_mcs  
+new class Run_mcs->set_file_name
+new class Run_mcs->Set_material_path  
+new class Run_mcs->Set_phantom_path  
+new class Run_mcs->Set_path_emi_img  
+new class Run_mcs->Set_path_att_img  
+new class Run_mcs->Set_stack_size  
+new class Run_mcs->Set_GPU_device_num  
+new class Run_mcs->Set_coil_flag  
+new class Run_mcs->Set_num_runs  
+new class Run_mcs->Set_num_runs  
+dim x y z is 100  100  100
+worldlength is 4
+Reading emission file from /data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cubic_phantom_ma/cubic_phantom_source.i33
+Reading atten file from /data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cubic_phantom_ma/cubic_phantom_att.i33
+Read original att and emission image in 0.109555 s
+Read materials database in 0.006639 s
+mateiral file path is : /data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cubic_phantom_ma/range_brain.dat
+start is: 0.000000  stop is : 0.000000 
+mateiral name is: Air
+start is: 1.000000  stop is : 1.000000 
+mateiral name is: Water
+Read phantom in 0.014450 s
+Create scanner and prepare for GPU in 0.000029 s
+thread number: 1
+Nb of act: 1000000 
+start thread:0
+Info: wait for thread completion
+seed1 is:  1575650224  seed2 is:1492195086 
+photon numbers to track: 2000000
+Navigation 0.486335 s    step 279 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1823486857  seed2 is:499940323 
+photon numbers to track: 2000000
+Navigation 0.483577 s    step 279 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  443433501  seed2 is:1356971843 
+photon numbers to track: 2000000
+Navigation 0.482394 s    step 287 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1527812176  seed2 is:210084762 
+photon numbers to track: 2000000
+Navigation 0.485311 s    step 285 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1870134945  seed2 is:1184635543 
+photon numbers to track: 2000000
+Navigation 0.480307 s    step 276 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  384422705  seed2 is:436735931 
+photon numbers to track: 2000000
+Navigation 0.484118 s    step 291 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  998774317  seed2 is:1566561365 
+photon numbers to track: 2000000
+Navigation 0.483568 s    step 276 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1310945790  seed2 is:139154454 
+photon numbers to track: 2000000
+Navigation 0.483250 s    step 280 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1249764140  seed2 is:1616574445 
+photon numbers to track: 2000000
+Navigation 0.484192 s    step 284 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+seed1 is:  1605536435  seed2 is:884099961 
+photon numbers to track: 2000000
+Navigation 0.484653 s    step 284 - sim 2000000/2000000
+Trues: 0, therein scattered: 0, Fraction: -nan, Randoms: 0, Total 0, Fraction: -nan 
+**************************************************
+End of thread: 0
+Finishe time: 2018-08-29.17:15:10
+**************************************************
+Info: all threads completed
+new class Run_mcs->Run_mcs_process  
+end of simulation

@@ -1,0 +1,3 @@
+Canvas.ShowEventStatus:     true
+Canvas.ShowToolBar:         false
+Canvas.ShowEditor:          false

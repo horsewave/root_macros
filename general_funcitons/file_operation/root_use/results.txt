@@ -1,0 +1,76 @@
+Number of Singles: 302521, Number of scattered: 34774, Number of absorbed: 4888 Rest: 1692591 
+Number of compton in Phantom: 480533,Number of compton in Crystal: 421406, Number of photoelectric in crystal: 528337 
+Trues: 31609, therein scattered: 7350, Fraction: 23.253, Randoms: 683, Total 32292, Fraction: 2.115 
+the used time for loop random generation is: 0.032764 s
+the used time for copy is: 0.001072 s
+photon numbers to track: 2000000
+Navigation 0.836299 s    step 832 - sim 2000000/2000000
+Start Time: 0.999932 
+Number of Singles: 302967, Number of scattered: 35129, Number of absorbed: 5067 Rest: 1691966 
+Number of compton in Phantom: 482646,Number of compton in Crystal: 421423, Number of photoelectric in crystal: 530083 
+Trues: 31718, therein scattered: 7338, Fraction: 23.135, Randoms: 659, Total 32377, Fraction: 2.035 
+the used time for loop random generation is: 0.032194 s
+the used time for copy is: 0.001109 s
+photon numbers to track: 2000000
+Navigation 0.836499 s    step 842 - sim 2000000/2000000
+Start Time: 1.999467 
+Number of Singles: 302606, Number of scattered: 34976, Number of absorbed: 4960 Rest: 1692434 
+Number of compton in Phantom: 480937,Number of compton in Crystal: 422507, Number of photoelectric in crystal: 528711 
+Trues: 31721, therein scattered: 7376, Fraction: 23.253, Randoms: 642, Total 32363, Fraction: 1.984 
+the used time for loop random generation is: 0.032099 s
+the used time for copy is: 0.001066 s
+photon numbers to track: 2000000
+Navigation 0.836483 s    step 810 - sim 2000000/2000000
+Start Time: 3.000147 
+Number of Singles: 302722, Number of scattered: 34853, Number of absorbed: 5028 Rest: 1692250 
+Number of compton in Phantom: 479993,Number of compton in Crystal: 422585, Number of photoelectric in crystal: 529043 
+Trues: 31555, therein scattered: 7275, Fraction: 23.055, Randoms: 639, Total 32194, Fraction: 1.985 
+the used time for loop random generation is: 0.032182 s
+the used time for copy is: 0.001093 s
+photon numbers to track: 2000000
+Navigation 0.838248 s    step 856 - sim 2000000/2000000
+Start Time: 4.001708 
+Number of Singles: 304023, Number of scattered: 34990, Number of absorbed: 4932 Rest: 1691045 
+Number of compton in Phantom: 479239,Number of compton in Crystal: 422937, Number of photoelectric in crystal: 530279 
+Trues: 32016, therein scattered: 7330, Fraction: 22.895, Randoms: 693, Total 32709, Fraction: 2.119 
+the used time for loop random generation is: 0.032409 s
+the used time for copy is: 0.001062 s
+photon numbers to track: 2000000
+Navigation 0.843917 s    step 895 - sim 2000000/2000000
+Start Time: 5.001837 
+Number of Singles: 304372, Number of scattered: 34965, Number of absorbed: 5020 Rest: 1690608 
+Number of compton in Phantom: 480449,Number of compton in Crystal: 421423, Number of photoelectric in crystal: 530014 
+Trues: 32093, therein scattered: 7384, Fraction: 23.008, Randoms: 662, Total 32755, Fraction: 2.021 
+the used time for loop random generation is: 0.032406 s
+the used time for copy is: 0.001099 s
+photon numbers to track: 2000000
+Navigation 0.830520 s    step 796 - sim 2000000/2000000
+Start Time: 6.002084 
+Number of Singles: 303049, Number of scattered: 34977, Number of absorbed: 5049 Rest: 1691902 
+Number of compton in Phantom: 480376,Number of compton in Crystal: 422375, Number of photoelectric in crystal: 529035 
+Trues: 31912, therein scattered: 7338, Fraction: 22.994, Randoms: 730, Total 32642, Fraction: 2.236 
+the used time for loop random generation is: 0.032408 s
+the used time for copy is: 0.001062 s
+photon numbers to track: 2000000
+Navigation 0.838461 s    step 861 - sim 2000000/2000000
+Start Time: 7.000532 
+Number of Singles: 303326, Number of scattered: 34922, Number of absorbed: 5039 Rest: 1691635 
+Number of compton in Phantom: 480432,Number of compton in Crystal: 423294, Number of photoelectric in crystal: 529461 
+Trues: 31936, therein scattered: 7318, Fraction: 22.915, Randoms: 663, Total 32599, Fraction: 2.034 
+the used time for loop random generation is: 0.032416 s
+the used time for copy is: 0.001091 s
+photon numbers to track: 2000000
+Navigation 0.850852 s    step 941 - sim 2000000/2000000
+Start Time: 8.000485 
+Number of Singles: 302638, Number of scattered: 34803, Number of absorbed: 5003 Rest: 1692359 
+Number of compton in Phantom: 480305,Number of compton in Crystal: 422520, Number of photoelectric in crystal: 528598 
+Trues: 31508, therein scattered: 7159, Fraction: 22.721, Randoms: 713, Total 32221, Fraction: 2.213 
+the used time for loop random generation is: 0.031837 s
+the used time for copy is: 0.001061 s
+photon numbers to track: 2000000
+Navigation 0.836611 s    step 825 - sim 2000000/2000000
+Start Time: 8.999795 
+Number of Singles: 302620, Number of scattered: 35106, Number of absorbed: 5024 Rest: 1692356 
+Number of compton in Phantom: 484028,Number of compton in Crystal: 421000, Number of photoelectric in crystal: 529421 
+Trues: 31730, therein scattered: 7285, Fraction: 22.959, Randoms: 688, Total 32418, Fraction: 2.122 
+

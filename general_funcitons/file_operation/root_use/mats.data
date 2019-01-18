@@ -1,0 +1,19 @@
+# Breast
+Breast: d=1.020 g/cm3; n=8;
+	+el: name=Oxygen    ; f=0.5270
+	+el: name=Carbon    ; f=0.3320
+	+el: name=Hydrogen  ; f=0.1060
+	+el: name=Nitrogen  ; f=0.0300
+	+el: name=Sulfur    ; f=0.0020
+	+el: name=Sodium    ; f=0.0010
+	+el: name=Phosphor  ; f=0.0010
+	+el: name=Chlorine  ; f=0.0010
+
+# Air
+Air: d=1.29 mg/cm3; n=4;
+	+el: name=Nitrogen  ; f=0.755268
+	+el: name=Oxygen    ; f=0.231781
+	+el: name=Argon     ; f=0.012827
+	+el: name=Carbon    ; f=0.000124
+
+
