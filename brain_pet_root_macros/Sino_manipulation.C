@@ -103,13 +103,13 @@ void main_3()
   cout << " path_sino_scaled_scatter: "<<  path_sino_scaled_scatter<<endl;
 
 
-//Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
-//Add_sino( path_sino_refer_scatter, path_sino_refer_true,path_sino_refer_true_plus_scatter);
+Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
+Add_sino( path_sino_refer_scatter, path_sino_refer_true,path_sino_refer_true_plus_scatter);
 
 
 
-//Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
-//Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
+Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
+Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
 
 Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
 Cor_norm( path_sino_refer_scatter, path_sino_refer_norm,path_sino_refer_scatter_normed);
@@ -193,15 +193,15 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  //name_sino_0="sphere_phantom_real_gpuSimu_0_scatter.fs";
-  //name_sino_1="sphere_phantom_real_gpuSimu_1_scatter.fs";
-  //name_sino_merge="scatter_no_norm.fs";
+  name_sino_0="sphere_phantom_real_gpuSimu_0_scatter.fs";
+  name_sino_1="sphere_phantom_real_gpuSimu_1_scatter.fs";
+  name_sino_merge="scatter_no_norm.fs";
 
-  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  ////cout<<"path: "<< path_input_sino_1<<endl;
-  /*Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);*/
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  //cout<<"path: "<< path_input_sino_1<<endl;
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
 }	
@@ -223,18 +223,6 @@ void main_2()
   string path_saved_sino ;
   float bin_value;
 
-
-  /*path_saved_sino = input_folder + norm_sino_name;*/
-  //bin_value = 1.0;
-  //create_sino_with_defined_value( path_saved_sino, bin_value);
-
-  //path_saved_sino = input_folder + att_sino_name;
-  //bin_value = 1.0;
-  //create_sino_with_defined_value( path_saved_sino, bin_value);
-
-  //path_saved_sino = input_folder + scat_sino_name;
-  //bin_value = 0.0;
-  /*create_sino_with_defined_value( path_saved_sino, bin_value);*/
 
   path_saved_sino = input_folder + random_sino_name;
   bin_value = 0.0;
