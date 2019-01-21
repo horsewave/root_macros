@@ -53,27 +53,114 @@ void Sino_manipulation()
 {
 
 
-  /* string input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_sino_320_192.fs" ;*/
-  //string saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_sino_320_192_normed_to_one.fs";
-
-  /*normlized_sino( input_sino,saved_sino);*/
   //main_1( sub_folder_1,sub_folder_2,sub_folder_merge) ;
-  main_1() ;
+  //main_1() ;
+  main_5() ;
+  //main_3() ;
 
   gApplication->Terminate();
 
 
 }	
 
+
+void main_3()
+{
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_no_detector_modual/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/";
+
+
+  string path_sino_input_true= base_folder_input +"true.fs";
+  string path_sino_input_scatter = base_folder_input +"scatter.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_no_detection_modual/norm_sino_320_192_no_detection_modual.fs";
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed.fs";
+  string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
+
+
+
+  string path_sino_refer_true = base_folder_refer +"true.fs";
+  string path_sino_refer_scatter = base_folder_refer +"scatter.fs";
+  string path_sino_refer_norm ="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192.fs";
+
+  string path_sino_refer_scatter_normed = base_folder_refer +"scatter_normed.fs";
+  string path_sino_refer_true_plus_scatter= base_folder_refer +"true_plus_scatter.fs";
+  string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"true_plus_scatter_normed.fs";
+
+  string path_sino_scaled_scatter = base_folder_input +"scatter_scaled.fs";
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed.fs";
+
+
+  cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
+  cout << " path_sino_input_scatter: "<< path_sino_input_scatter <<endl;
+  cout << " path_sino_input_true_plus_scatter: "<< path_sino_input_true_plus_scatter <<endl;
+  cout << " path_sino_input_true_plus_scatter_normed: "<< path_sino_input_true_plus_scatter_normed <<endl;
+  
+  cout << " path_sino_refer_true: "<< path_sino_refer_true <<endl;
+  cout << " path_sino_refer_scatter: "<< path_sino_refer_scatter <<endl;
+  cout << " path_sino_refer_true_plus_scatter: "<< path_sino_refer_true_plus_scatter <<endl;
+  cout << " path_sino_refer_true_plus_scatter_normed: "<< path_sino_refer_true_plus_scatter_normed <<endl;
+  cout << " path_sino_scaled_scatter: "<<  path_sino_scaled_scatter<<endl;
+
+
+//Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
+//Add_sino( path_sino_refer_scatter, path_sino_refer_true,path_sino_refer_true_plus_scatter);
+
+
+
+//Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
+//Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
+
+Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
+Cor_norm( path_sino_refer_scatter, path_sino_refer_norm,path_sino_refer_scatter_normed);
+
+
+
+  double total_events_input = get_total_events_simu_data( path_sino_input_true_plus_scatter_normed);
+  double total_events_refer = get_total_events_simu_data( path_sino_refer_true_plus_scatter_normed);
+
+  cout<<"total_events_input is: "<<  total_events_input<<endl;
+  cout<<"total_events_refer is: "<<  total_events_refer<<endl;
+
+
+  //// 4.3 calculate the scaling factor
+
+  float  scaling_factor=total_events_refer/total_events_input;
+
+  cout <<" scaling factor is:  " <<scaling_factor <<endl;
+  // 4.4 save the scaled scatter sino
+
+  Sino_scale_whole( path_sino_input_scatter_normed, path_sino_scaled_scatter_normed,scaling_factor);
+
+  cout<<"------------4: finish scaling the simu scatter--------------"<<endl;
+
+  cout<<"------------all finished! You can reconstruct now!--------------"<<endl;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /*
- * Get the gpu_mcs norm sino
+ * divide two sinos using presto functions
  */
 void main_5()
 {
-  string path_sino_numerator = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/att_forward_projection.fs" ;
-  string  path_sino_denominator= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/scatterMCS/merged_sino/norm_acq_gpuSimu_0_true.fs" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/" ;
 
-  string path_saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_sino_320_192.fs" ;
+  //string path_sino_numerator = input_folder + "XB1BN310N-BI-01_0-1800_gpuSimu_true_scatter_sino.fs";
+  string path_sino_numerator = input_folder + "att_forward_projection_with_gaps.fs";
+  string  path_sino_denominator=input_folder + "scatterMCS/true_no_norm.fs" ;
+
+  string path_saved_sino = input_folder + "norm_sino_320_192_no_detection_modual.fs" ;
 
 
   sino_divid_presto(path_sino_numerator, path_sino_denominator,path_saved_sino);
@@ -90,11 +177,11 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/scatterMCS/";
 
-  string name_sino_0="sphere_phantom_real_gpuSimu_0_true.fs";
-  string name_sino_1="sphere_phantom_real_gpuSimu_1_true.fs";
-  string name_sino_merge="true.fs";
+  string name_sino_0="norm_acq_gpuSimu_0_true.fs";
+  string name_sino_1="norm_acq_gpuSimu_1_true.fs";
+  string name_sino_merge="true_no_norm.fs";
 
   string sub_folder_1 = "" ;
   string sub_folder_2 = "" ;
@@ -106,15 +193,15 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  name_sino_0="sphere_phantom_real_gpuSimu_0_scatter.fs";
-  name_sino_1="sphere_phantom_real_gpuSimu_1_scatter.fs";
-  name_sino_merge="scatter.fs";
+  //name_sino_0="sphere_phantom_real_gpuSimu_0_scatter.fs";
+  //name_sino_1="sphere_phantom_real_gpuSimu_1_scatter.fs";
+  //name_sino_merge="scatter_no_norm.fs";
 
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  //cout<<"path: "<< path_input_sino_1<<endl;
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  ////cout<<"path: "<< path_input_sino_1<<endl;
+  /*Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);*/
 
 
 }	
@@ -163,7 +250,7 @@ void main_2()
  *  2: scale with a whole factor
  *  3: scale with different planes
  */
-void main_3()
+void main_scale_ways()
 {
   string frame_time="0-3000";
   string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FET/FE2BP034F-BI";
@@ -491,7 +578,8 @@ void Cor_random( string path_sino_prompt,string path_sino_rand,string saved_sino
   BrainPET_Sinograms* sino_prompt=new BrainPET_Sinograms(dump,"prompt");  
   BrainPET_Sinograms* sino_random=new BrainPET_Sinograms(dump,"random");
 
-  bool is_int=true;
+  //bool is_int=true;
+  bool is_int=false;
   sino_prompt->read_flatSinogram(path_sino_prompt,is_int);
 
   is_int=false;
@@ -674,9 +762,6 @@ void Sino_scale_whole( string path_sino_input, string saved_sino_scaled,float sc
 
   bool is_int=false;
   sino_input->read_flatSinogram(path_sino_input,is_int);
-
-
-
 
   //---scale scatter sinogram
   sino_input->scale_by_value(scale_factor); 
@@ -2245,6 +2330,43 @@ void normlized_sino( string input_sino,string saved_sino)
 
 
 }
+
+
+
+// return value: total number
+double get_total_events_simu_data(string path_sino_simu_true_plus_scatter)
+{
+
+  MRPET_dump *dump = new MRPET_dump();	
+
+  ///---measurement data, correction of random and norm//////////////////////////////////////////////////
+
+  bool is_short_int=false;
+  BrainPET_Sinograms* simu_true_plus_scatter=new BrainPET_Sinograms(dump,"simu_true_plus_scatter");
+
+
+  simu_true_plus_scatter->read_flatSinogram(path_sino_simu_true_plus_scatter,is_short_int);
+
+  //double 	get_n_Events ()
+  double total_events= simu_true_plus_scatter->get_n_Events();
+
+  delete dump;
+  dump=NULL;
+
+  delete simu_true_plus_scatter;
+  simu_true_plus_scatter=NULL;
+
+
+
+  return total_events ;
+
+}
+
+
+
+
+
+
 
 
 

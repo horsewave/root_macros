@@ -56,25 +56,25 @@
 
 typedef std::vector<int> int_vec_t; 
 typedef std::vector<float> float_vec_t; 
-void compare_MCS_SSS_scatter_sino(string path_sino_mcs,string path_sino_sss, string saved_path_root_file)
-//void compare_MCS_SSS_scatter_sino()
+//void compare_MCS_SSS_scatter_sino(string path_sino_mcs,string path_sino_sss, string saved_path_root_file)
+void compare_MCS_SSS_scatter_sino()
 {
 
 
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  /*string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FET/FE2BP034F-BI/";*/
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/";
   //string frame_time="0-3000";
 
-  //string part_name_mcs="scatterMCS/photonPair48E9/normed_scaled_scatter.fs";
-  //string part_name_sss="scatterSSS/range_" + frame_time +"_scal_scat.fs";
+  string part_name_mcs="range_0-3600_scal_scat.fs";
+  string part_name_sss="scater_bad_plane_cor.fs";
   
-  //string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
+  string part_root_file_name="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/root_file/compare_MCS_SSS_scatter_sino.root";
 
-  //string path_sino_mcs = base_folder + part_name_mcs;
-  //string path_sino_sss = base_folder + part_name_sss;
- /*string saved_path_root_file = base_folder + part_root_file_name;*/
+  string path_sino_mcs = base_folder + part_name_mcs;
+  string path_sino_sss = base_folder + part_name_sss;
+ string saved_path_root_file = part_root_file_name;
 
  cout<< saved_path_root_file<<endl;
 /////////////running without input parameters//////////////////////////////////////////////////
