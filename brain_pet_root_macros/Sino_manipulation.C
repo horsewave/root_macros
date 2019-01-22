@@ -51,6 +51,7 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
+//main_1( );
 
   main_3() ;
 
@@ -60,10 +61,52 @@ void Sino_manipulation()
 }	
 
 
+
+/*
+ *  merge two sinos
+ */
+//void main_1( string sub_folder_1,string sub_folder_2,string sub_folder_merge)
+void main_1( )
+{
+
+  //diff_scatter_methods()
+  //
+
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/";
+
+  string name_sino_0="true.fs";
+  string name_sino_1="true.fs";
+  string name_sino_merge="true.fs";
+
+  string sub_folder_1 = "merged_with_detector_modual/" ;
+  string sub_folder_2 = "run_5000_with_detector_modual_3/" ;
+  string sub_folder_merge = "merged_with_detector_modual/" ;
+
+  string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+  name_sino_0="scatter.fs";
+  name_sino_1="scatter.fs";
+  name_sino_merge="scatter.fs";
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  //cout<<"path: "<< path_input_sino_1<<endl;
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+}	
+
+
+
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_no_detector_modual/";
-   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
@@ -104,10 +147,10 @@ void main_3()
 
 
 
-Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
+//Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
 //Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
 
-Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
+//Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
 //Cor_norm( path_sino_refer_scatter, path_sino_refer_norm,path_sino_refer_scatter_normed);
 
 
