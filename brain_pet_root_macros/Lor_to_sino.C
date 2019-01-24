@@ -81,11 +81,29 @@ void main_1()
 void main_2()
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/scatterMCS/" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/" ;
   
-  string path_lor_data = input_folder + "norm_acq_gpuSimu_0_true.flor";
-  string path_saved_sino = input_folder + "norm_acq_gpuSimu_0_true.fs";
+  string path_lor_data = input_folder + "sphere_phantom_real_gpuSimu_0_true.flor";
+  string path_saved_sino = input_folder + "sphere_phantom_real_gpuSimu_0_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "sphere_phantom_real_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_real_gpuSimu_1_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "sphere_phantom_real_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_real_gpuSimu_0_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  
+  path_lor_data = input_folder + "sphere_phantom_real_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_real_gpuSimu_1_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+
+
 
   
 }

@@ -51,9 +51,9 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
-//main_1( );
+main_1();
 
-  main_3() ;
+  //main_3() ;
 
   gApplication->Terminate();
 
@@ -79,7 +79,7 @@ void main_1( )
   string name_sino_merge="true.fs";
 
   string sub_folder_1 = "merged_with_detector_modual/" ;
-  string sub_folder_2 = "run_5000_with_detector_modual_3/" ;
+  string sub_folder_2 = "run_5000_with_detector_modual_4/" ;
   string sub_folder_merge = "merged_with_detector_modual/" ;
 
   string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
