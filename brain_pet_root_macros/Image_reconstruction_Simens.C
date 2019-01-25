@@ -26,7 +26,7 @@ void Image_reconstruction_Simens()
 
   //// ********************1: with detector modual*************************
 
-  string prompt_sino="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/true_plus_scatter.fs";
+  string prompt_sino="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/true.fs";
   string random_sino="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
 
   //--- Norm file for measurement data
@@ -37,10 +37,10 @@ void Image_reconstruction_Simens()
 
   // scatter with scatter modual;
   //string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/scatter_scaled_normed.fs";
-  string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/scatter_normed.fs";
+  string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/scatter.fs";
   // scatter file: with detetion module; norm: with detector modual
   //string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/img/recon_img_scat_sino_with_detec.i";
-  string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/img/recon_img_merged.i";
+  string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/true.i";
 
   int nsubsets=2;
   int niterations=32;

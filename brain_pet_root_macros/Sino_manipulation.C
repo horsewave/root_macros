@@ -26,6 +26,7 @@
  * 25: void get_gaps_sino(string path_sino_with_gap, string path_saved_sino,float set_value=1)
  * void remove_gap_sino_bad_lor(string path_sino_gap_ori,string path_saved_sino_without_gap,float sino_value=2)
  * void normlized_sino( string input_sino,string saved_sino)
+ * double sino_get_total_events(string path_sino)
 
 
 
@@ -51,9 +52,13 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
-main_1();
+//main_1();
 
   //main_3() ;
+  //
+  string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
+sino_get_total_events(path_prompt);
+
 
   gApplication->Terminate();
 
@@ -1915,6 +1920,39 @@ void set_sino_value_except_gaps(string path_sino_with_gap, string path_saved_sin
 }
 
 
+
+double sino_get_total_events(string path_sino)
+{
+
+
+  //class including all the basic information of the MRPET.
+  MRPET_dump *dump = new MRPET_dump();	
+
+  ///---measurement data, correction of random and scatter//////////////////////////////////////////////////
+  BrainPET_Sinograms* sino_input=new BrainPET_Sinograms(dump,"sino_norm");  
+
+  //bool is_int=false;
+  bool is_int=true;
+  sino_input->read_flatSinogram(path_sino,is_int);
+
+  cout<<" the total events of sino_1 is: " << sino_input->get_n_Events()<< endl;
+
+
+
+  if(sino_input!=NULL)
+  {
+    delete sino_input;
+    sino_input=NULL;
+
+  }
+  if(dump!=NULL)
+  {
+    delete dump;
+  }
+
+
+
+}
 
 
 
