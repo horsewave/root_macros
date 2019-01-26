@@ -51,29 +51,6 @@ void Lor_to_sino()
 
 
 /*
- *  convert LOR data to sino data and  scatter sino scaling for GPU-MCS 
- */
-void main_1()
-{
-   string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/";
-  string base_folder_lor = base_folder +"scatterMCS/";
-
-  string patient_name="XB1BN305N-BI-01";
-
-
-  string path_sino_measured_prompt = base_folder +"sinos/range_0-1800_prompt.fs";
-  string path_sino_measured_random = base_folder +"sinos/range_0-1800_vrr.fs";
-  string path_sino_measured_norm = base_folder +"norm/PSNorm-170720_STD_norm.fs";
-
-  int gpu_num=2;
-
-
-    cout<< "gpu_num is : "<< gpu_num <<endl;
-    Lor_to_sino_run(base_folder_lor,patient_name, path_sino_measured_prompt,path_sino_measured_random,path_sino_measured_norm,gpu_num );
-
-}
-
-/*
  * Just convert the LOR to sino and do nothing else
  *
  */
@@ -81,7 +58,7 @@ void main_1()
 void main_2()
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_4000_no_detector_modual_with_coil/" ;
   
   string path_lor_data = input_folder + "sphere_phantom_real_gpuSimu_0_true.flor";
   string path_saved_sino = input_folder + "sphere_phantom_real_gpuSimu_0_true.fs";
