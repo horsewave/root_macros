@@ -52,9 +52,10 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
-main_1();
+//main_1();
 
-  //main_3() ;
+  //main_2() ;
+  main_3() ;
   //
   //string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
 //sino_get_total_events(path_prompt);
@@ -77,10 +78,10 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/XB1BN304N-BI-01/reco/30min-data_0-30/scatterMCS/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/";
 
-  string name_sino_0="XB1BN304N-BI-01_0-1800_gpuSimu_0_true.fs";
-  string name_sino_1="XB1BN304N-BI-01_0-1800_gpuSimu_1_true.fs";
+  string name_sino_0="XB1BN310N-BI-01_0-1800_gpuSimu_0_true.fs";
+  string name_sino_1="XB1BN310N-BI-01_0-1800_gpuSimu_1_true.fs";
   string name_sino_merge="true.fs";
 
   string sub_folder_1 = "" ;
@@ -93,8 +94,8 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  name_sino_0="XB1BN304N-BI-01_0-1800_gpuSimu_0_scatter.fs";
-  name_sino_1="XB1BN304N-BI-01_0-1800_gpuSimu_1_scatter.fs";
+  name_sino_0="XB1BN310N-BI-01_0-1800_gpuSimu_0_scatter.fs";
+  name_sino_1="XB1BN310N-BI-01_0-1800_gpuSimu_1_scatter.fs";
   name_sino_merge="scatter.fs";
 
   path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
@@ -110,29 +111,30 @@ void main_1( )
 
 void main_3()
 {
-   string base_folder_input = "";
-   string base_folder_refer = "";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
   string path_sino_input_scatter = base_folder_input +"scatter.fs";
-  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_no_detection_modual/norm_sino_320_192_no_detection_modual.fs";
-  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed.fs";
+  //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_no_coil.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
-  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_no_coil.fs";
 
 
 
-  string path_sino_refer_true = base_folder_refer +"true.fs";
+  string path_sino_refer_true = base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
   string path_sino_refer_scatter = base_folder_refer +"scatter.fs";
   string path_sino_refer_norm ="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
 
   string path_sino_refer_scatter_normed = base_folder_refer +"scatter_normed.fs";
   string path_sino_refer_true_plus_scatter= base_folder_refer +"true_plus_scatter.fs";
-  string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"true_plus_scatter_normed.fs";
+  string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
 
   string path_sino_scaled_scatter = base_folder_input +"scatter_scaled.fs";
-  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed.fs";
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_no_coil.fs";
 
 
   cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
@@ -152,10 +154,10 @@ void main_3()
 
 
 
-//Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
+Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
 //Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
 
-//Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
+Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
 //Cor_norm( path_sino_refer_scatter, path_sino_refer_norm,path_sino_refer_scatter_normed);
 
 
@@ -184,6 +186,21 @@ void main_3()
 }
 
 
+void main_2()
+{
+
+  string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/"; 
+  string path_prompt = base_folder +  "sinos/range_0-1800_prompt.fs" ;
+  string path_random= base_folder +  "sinos/range_0-1800_vrr.fs" ;
+  string path_norm= base_folder +  "norm/BAD-BLOCK--norm-PSNorm-170720.fs" ;
+  string path_prompt_ran = base_folder +  "prompt_rand_cor.fs" ;
+  string path_prompt_ran_norm = base_folder +  "prompt_rand_norm_cor.fs" ;
+
+Cor_random( path_prompt,path_random,path_prompt_ran);
+ Cor_norm( path_prompt_ran, path_norm,path_prompt_ran_norm);
+
+
+}
 
 
 
@@ -447,8 +464,8 @@ void Cor_random( string path_sino_prompt,string path_sino_rand,string saved_sino
   BrainPET_Sinograms* sino_prompt=new BrainPET_Sinograms(dump,"prompt");  
   BrainPET_Sinograms* sino_random=new BrainPET_Sinograms(dump,"random");
 
-  //bool is_int=true;
-  bool is_int=false;
+  bool is_int=true;
+  //bool is_int=false;
   sino_prompt->read_flatSinogram(path_sino_prompt,is_int);
 
   is_int=false;
