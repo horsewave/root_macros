@@ -52,12 +52,12 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
-//main_1();
+main_1();
 
   //main_3() ;
   //
-  string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
-sino_get_total_events(path_prompt);
+  //string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
+//sino_get_total_events(path_prompt);
 
 
   gApplication->Terminate();
@@ -77,15 +77,15 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/XB1BN304N-BI-01/reco/30min-data_0-30/scatterMCS/";
 
-  string name_sino_0="true.fs";
-  string name_sino_1="true.fs";
+  string name_sino_0="XB1BN304N-BI-01_0-1800_gpuSimu_0_true.fs";
+  string name_sino_1="XB1BN304N-BI-01_0-1800_gpuSimu_1_true.fs";
   string name_sino_merge="true.fs";
 
-  string sub_folder_1 = "merged_with_detector_modual/" ;
-  string sub_folder_2 = "run_5000_with_detector_modual_4/" ;
-  string sub_folder_merge = "merged_with_detector_modual/" ;
+  string sub_folder_1 = "" ;
+  string sub_folder_2 = "" ;
+  string sub_folder_merge = "" ;
 
   string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
   string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
@@ -93,8 +93,8 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  name_sino_0="scatter.fs";
-  name_sino_1="scatter.fs";
+  name_sino_0="XB1BN304N-BI-01_0-1800_gpuSimu_0_scatter.fs";
+  name_sino_1="XB1BN304N-BI-01_0-1800_gpuSimu_1_scatter.fs";
   name_sino_merge="scatter.fs";
 
   path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
@@ -110,8 +110,8 @@ void main_1( )
 
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/";
-   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/merged_with_detector_modual/";
+   string base_folder_input = "";
+   string base_folder_refer = "";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
