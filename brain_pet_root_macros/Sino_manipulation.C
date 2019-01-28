@@ -78,10 +78,10 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/";
 
-  string name_sino_0="XB1BN310N-BI-01_0-1800_gpuSimu_0_true.fs";
-  string name_sino_1="XB1BN310N-BI-01_0-1800_gpuSimu_1_true.fs";
+  string name_sino_0="XB1BN310N-BI-01_gpuSimu_0_true.fs";
+  string name_sino_1="XB1BN310N-BI-01_gpuSimu_1_true.fs";
   string name_sino_merge="true.fs";
 
   string sub_folder_1 = "" ;
@@ -94,8 +94,8 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  name_sino_0="XB1BN310N-BI-01_0-1800_gpuSimu_0_scatter.fs";
-  name_sino_1="XB1BN310N-BI-01_0-1800_gpuSimu_1_scatter.fs";
+  name_sino_0="XB1BN310N-BI-01_gpuSimu_0_scatter.fs";
+  name_sino_1="XB1BN310N-BI-01_gpuSimu_1_scatter.fs";
   name_sino_merge="scatter.fs";
 
   path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
@@ -111,14 +111,15 @@ void main_1( )
 
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/";
    string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
   string path_sino_input_scatter = base_folder_input +"scatter.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_no_detection_modual/norm_sino_320_192_no_detection_modual.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
-  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
+  //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
   string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_no_coil.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
   string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_no_coil.fs";
@@ -149,7 +150,7 @@ void main_3()
   cout << " path_sino_scaled_scatter: "<<  path_sino_scaled_scatter<<endl;
 
 
-//Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
+Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
 //Add_sino( path_sino_refer_scatter, path_sino_refer_true,path_sino_refer_true_plus_scatter);
 
 

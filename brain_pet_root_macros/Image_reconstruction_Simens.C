@@ -38,10 +38,10 @@ void Image_reconstruction_Simens()
   // scatter with scatter modual;
   //string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/run_5000_with_detector_modual/scatter_scaled_normed.fs";
   //string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/scatter_scaled_normed.fs";
-  string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/scatter_scaled_normed_no_coil.fs";
+  string scatter_sino_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/scatter_scaled_normed_no_coil.fs";
   // scatter file: with detetion module; norm: with detector modual
   //string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov/scatterMCS/img/recon_img_scat_sino_with_detec.i";
-  string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/img/mcs/recon_img_with_detec_s2_i64_norm_no_coil.i";
+  string reconstructe_img= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/img/mcs/recon_img_no_detec_s2_i64_norm_no_coil.i";
 
   int nsubsets=2;
   int niterations=64;
