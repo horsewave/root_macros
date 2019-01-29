@@ -57,7 +57,7 @@
 typedef std::vector<int> int_vec_t; 
 typedef std::vector<float> float_vec_t; 
 //void compare_MCS_SSS_scatter_sino(string path_sino_mcs,string path_sino_sss, string saved_path_root_file)
-void compare_MCS_SSS_scatter_sino()
+void compare_MCS_SSS_sino_axial()
 {
 
 
