@@ -58,7 +58,7 @@ void Lor_to_sino()
 void main_2()
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_with_detect/" ;
   
   string path_lor_data = input_folder + "XB1BN310N-BI-01_gpuSimu_0_true.flor";
   string path_saved_sino = input_folder + "XB1BN310N-BI-01_gpuSimu_0_true.fs";
