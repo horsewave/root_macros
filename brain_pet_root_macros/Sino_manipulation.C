@@ -118,12 +118,12 @@ void main_3()
   string path_sino_input_true= base_folder_input +"true.fs";
   string path_sino_input_scatter = base_folder_input +"scatter.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil_true_plus_scatter.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_with_coil.fs";
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_with_true_plus_scatter_with_coil.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
-  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_with_coil.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_true_plus_scatter_with_coil.fs";
 
 
 
@@ -136,7 +136,7 @@ void main_3()
   string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
 
   string path_sino_scaled_scatter = base_folder_input +"scatter_scaled.fs";
-  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_with_coil.fs";
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_with_true_plus_scatter_with_coil.fs";
 
 
   cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
