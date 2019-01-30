@@ -16,11 +16,11 @@ void rc_real_region()
 {
 
    string path_base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/img/" ;
-  //string path_img_data =path_base_folder + "mcs/recon_img_no_detec_s2_i64_norm_no_coil.i" ;
+  string path_img_data =path_base_folder + "mcs/recon_img_with_detec_s2_i64_norm_old.i" ;
   //string path_img_data =path_base_folder + "mcs/recon_img_with_detec_s2_i64_norm_no_coil.i" ;
-   string path_img_data =path_base_folder + "sss/recon_img_with_detec_s2_i64.i" ;
+   //string path_img_data =path_base_folder + "sss/recon_img_with_detec_s2_i64.i" ;
 
-  string saved_data_path = path_base_folder +"sss_ave_std_real_region.txt" ;
+  string saved_data_path = path_base_folder +"mcs_ave_std_real_region_norm_old.txt" ;
 
   string path_img_voi= path_base_folder + "voi_img/img_voi_real_region_27mm.i" ;
   string sphere_name ="27mm real region";
@@ -54,9 +54,9 @@ void rc_effect_region()
 {
 
    string path_base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/img/" ;
-  string path_img_data =path_base_folder + "sss/recon_img_with_detec_s2_i64.i" ;
+  string path_img_data =path_base_folder + "mcs/recon_img_with_detec_s2_i64_norm_old.i" ;
 
-  string saved_data_path = path_base_folder +"sss_ave_std_effect_region.txt" ;
+  string saved_data_path = path_base_folder +"mcs_ave_std_effect_region_normed_old.txt" ;
 
 
 

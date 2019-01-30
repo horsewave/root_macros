@@ -111,19 +111,19 @@ void main_1( )
 
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_with_detect/";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/";
    string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
   string path_sino_input_scatter = base_folder_input +"scatter.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil_true_plus_scatter.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_with_true_plus_scatter_with_coil.fs";
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_old.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
-  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_true_plus_scatter_with_coil.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_old.fs";
 
 
 
@@ -136,7 +136,7 @@ void main_3()
   string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
 
   string path_sino_scaled_scatter = base_folder_input +"scatter_scaled.fs";
-  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_with_true_plus_scatter_with_coil.fs";
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_old.fs";
 
 
   cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
