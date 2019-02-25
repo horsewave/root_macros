@@ -55,11 +55,16 @@ void Sino_manipulation()
 //main_1();
 
   //main_2() ;
-  main_3() ;
+  //main_3() ;
   //
   //string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
 //sino_get_total_events(path_prompt);
-
+string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterSSS/test/" ;
+string path_sino_input = base_folder + "scatter_sino_unscaled.fs" ; 
+//string path_sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/norm/PSNorm-170720_STD_norm.fs" ;
+string path_sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs" ;
+  string saved_sino_norm_cor= base_folder + "scatter_sino_unscaled_normed_mcs.fs" ;
+Cor_norm( path_sino_input, path_sino_norm,saved_sino_norm_cor);
 
   gApplication->Terminate();
 

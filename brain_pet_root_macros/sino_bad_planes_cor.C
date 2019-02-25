@@ -2,12 +2,13 @@ void sino_bad_planes_cor()
 {
 
   // sino needed to correct bad planes
-  string path_input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/range_0-3600_scal_scat.fs" ;
+  //string path_input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterSSS/range_0-1800_scal_scat.fs" ;
+  string path_input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/error_norm/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
 
   // bad plane sino, in which all points are set zero while the points in the bad plane is set one.
   string path_bad_plane_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/bad_planes_sino.fs" ;
 
-  string saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/scater_bad_plane_cor.fs" ;
+  string saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000/error_norm/scater_bad_plane_cor.fs" ;
 
 set_bad_plane(path_input_sino,path_bad_plane_sino, saved_sino);
 

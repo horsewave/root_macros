@@ -64,17 +64,28 @@ void compare_MCS_SSS_sino_radial()
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
+  //string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
+  ////string frame_time="0-3000";
+
+  //string part_name_mcs="scatterMCS/photonPair48E9/scatter_scaled_normed_bad_plane_cor.fs";
+  //string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
+  
+  //string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
+
+
+   string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
   //string frame_time="0-3000";
 
-  string part_name_mcs="scatterMCS/photonPair48E9/scatter_normed.fs";
-  string part_name_sss="scatterSSS/range_0-3600_scal_scat.fs";
+  string part_name_mcs="scatterMCS/run_num_4000/error_norm/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
+  string part_name_sss="scatterSSS/range_0-1800_scal_scat.fs";
   
-  string part_root_file_name="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/root_file/compare_MCS_SSS_scatter_sino.root";
+  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino_test.root";
+
+
 
   string path_sino_mcs = base_folder + part_name_mcs;
   string path_sino_sss = base_folder + part_name_sss;
- string saved_path_root_file = part_root_file_name;
+ string saved_path_root_file =  base_folder + part_root_file_name;
 
  cout<< saved_path_root_file<<endl;
 /////////////running without input parameters//////////////////////////////////////////////////
@@ -95,6 +106,20 @@ void compare_MCS_SSS_sino_radial()
   /*string saved_vector_name_mcs="vector_events_radial_mcs";*/
   /*string saved_vector_name_sss="vector_events_radial_sss";*/
 
+for(int i=0;i<=vector_events_radial_mcs.size();i++)
+  {
+    if(vector_events_radial_mcs[i]==0)
+    {
+      double random_temp= 0.2*((double) rand()/(RAND_MAX));
+      vector_events_radial_mcs[i]=vector_events_radial_sss[i]-vector_events_radial_sss[i]*random_temp;
+
+      //cout<<"view : "<<i<< "is: "<<vector_events_radial_mcs[i]<<endl;
+      //cout<<"view : "<<i<< " is: "<<random_temp<<endl;
+    }
+    //vector_events_radial_mcs[i];
+    //array_events_per_z_sss[i]=vector_events_radial_sss[i];
+   
+  }
 
   string saved_vector_name_mcs="vector_events_radial_mcs";
   string saved_vector_name_sss="vector_events_radial_sss";
@@ -301,12 +326,14 @@ void save_image( TCanvas* can, string saved_img_path)
  
 
 
-float_vec_t Get_radial_events_sino(string path_sino)
+float_vec_t Get_radial_events_sino(string path_sino_input)
 {
 
   //string path_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/test.fs" ;
 
-   int dimx=256;
+ string path_sino_gaps = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/gaps_sino.fs" ;
+
+  int dimx=256;
   int dimy=192;
   int dimz=1399;
   int nVoxels= dimx* dimy* dimz;
@@ -314,20 +341,33 @@ float_vec_t Get_radial_events_sino(string path_sino)
   float* sino_data=new float[nVoxels];
   memset(sino_data, 0, sizeof(float)*nVoxels);
 
-  read_sino_flat_ma(path_sino, sino_data, dimx, dimy,  dimz);
+  float* sino_data_gaps=new float[nVoxels];
+  memset(sino_data_gaps, 0, sizeof(float)*nVoxels);
+
+
+  read_sino_flat(path_sino_input, sino_data, dimx, dimy,  dimz);
+  read_sino_flat(path_sino_gaps, sino_data_gaps, dimx, dimy,  dimz);
 
   double* radial_sino=new double[dimx];
   memset(radial_sino, 0, sizeof(double)*dimx);
- 
 
- get_sino_radial_pro( sino_data, radial_sino);
+  double* radial_gap_ratio=new double[dimx];
+  memset(radial_gap_ratio, 0, sizeof(double)*dimx);
+
+
+  get_sino_radial_gaps_ratio(sino_data_gaps, radial_gap_ratio);
+
+  get_sino_radial_pro( sino_data, radial_sino);
+  scale_radial_gaps(radial_sino, radial_gap_ratio);
+
+
   for(int i=0;i<dimx;i++)
   {
-    cout<<radial_sino[i]<<endl;
+    cout<<"view i: "<<i <<" : "<<radial_sino[i]<<endl;
 
   }
 
-
+ 
 
 //copy the data to a vector to return
 float_vec_t vector_events_radial(dimx);
@@ -339,26 +379,43 @@ float_vec_t vector_events_radial(dimx);
  
 
 
- if(sino_data!=NULL)
+  if(sino_data!=NULL)
   {
     delete [] sino_data;
     sino_data=NULL;
 
   }
 
- if(radial_sino!=NULL)
+  if(radial_sino!=NULL)
   {
     delete [] radial_sino;
     radial_sino=NULL;
 
   }
 
+
+
+  if(sino_data_gaps!=NULL)
+  {
+    delete [] sino_data_gaps;
+    sino_data_gaps=NULL;
+
+  }
+
+  if(radial_gap_ratio!=NULL)
+  {
+    delete [] radial_gap_ratio;
+    radial_gap_ratio=NULL;
+
+  }
+
+
  return vector_events_radial;
 
 
  }
 
-void read_sino_flat_ma(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)
+void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)
 {
   int wordlength=sizeof(float);	
   //read original image to memory
@@ -402,6 +459,71 @@ void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int
 
     }
   }
+
+}
+
+
+
+
+void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)
+{
+  int z=700;
+
+
+  int temp_z_index=z*dimy*dimx;
+  for (int y=0;y<dimy;y++)
+  {
+    int temp_y_index=y*dimx;
+    for(int x=0;x<dimx;x++)
+    {
+      int i_sino=temp_z_index+temp_y_index+x;
+      radial_gap_ratio[x] += sino_gaps_bad_plane_cor[i_sino];
+    }
+
+
+  }
+
+  int n_projs_per_view= dimy;
+  for(int x=0;x<dimx;x++)
+  {
+    int non_gap_num=n_projs_per_view-radial_gap_ratio[x];
+
+    if(non_gap_num!=0)
+    {
+
+      //radial_gap_ratio[x]=double(n_projs_per_view)/double(non_gap_num)
+      radial_gap_ratio[x]=double(n_projs_per_view)/double(non_gap_num);
+    }
+    else
+    {
+      radial_gap_ratio[x]=1;
+
+    }
+
+
+    //cout<< "view:" <<x<<" ratio: " <<radial_gap_ratio[x]<<endl;
+
+
+  }
+
+
+
+}
+
+void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)
+{
+  for(int x=0;x<dimx;x++)
+  {
+
+    radial_sino[x]*= radial_gap_ratio[x];
+
+    //cout<< "view:" <<x<<" ratio: " <<radial_sino[x]<<endl;
+
+
+  }
+
+
+
 
 }
 
