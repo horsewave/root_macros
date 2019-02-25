@@ -15,7 +15,6 @@ void sss_81()
   string mumap_image_fname = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/atten/GUI_generated/AttenMap_for_reco.i";
 
   string scatter_lor_fname = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/test/scatter_lor.flor";
-  string scatter_lor_fname = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/test/scatter_lor.flor";
   string sino_fname_unscaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/test/scatter_sino_unscaled.fs";
   string sino_fname_scaled = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/test/scatter_sino_scaled.fs";
   bool dwell_corr = true;
@@ -55,9 +54,9 @@ void sss_310()
   string scatter_lor_fname =  base_folder +"scatterSSS/test/scatter_lor.flor";
   //string sino_fname_unscaled = base_folder + "scatterSSS/test/scatter_sino_unscaled.fs";
   //string sino_fname_scaled =  base_folder +"scatterSSS/test/scatter_sino_scaled.fs";
-  string sino_fname_unscaled = base_folder + "scatterSSS/test/scatter_sino_unscaled_normed_mcs.fs";
-  string sino_fname_scaled =  base_folder +"scatterSSS/test/scatter_sino_scaled_normed_mcs.fs";
-  bool dwell_corr = true;
+  string sino_fname_unscaled = base_folder + "scatterSSS/test/scatter_sino_unscaled_no_dwell.fs";
+  string sino_fname_scaled =  base_folder +"scatterSSS/test/scatter_sino_scaled_no_dwell.fs";
+  bool dwell_corr = false;
 
   ////void 	SIEMENS_SCATTER3D_V4 (string emission_image_fname, string mumap_image_fname, string scatter_lor_fname)
 //stools->SIEMENS_SCATTER3D_V4(emission_image_fname,mumap_image_fname,scatter_lor_fname);
@@ -65,7 +64,7 @@ void sss_310()
 // *********2: LOR TO SINO*************
 
 ////void 	SIEMENS_SCANSORT_V3_LOR2SINO (string lor_fname, string sino_fname, bool dwell_corr)
-//stools->SIEMENS_SCANSORT_V3_LOR2SINO (scatter_lor_fname, sino_fname_unscaled, dwell_corr);
+stools->SIEMENS_SCANSORT_V3_LOR2SINO (scatter_lor_fname, sino_fname_unscaled, dwell_corr);
 
 // *********3: SSS scaling*************
 

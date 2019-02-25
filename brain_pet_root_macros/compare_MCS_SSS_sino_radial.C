@@ -64,9 +64,10 @@ void compare_MCS_SSS_sino_radial()
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/";
-  string part_name_mcs="scatterMCS/scatter_scaled_normed_bad_plane_cor.fs";
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
+  string part_name_mcs="scatterMCS/run_num_4000/error_norm/scater_bad_plane_cor.fs";
   string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
+
   
   string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
 
