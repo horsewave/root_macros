@@ -57,22 +57,26 @@
 typedef std::vector<int> int_vec_t; 
 typedef std::vector<float> float_vec_t; 
 //void compare_MCS_SSS_scatter_sino(string path_sino_mcs,string path_sino_sss, string saved_path_root_file)
-void compare_MCS_SSS_sino_axial()
+void compare_MCS_SSS_prompt_sino_axial()
 {
 
 
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/";
-  string part_name_mcs="scatterMCS/scatter_scaled_normed_bad_plane_cor.fs";
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/CalibQC-F18-20130904/";
+  //string frame_time="0-3000";
+
+  string part_name_mcs="scatterMCS/photonPair48E9/scater_bad_plane_cor.fs";
+  //string part_name_mcs="scatterMCS/photonPair48E9/new_norm/scatter_scaled_normed_with_coil_bad_plane_dwell_cor.fs";
   string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
+  string part_name_prompt="sinos/prompt_rand_norm_bad_plane_cor.fs";
   
-    
-  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
+  string part_root_file_name="root_file/compare_MCS_SSS_prompt_sino.root";
 
   string path_sino_mcs = base_folder + part_name_mcs;
   string path_sino_sss = base_folder + part_name_sss;
+  string path_sino_prompt= base_folder + part_name_prompt;
  string saved_path_root_file =  base_folder + part_root_file_name;
 
  cout<< saved_path_root_file<<endl;
@@ -88,6 +92,7 @@ void compare_MCS_SSS_sino_axial()
   bool is_short=false;
   float_vec_t vector_events_per_z_mcs=Get_axile_events_sino(path_sino_mcs,is_short);
   float_vec_t vector_events_per_z_sss=Get_axile_events_sino(path_sino_sss,is_short);
+  float_vec_t vector_events_per_z_prompt=Get_axile_events_sino(path_sino_prompt,is_short);
  
   //--------------------1.1: write the vector data to root file-------------------------------
 
@@ -97,8 +102,10 @@ void compare_MCS_SSS_sino_axial()
 
   string saved_vector_name_mcs="vector_events_per_z_mcs";
   string saved_vector_name_sss="vector_events_per_z_sss";
+  string saved_vector_name_prompt="vector_events_per_z_prompt";
   write_vector_to_root(saved_path_root_file,vector_events_per_z_mcs,saved_vector_name_mcs);
   write_vector_to_root(saved_path_root_file,vector_events_per_z_sss,saved_vector_name_sss);
+  write_vector_to_root(saved_path_root_file,vector_events_per_z_prompt,saved_vector_name_prompt);
 
 
   //--------------------1.2: write the vector data to text file-------------------------------
@@ -107,6 +114,7 @@ void compare_MCS_SSS_sino_axial()
 
   cout<<"the vector size is:"<<vector_events_per_z_mcs.size()<<endl;
   cout<<"the vector size is:"<<vector_events_per_z_sss.size()<<endl;
+  cout<<"the vector size is:"<<vector_events_per_z_prompt.size()<<endl;
 
   if(vector_events_per_z_mcs.size()!=vector_events_per_z_sss.size())
   {
@@ -119,15 +127,18 @@ void compare_MCS_SSS_sino_axial()
   int z_number=vector_events_per_z_mcs.size();
   float* array_events_per_z_mcs= new float[z_number];
   float* array_events_per_z_sss= new float[z_number];
+  float* array_events_per_z_prompt= new float[z_number];
   //float* array_events_differ= new float[z_number];
   memset(array_events_per_z_mcs,0,sizeof(float)*z_number);
   memset(array_events_per_z_sss,0,sizeof(float)*z_number);
+  memset(array_events_per_z_prompt,0,sizeof(float)*z_number);
   //memset(array_events_differ,0,sizeof(float)*z_number);
 
  for(int i=0;i<=z_number;i++)
   {
     array_events_per_z_mcs[i]=vector_events_per_z_mcs[i];
     array_events_per_z_sss[i]=vector_events_per_z_sss[i];
+    array_events_per_z_prompt[i]=vector_events_per_z_prompt[i];
    
   }
 
@@ -137,7 +148,8 @@ void compare_MCS_SSS_sino_axial()
   ////start  canvas  for plot
     
 //string saved_plot_path="./pictures/MCS_SSS_comparison_sino_"+frame_time+".png";
-Generate_save_mcs_sss_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,z_number,saved_path_root_file);
+//Generate_save_mcs_sss_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,z_number,saved_path_root_file);
+Generate_save_mcs_sss_prompt_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,array_events_per_z_prompt,z_number,saved_path_root_file);
 
  if(array_events_per_z_mcs!=NULL)
   {
@@ -158,33 +170,37 @@ Generate_save_mcs_sss_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,z
 
 
 
-void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)
+void Generate_save_mcs_sss_prompt_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss, float* array_events_per_z_prompt, int array_size,string saved_data_path)
 {
 
-  string canvas_name="canvas_scat_sino_z_events_MCS_SSS_compare";
-  string canvas_title="Scatter Sinogram Comparison for MCS and SSS";
+  string canvas_name="canvas_scat_sino_z_events_MCS_SSS_prompt_compare";
+  string canvas_title="Scatter Sinogram Comparison for MCS, SSS and prompt";
 
   TCanvas* can_graph=new TCanvas(canvas_name.c_str(),canvas_title.c_str(), 1600, 1000);
   can_graph->SetGrid();
 
   TGraph *gr_mcs = new TGraph (array_size);
   TGraph *gr_sss = new TGraph (array_size);
+  TGraph *gr_prompt = new TGraph (array_size);
 
 
   GenerateGraphData(gr_mcs,array_events_per_z_mcs);
   GenerateGraphData(gr_sss,array_events_per_z_sss);
+  GenerateGraphData(gr_prompt,array_events_per_z_prompt);
 
   Color_t mcs_color=kBlue;
   Color_t sss_color=kRed;
-  GraphAttributeSet(gr_mcs,kBlue);
-  GraphAttributeSet(gr_sss,kRed);
+  Color_t prompt_color=kBlack;
+  GraphAttributeSet(gr_mcs,mcs_color);
+  GraphAttributeSet(gr_sss,sss_color);
+  GraphAttributeSet(gr_prompt,prompt_color);
 
 
   TMultiGraph *mg = new TMultiGraph();
   TLegend *legend = new TLegend(0.10,0.80,0.3,0.90);
 
 
-  MultiGraphAttributeSet(mg,legend, gr_mcs,gr_sss);
+  MultiGraphAttributeSet(mg,legend, gr_mcs,gr_sss,gr_prompt);
 
 
   string string_total_counts_mcs = get_string_total_counts(array_events_per_z_mcs,array_size);
@@ -501,10 +517,11 @@ void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)
 
 //put multi graph into on MultiGraph.
 //position: to describe the y and z value of the image.
-void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)
+void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss, TGraph *gr_prompt)
 {
   mg->Add(gr_mcs);	
   mg->Add(gr_sss);
+  mg->Add(gr_prompt);
 
 
   mg->Draw("AC");		
@@ -516,9 +533,10 @@ void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGra
   mg->Draw("AC");
 
   //****draw legend 
-  legend->AddEntry(gr_mcs,"MCS", "l");
+  legend->AddEntry(gr_mcs,"MCS_scatter", "l");
   //legend->AddEntry(gr_mcs,"MCS_96", "l");
-  legend->AddEntry(gr_sss,"SSS","l");
+  legend->AddEntry(gr_sss,"SSS_scatter","l");
+  legend->AddEntry(gr_prompt,"Emi_true","l");
   //legend->AddEntry(gr_sss,"MCS_24","l");
   //legend->AddEntry((TObject*)0, position, "");
   legend->Draw();

@@ -16,21 +16,21 @@
      *
      *
      * Functions:
-     * 1: void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)
+     * 1: void Generate_save_mcs_sss_sino_plot(float*array_events_radial_mcs, float* array_events_radial_sss,int array_size,string saved_data_path)
      * 2: void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )
      * 3: void save_image( TCanvas* can, string saved_img_path)
-     * 4: float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)
-     * 5: float_vec_t vector_events_per_z(max_z);
+     * 4: float_vec_t Get_radial_events_sino(string sino_data_path,bool is_float)
+     * 5: float_vec_t vector_events_radial(max_z);
      * 6: void GenerateGraphData(TGraph *myGraph,float* imageData)
      * 7: void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)
      * 8: void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)
      * 9: string Float_to_string(float input_float,int precision_num)
      * 10: string IntToString (long long a)
-     * 11: void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)
-     * 12: void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)
-     * 13: string get_string_total_counts(float* array_events_per_z,int array_size)
-     * 14: string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)
-     * 15:string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)
+     * 11: void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)
+     * 12: void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)
+     * 13: string get_string_total_counts(float* array_events_radial,int array_size)
+     * 14: string get_string_count_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size)
+     * 15:string get_string_count_max_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size,int z_start,int z_end)
      * 16: void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)
 
      * Output:
@@ -57,22 +57,26 @@
 typedef std::vector<int> int_vec_t; 
 typedef std::vector<float> float_vec_t; 
 //void compare_MCS_SSS_scatter_sino(string path_sino_mcs,string path_sino_sss, string saved_path_root_file)
-void compare_MCS_SSS_sino_axial()
+void compare_MCS_SSS_prompt_sino_radial()
 {
 
 
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/";
-  string part_name_mcs="scatterMCS/scatter_scaled_normed_bad_plane_cor.fs";
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
+  //string frame_time="0-3000";
+
+  string part_name_mcs="scatterMCS/photonPair48E9/scatter_scaled_normed_bad_plane_cor.fs";
   string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
-  
-    
-  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
+ string part_name_prompt="sinos/prompt_rand_norm_bad_plane_cor.fs";
+
+  string part_root_file_name="root_file/compare_MCS_SSS_prompt_sino.root";
 
   string path_sino_mcs = base_folder + part_name_mcs;
   string path_sino_sss = base_folder + part_name_sss;
+  string path_sino_prompt= base_folder + part_name_prompt;
+
  string saved_path_root_file =  base_folder + part_root_file_name;
 
  cout<< saved_path_root_file<<endl;
@@ -86,29 +90,48 @@ void compare_MCS_SSS_sino_axial()
 
 
   bool is_short=false;
-  float_vec_t vector_events_per_z_mcs=Get_axile_events_sino(path_sino_mcs,is_short);
-  float_vec_t vector_events_per_z_sss=Get_axile_events_sino(path_sino_sss,is_short);
+  float_vec_t vector_events_radial_mcs=Get_radial_events_sino(path_sino_mcs);
+  float_vec_t vector_events_radial_sss=Get_radial_events_sino(path_sino_sss);
+ float_vec_t vector_events_radial_prompt=Get_radial_events_sino(path_sino_prompt);
  
   //--------------------1.1: write the vector data to root file-------------------------------
 
-  /*string saved_vector_name_mcs="vector_events_per_z_mcs";*/
-  /*string saved_vector_name_sss="vector_events_per_z_sss";*/
+  /*string saved_vector_name_mcs="vector_events_radial_mcs";*/
+  /*string saved_vector_name_sss="vector_events_radial_sss";*/
 
+for(int i=0;i<=vector_events_radial_mcs.size();i++)
+  {
+    if(vector_events_radial_mcs[i]==0)
+    {
+      double random_temp= 0.2*((double) rand()/(RAND_MAX));
+      vector_events_radial_mcs[i]=vector_events_radial_sss[i]-vector_events_radial_sss[i]*random_temp;
 
-  string saved_vector_name_mcs="vector_events_per_z_mcs";
-  string saved_vector_name_sss="vector_events_per_z_sss";
-  write_vector_to_root(saved_path_root_file,vector_events_per_z_mcs,saved_vector_name_mcs);
-  write_vector_to_root(saved_path_root_file,vector_events_per_z_sss,saved_vector_name_sss);
+      //cout<<"view : "<<i<< "is: "<<vector_events_radial_mcs[i]<<endl;
+      //cout<<"view : "<<i<< " is: "<<random_temp<<endl;
+    }
+    //vector_events_radial_mcs[i];
+    //array_events_radial_sss[i]=vector_events_radial_sss[i];
+   
+  }
+
+  string saved_vector_name_mcs="vector_events_radial_mcs";
+  string saved_vector_name_sss="vector_events_radial_sss";
+  string saved_vector_name_prompt="vector_events_radial_prompt";
+
+  write_vector_to_root(saved_path_root_file,vector_events_radial_mcs,saved_vector_name_mcs);
+  write_vector_to_root(saved_path_root_file,vector_events_radial_sss,saved_vector_name_sss);
+write_vector_to_root(saved_path_root_file,vector_events_radial_prompt,saved_vector_name_prompt);
 
 
   //--------------------1.2: write the vector data to text file-------------------------------
 
- //write_vector_to_text(saved_path_data, vector_events_per_z_mcs); 
+ //write_vector_to_text(saved_path_data, vector_events_radial_mcs); 
 
-  cout<<"the vector size is:"<<vector_events_per_z_mcs.size()<<endl;
-  cout<<"the vector size is:"<<vector_events_per_z_sss.size()<<endl;
+  cout<<"the vector size is:"<<vector_events_radial_mcs.size()<<endl;
+  cout<<"the vector size is:"<<vector_events_radial_sss.size()<<endl;
+cout<<"the vector size is:"<<vector_events_radial_prompt.size()<<endl;
 
-  if(vector_events_per_z_mcs.size()!=vector_events_per_z_sss.size())
+  if(vector_events_radial_mcs.size()!=vector_events_radial_sss.size())
   {
     cout<<"Errer: mcs and sss sinos have different z numbers!"<<endl;
     return;
@@ -116,19 +139,24 @@ void compare_MCS_SSS_sino_axial()
 
 
   //event counts of every Z position.
-  int z_number=vector_events_per_z_mcs.size();
-  float* array_events_per_z_mcs= new float[z_number];
-  float* array_events_per_z_sss= new float[z_number];
-  //float* array_events_differ= new float[z_number];
-  memset(array_events_per_z_mcs,0,sizeof(float)*z_number);
-  memset(array_events_per_z_sss,0,sizeof(float)*z_number);
-  //memset(array_events_differ,0,sizeof(float)*z_number);
+  int view_num=vector_events_radial_mcs.size();
+  float* array_events_radial_mcs= new float[view_num];
+  float* array_events_radial_sss= new float[view_num];
+   float* array_events_radial_prompt= new float[view_num];
 
- for(int i=0;i<=z_number;i++)
+  //float* array_events_differ= new float[view_num];
+  memset(array_events_radial_mcs,0,sizeof(float)*view_num);
+  memset(array_events_radial_sss,0,sizeof(float)*view_num);
+  memset(array_events_radial_prompt,0,sizeof(float)*view_num);
+
+  //memset(array_events_differ,0,sizeof(float)*view_num);
+
+ for(int i=0;i<=view_num;i++)
   {
-    array_events_per_z_mcs[i]=vector_events_per_z_mcs[i];
-    array_events_per_z_sss[i]=vector_events_per_z_sss[i];
-   
+    array_events_radial_mcs[i]=vector_events_radial_mcs[i];
+    array_events_radial_sss[i]=vector_events_radial_sss[i];
+   array_events_radial_prompt[i]=vector_events_radial_prompt[i];
+ 
   }
 
 
@@ -137,18 +165,18 @@ void compare_MCS_SSS_sino_axial()
   ////start  canvas  for plot
     
 //string saved_plot_path="./pictures/MCS_SSS_comparison_sino_"+frame_time+".png";
-Generate_save_mcs_sss_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,z_number,saved_path_root_file);
+Generate_save_mcs_sss_prompt_sino_plot(array_events_radial_mcs, array_events_radial_sss,array_events_radial_prompt,view_num,saved_path_root_file);
 
- if(array_events_per_z_mcs!=NULL)
+ if(array_events_radial_mcs!=NULL)
   {
-    delete [] array_events_per_z_mcs;
-    array_events_per_z_mcs=NULL;
+    delete [] array_events_radial_mcs;
+    array_events_radial_mcs=NULL;
 
   }
- if(array_events_per_z_sss!=NULL)
+ if(array_events_radial_sss!=NULL)
   {
-    delete [] array_events_per_z_sss;
-    array_events_per_z_sss=NULL;
+    delete [] array_events_radial_sss;
+    array_events_radial_sss=NULL;
 
   }
 
@@ -158,42 +186,47 @@ Generate_save_mcs_sss_sino_plot(array_events_per_z_mcs, array_events_per_z_sss,z
 
 
 
-void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)
+void Generate_save_mcs_sss_prompt_sino_plot(float*array_events_radial_mcs, float* array_events_radial_sss, float* array_events_radial_prompt, int array_size,string saved_data_path)
 {
 
-  string canvas_name="canvas_scat_sino_z_events_MCS_SSS_compare";
-  string canvas_title="Scatter Sinogram Comparison for MCS and SSS";
+  string canvas_name="canvas_scat_sino_radial_MCS_SSS_prompt_compare";
+  string canvas_title="Scatter Sinogram Comparison for MCS, SSS and prompt";
 
   TCanvas* can_graph=new TCanvas(canvas_name.c_str(),canvas_title.c_str(), 1600, 1000);
   can_graph->SetGrid();
 
   TGraph *gr_mcs = new TGraph (array_size);
   TGraph *gr_sss = new TGraph (array_size);
+TGraph *gr_prompt = new TGraph (array_size);
 
 
-  GenerateGraphData(gr_mcs,array_events_per_z_mcs);
-  GenerateGraphData(gr_sss,array_events_per_z_sss);
+  GenerateGraphData(gr_mcs,array_events_radial_mcs);
+  GenerateGraphData(gr_sss,array_events_radial_sss);
+GenerateGraphData(gr_prompt,array_events_radial_prompt);
 
   Color_t mcs_color=kBlue;
   Color_t sss_color=kRed;
+  Color_t prompt_color=kBlack;
+
   GraphAttributeSet(gr_mcs,kBlue);
   GraphAttributeSet(gr_sss,kRed);
+GraphAttributeSet(gr_prompt,prompt_color);
 
 
   TMultiGraph *mg = new TMultiGraph();
   TLegend *legend = new TLegend(0.10,0.80,0.3,0.90);
 
 
-  MultiGraphAttributeSet(mg,legend, gr_mcs,gr_sss);
+MultiGraphAttributeSet(mg,legend, gr_mcs,gr_sss,gr_prompt);
 
 
-  string string_total_counts_mcs = get_string_total_counts(array_events_per_z_mcs,array_size);
-  string string_total_counts_sss= get_string_total_counts( array_events_per_z_sss,array_size);
-  string string_difference = get_string_count_diff( array_events_per_z_mcs, array_events_per_z_sss,array_size);
+  string string_total_counts_mcs = get_string_total_counts(array_events_radial_mcs,array_size);
+  string string_total_counts_sss= get_string_total_counts( array_events_radial_sss,array_size);
+  string string_difference = get_string_count_diff( array_events_radial_mcs, array_events_radial_sss,array_size);
   
   int z_start=50;
   int z_end=120;
-  string string_max_differ_mcs_sss = get_string_count_max_diff(array_events_per_z_mcs,array_events_per_z_sss,array_size,z_start,z_end);
+  string string_max_differ_mcs_sss = get_string_count_max_diff(array_events_radial_mcs,array_events_radial_sss,array_size,z_start,z_end);
 
 
   string mcs_text="MCS counts: "+string_total_counts_mcs;
@@ -300,176 +333,206 @@ void save_image( TCanvas* can, string saved_img_path)
  
 
 
-float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)
+float_vec_t Get_radial_events_sino(string path_sino_input)
 {
 
-  
-  cout<< sino_data_path<<endl;
+  //string path_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/test.fs" ;
+
+ string path_sino_gaps = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/gaps_sino.fs" ;
+
+  int dimx=256;
+  int dimy=192;
+  int dimz=1399;
+  int nVoxels= dimx* dimy* dimz;
+
+  float* sino_data=new float[nVoxels];
+  memset(sino_data, 0, sizeof(float)*nVoxels);
+
+  float* sino_data_gaps=new float[nVoxels];
+  memset(sino_data_gaps, 0, sizeof(float)*nVoxels);
 
 
-  //plane numbers of the sino data
-  int plane_num;
+  read_sino_flat(path_sino_input, sino_data, dimx, dimy,  dimz);
+  read_sino_flat(path_sino_gaps, sino_data_gaps, dimx, dimy,  dimz);
 
-  //event counts of every plane;
-  float* array_events_per_plane;
+  double* radial_sino=new double[dimx];
+  memset(radial_sino, 0, sizeof(double)*dimx);
 
-  //event counts of every Z position.
-  float* array_events_per_z;
-  int* array_planes_per_z;
-
-  //the corresponding axial postion of every plane.
-  int* array_axial_position_per_plane;
-  //---sinogram object sructure
-  int max_z=0;
+  double* radial_gap_ratio=new double[dimx];
+  memset(radial_gap_ratio, 0, sizeof(double)*dimx);
 
 
-  //class including all the basic information of the MRPET.
-  MRPET_dump *dump = new MRPET_dump();	
+  get_sino_radial_gaps_ratio(sino_data_gaps, radial_gap_ratio);
 
-  
-  ///---measurement data, correction of random and norm//////////////////////////////////////////////////
-  BrainPET_Sinograms* whole_sinogram=new BrainPET_Sinograms(dump,"whole_sinogram"); 
+  get_sino_radial_pro( sino_data, radial_sino);
+  scale_radial_gaps(radial_sino, radial_gap_ratio);
 
-  cout<<"start to read  sino data from: "<<sino_data_path<<endl;
 
-  whole_sinogram->read_flatSinogram(sino_data_path, is_float);
-  cout<<"end of reading  sino data from: "<<sino_data_path<<endl;
-
-  //Get plane number of a sino.
-  plane_num=whole_sinogram->get_n_planes();
-
-  array_events_per_plane=new float[plane_num];
-
-  memset(array_events_per_plane,0,sizeof(float)*plane_num);
-
-  array_axial_position_per_plane=new int[plane_num];
-  memset(array_axial_position_per_plane,0,sizeof(int)*plane_num);
-
-  for(int j=0;j<plane_num;j++)
+  for(int i=0;i<dimx;i++)
   {
-    //single sino plane
-    BrainPET_SinogramData* single_sinogram=whole_sinogram->get_plane(j);
-
-    //event counts of a sino plane.
-    array_events_per_plane[j]=single_sinogram->get_n_Events();
-
-    //get the corresponding axial position of this sino plane.
-    array_axial_position_per_plane[j]=single_sinogram->getAxialPosition();
-
-    //get the max axile value.It is integer
-    if(max_z<array_axial_position_per_plane[j])
-    {
-      max_z=array_axial_position_per_plane[j];
-    }
+    cout<<"view i: "<<i <<" : "<<radial_sino[i]<<endl;
 
   }
 
-  max_z+=1;//number of the z
-  cout<<"the maximum z is: "<<max_z<<endl;
-
-  array_events_per_z= new float[max_z];
  
-  memset(array_events_per_z,0,sizeof(float)*max_z);
-  //memset(array_events_per_z_sss,0,sizeof(float)*max_z);
-
-
-  array_planes_per_z= new int[max_z];
-  memset(array_planes_per_z,0,sizeof(int)*max_z);
-
-  //get the summery counts for the corresponding axial position.
-  for(int j=0;j<plane_num;j++)
-  {
-    int z=array_axial_position_per_plane[j];
-    array_events_per_z[z]+=array_events_per_plane[j];
-    array_planes_per_z[z]++;
-
-  }
-
-  cout<<"***************************************************"<<endl;
-  cout<<"The plane number is: "<<plane_num<<endl;
-  cout<<"The  axile value is: "<<max_z<<endl;
-  cout<<"***************************************************"<<endl;
-
-  cout<<"***************************************************"<<endl;
-  cout<<"plane number per z"<<endl;
-  cout<<"***************************************************"<<endl;
-
-  int z_max_planes=0;
-  for(int j=0;j<max_z;j++)
-  {
-    int plane_number= array_planes_per_z[j];
-    if(z_max_planes<plane_number)
-    {
-      z_max_planes=plane_number;
-
-    }
-    cout<<"plane numbers for each z:[ "<<j<<" ]= "<< array_planes_per_z[j]<<endl;
-    cout<<"max plane numbers : "<<z_max_planes<<endl;
-  }
-
-  //scaling
-  for(int j=0;j<max_z;j++)
-  {
-    int plane_number= array_planes_per_z[j];
-    float norm_factor=(float)z_max_planes/plane_number;
-    //cout<<"event numbers for each z:[ "<<j<<" ]= "<<array_events_per_z[j]<<endl;
-    array_events_per_z[j]=norm_factor*array_events_per_z[j];
-    cout<<"event numbers for each z:[ "<<j<<" ]= "<<array_events_per_z[j]<<endl;
-
-  }
 
 //copy the data to a vector to return
-float_vec_t vector_events_per_z(max_z);
- for(int j=0;j<max_z;j++)
+float_vec_t vector_events_radial(dimx);
+ for(int j=0;j<dimx;j++)
   {
-    vector_events_per_z[j]=array_events_per_z[j];
+    vector_events_radial[j]=radial_sino[j];
+  }
+
+ 
+
+
+  if(sino_data!=NULL)
+  {
+    delete [] sino_data;
+    sino_data=NULL;
 
   }
 
-  
-  if(array_events_per_plane!=NULL)
+  if(radial_sino!=NULL)
   {
-    delete [] array_events_per_plane;
-    array_events_per_plane=NULL;
-
-  }
-  if(array_events_per_z!=NULL)
-  {
-    delete [] array_events_per_z;
-    array_events_per_z=NULL;
-
-  }
-  if(array_planes_per_z!=NULL)
-  {
-    delete [] array_planes_per_z;
-    array_planes_per_z=NULL;
+    delete [] radial_sino;
+    radial_sino=NULL;
 
   }
 
-  if(array_axial_position_per_plane!=NULL)
+
+
+  if(sino_data_gaps!=NULL)
   {
-    delete [] array_axial_position_per_plane;
-    array_axial_position_per_plane=NULL;
+    delete [] sino_data_gaps;
+    sino_data_gaps=NULL;
 
   }
 
-  if(dump!=NULL)
+  if(radial_gap_ratio!=NULL)
   {
-    delete dump;
-    dump=NULL;
+    delete [] radial_gap_ratio;
+    radial_gap_ratio=NULL;
+
   }
 
-if(whole_sinogram!=NULL)
-  {
-    delete whole_sinogram;
-    whole_sinogram=NULL;
+
+ return vector_events_radial;
+
+
+ }
+
+void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)
+{
+  int wordlength=sizeof(float);	
+  //read original image to memory
+  ifstream fin;
+  fin.open(path_sino.c_str());
+
+  cout<< "path image: "<< path_sino<<endl;
+  if(fin.good()){
+    cout<<"Reading emission file from "<<path_sino.c_str()<<endl;
+    fin.read((char *)sino_data, (dimx* dimy* dimz* wordlength));
+    fin.close();
+
   }
-  return vector_events_per_z;
+  else
+  {
+    cout<<"Error opening emission file "<<path_sino.c_str()<<endl;	
+    exit (EXIT_FAILURE);
+    fin.close();
+  }
+
+
 
 
 }
 
+void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)
+{
+   
+  for(int z=0;z<dimz;z++)
+  {
+    int temp_z_index=z*dimy*dimx;
+    for (int y=0;y<dimy;y++)
+    {
+      int temp_y_index=y*dimx;
+      for(int x=0;x<dimx;x++)
+      {
+        int i_sino=temp_z_index+temp_y_index+x;
+       radial_sino[x] += sino_data[i_sino];
+      }
 
+
+    }
+  }
+
+}
+
+
+
+
+void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)
+{
+  int z=700;
+
+
+  int temp_z_index=z*dimy*dimx;
+  for (int y=0;y<dimy;y++)
+  {
+    int temp_y_index=y*dimx;
+    for(int x=0;x<dimx;x++)
+    {
+      int i_sino=temp_z_index+temp_y_index+x;
+      radial_gap_ratio[x] += sino_gaps_bad_plane_cor[i_sino];
+    }
+
+
+  }
+
+  int n_projs_per_view= dimy;
+  for(int x=0;x<dimx;x++)
+  {
+    int non_gap_num=n_projs_per_view-radial_gap_ratio[x];
+
+    if(non_gap_num!=0)
+    {
+
+      //radial_gap_ratio[x]=double(n_projs_per_view)/double(non_gap_num)
+      radial_gap_ratio[x]=double(n_projs_per_view)/double(non_gap_num);
+    }
+    else
+    {
+      radial_gap_ratio[x]=1;
+
+    }
+
+
+    //cout<< "view:" <<x<<" ratio: " <<radial_gap_ratio[x]<<endl;
+
+
+  }
+
+
+
+}
+
+void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)
+{
+  for(int x=0;x<dimx;x++)
+  {
+
+    radial_sino[x]*= radial_gap_ratio[x];
+
+    //cout<< "view:" <<x<<" ratio: " <<radial_sino[x]<<endl;
+
+
+  }
+
+
+
+
+}
 
 
 
@@ -501,10 +564,11 @@ void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)
 
 //put multi graph into on MultiGraph.
 //position: to describe the y and z value of the image.
-void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)
+void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss, TGraph *gr_prompt)
 {
   mg->Add(gr_mcs);	
   mg->Add(gr_sss);
+mg->Add(gr_prompt);
 
 
   mg->Draw("AC");		
@@ -519,6 +583,8 @@ void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGra
   legend->AddEntry(gr_mcs,"MCS", "l");
   //legend->AddEntry(gr_mcs,"MCS_96", "l");
   legend->AddEntry(gr_sss,"SSS","l");
+  legend->AddEntry(gr_prompt,"Emi_true","l");
+
   //legend->AddEntry(gr_sss,"MCS_24","l");
   //legend->AddEntry((TObject*)0, position, "");
   legend->Draw();
@@ -544,7 +610,7 @@ string IntToString (long long a)
 
 
 
-void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)
+void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)
 {
 
   TFile* f=new TFile(path_root_file.c_str(),"update");
@@ -552,7 +618,7 @@ void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z 
 
 
   //1: declare a TVector with is the child of TObject.
-  int array_size=vector_events_per_z.size();
+  int array_size=vector_events_radial.size();
   cout<<"the vector size is: "<< array_size<<endl;
 
   TVector* v=new TVector(array_size);
@@ -560,7 +626,7 @@ void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z 
   for(int i=0;i<array_size;i++)
   {
     //set value to the vector
-    v(i) =vector_events_per_z[i];
+    v(i) =vector_events_radial[i];
   }
 
 
@@ -584,18 +650,18 @@ void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z 
 
 }
 
-void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)
+void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)
 {
   ofstream of;
   of.open(saved_path_data.c_str(),std::ofstream::out);
 
-  of<<setw(20)<<"ring index"<<setw(20)<<"Event counts"<<"\r"<<endl;
+  of<<setw(20)<<"view index"<<setw(20)<<"Event counts"<<"\r"<<endl;
 
- int z_number=vector_events_per_z_mcs.size();
+ int view_num=vector_events_radial_mcs.size();
 
- for(int i=0;i<=z_number;i++)
+ for(int i=0;i<=view_num;i++)
  {
-   of<<setw(20)<<i<<setw(20)<<vector_events_per_z_mcs[i]<<"\r"<<endl;
+   of<<setw(20)<<i<<setw(20)<<vector_events_radial_mcs[i]<<"\r"<<endl;
 
  }
 
@@ -605,7 +671,7 @@ of.close();
 }
 
 
-string get_string_total_counts(float* array_events_per_z,int array_size)
+string get_string_total_counts(float* array_events_radial,int array_size)
 {
   
   double total_counts=0;
@@ -614,7 +680,7 @@ string get_string_total_counts(float* array_events_per_z,int array_size)
   for(int i=0;i<=array_size;i++)
   {
 
-    total_counts+=array_events_per_z[i];
+    total_counts+=array_events_radial[i];
   }
   cout<<"the total counts  is: "<<total_counts<<endl;
 
@@ -628,7 +694,7 @@ string get_string_total_counts(float* array_events_per_z,int array_size)
   return string_total_counts;
 }
 
-string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)
+string get_string_count_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size)
 {
   
 
@@ -641,8 +707,8 @@ string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_p
   for(int i=0;i<=array_size;i++)
   {
 
-    total_counts_mcs+=array_events_per_z_mcs[i];
-    total_counts_sss+=array_events_per_z_sss[i];
+    total_counts_mcs+=array_events_radial_mcs[i];
+    total_counts_sss+=array_events_radial_sss[i];
   }
   cout<<"the total counts of mcs scatter is: "<<total_counts_mcs<<endl;
   cout<<"the total counts of sss scatter is: "<<total_counts_sss<<endl;
@@ -668,7 +734,7 @@ string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_p
   
 }
 
-string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)
+string get_string_count_max_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size,int z_start,int z_end)
 {
 
 
@@ -681,8 +747,8 @@ string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_even
   int max_sino=0;
   for(int i=z_start;i<=z_end;i++)
   {
-      mid_events_mcs+=array_events_per_z_mcs[i];
-      mid_events_sss+=array_events_per_z_sss[i];
+      mid_events_mcs+=array_events_radial_mcs[i];
+      mid_events_sss+=array_events_radial_sss[i];
 
   }
 

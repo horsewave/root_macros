@@ -64,24 +64,11 @@ void compare_MCS_SSS_sino_radial()
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-  //string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
-  ////string frame_time="0-3000";
-
-  //string part_name_mcs="scatterMCS/photonPair48E9/scatter_scaled_normed_bad_plane_cor.fs";
-  //string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/";
+  string part_name_mcs="scatterMCS/scatter_scaled_normed_bad_plane_cor.fs";
+  string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
   
-  //string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
-
-
-   string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
-  //string frame_time="0-3000";
-
-  string part_name_mcs="scatterMCS/run_num_4000/error_norm/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
-  string part_name_sss="scatterSSS/range_0-1800_scal_scat.fs";
-  
-  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino_test.root";
-
-
+  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino.root";
 
   string path_sino_mcs = base_folder + part_name_mcs;
   string path_sino_sss = base_folder + part_name_sss;
@@ -111,7 +98,8 @@ for(int i=0;i<=vector_events_radial_mcs.size();i++)
     if(vector_events_radial_mcs[i]==0)
     {
       double random_temp= 0.2*((double) rand()/(RAND_MAX));
-      vector_events_radial_mcs[i]=vector_events_radial_sss[i]-vector_events_radial_sss[i]*random_temp;
+      //vector_events_radial_mcs[i]=vector_events_radial_sss[i]-vector_events_radial_sss[i]*random_temp;
+      vector_events_radial_mcs[i]=vector_events_radial_sss[i]-vector_events_radial_sss[i]*0.83;
 
       //cout<<"view : "<<i<< "is: "<<vector_events_radial_mcs[i]<<endl;
       //cout<<"view : "<<i<< " is: "<<random_temp<<endl;
