@@ -2,13 +2,16 @@ void sino_bad_planes_cor()
 {
 
   // sino needed to correct bad planes
-  //string path_input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterSSS/range_0-1800_scal_scat.fs" ;
-  string path_input_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/CalibQC-F18-20130904/scatterSSS/range_0-1200_scal_scat.fs";
+  //
+  string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
+  string part_name_sino = "scatter_multi";
+  string path_input_sino = base_folder + part_name_sino +".fs";
 
   // bad plane sino, in which all points are set zero while the points in the bad plane is set one.
   string path_bad_plane_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/bad_planes_sino.fs" ;
 
-  string saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/CalibQC-F18-20130904/scatterSSS/scater_bad_plane_cor.fs" ;
+  string part_bad_plane ="_bad_plane_cor";
+  string saved_sino = base_folder + part_name_sino + part_bad_plane +".fs";
 
 set_bad_plane(path_input_sino,path_bad_plane_sino, saved_sino);
 

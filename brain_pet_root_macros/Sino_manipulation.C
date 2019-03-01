@@ -24,9 +24,11 @@
  *
  * 24: void set_sino_value_except_gaps(string path_sino_with_gap, string path_saved_sino,float set_value=1)
  * 25: void get_gaps_sino(string path_sino_with_gap, string path_saved_sino,float set_value=1)
- * void remove_gap_sino_bad_lor(string path_sino_gap_ori,string path_saved_sino_without_gap,float sino_value=2)
- * void normlized_sino( string input_sino,string saved_sino)
- * double sino_get_total_events(string path_sino)
+ * 26: void remove_gap_sino_bad_lor(string path_sino_gap_ori,string path_saved_sino_without_gap,float sino_value=2)
+ * 27: void normlized_sino( string input_sino,string saved_sino)
+ * 28: double sino_get_total_events(string path_sino)
+ * 29: Get_segment_sino(string input_sino);
+ * 29: void Get_scatter_fraction(string input_sino_true_plus_scatter, string input_sino_scatter);
 
 
 
@@ -52,19 +54,22 @@ typedef std::vector<float> float_vec_t;
 void Sino_manipulation()
 {
 
+
+ /* string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/" ;*/
+  //string sino_total = base_folder + "scatter_scaled_normed_multi_plus_single_bad_plane_cor.fs" ;
+  //string sino_single = base_folder + "scatter_scaled_normed_single_bad_plane_cor.fs" ;
+  //string sino_multi = base_folder + "scatter_multi_subtract.fs" ;
+/*Cor_scatter( sino_total, sino_single,sino_multi);*/
+
+
 //main_1();
+main_4();
 
   //main_2() ;
   //main_3() ;
   //
-  //string path_prompt = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/sinos/range_0-1800_prompt.fs";
-//sino_get_total_events(path_prompt);
-string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterSSS/test/" ;
-string path_sino_input = base_folder + "scatter_sino_unscaled.fs" ; 
-//string path_sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/norm/PSNorm-170720_STD_norm.fs" ;
-string path_sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs" ;
-  string saved_sino_norm_cor= base_folder + "scatter_sino_unscaled_normed_mcs.fs" ;
-Cor_norm( path_sino_input, path_sino_norm,saved_sino_norm_cor);
+  
+
 
   gApplication->Terminate();
 
@@ -83,11 +88,11 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_with_detect/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
 
-  string name_sino_0="XB1BN310N-BI-01_gpuSimu_0_true.fs";
-  string name_sino_1="XB1BN310N-BI-01_gpuSimu_1_true.fs";
-  string name_sino_merge="true.fs";
+  string name_sino_0="scatter_multi.fs";
+  string name_sino_1="scatter_single.fs";
+  string name_sino_merge="scatter_multi_plus_single.fs";
 
   string sub_folder_1 = "" ;
   string sub_folder_2 = "" ;
@@ -99,36 +104,92 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  name_sino_0="XB1BN310N-BI-01_gpuSimu_0_scatter.fs";
-  name_sino_1="XB1BN310N-BI-01_gpuSimu_1_scatter.fs";
-  name_sino_merge="scatter.fs";
+  //name_sino_0="XB1BN304N-BI_gpuSimu_0_scatter_multi.fs";
+  //name_sino_1="XB1BN304N-BI_gpuSimu_1_scatter_multi.fs";
+  //name_sino_merge="scatter_multi.fs";
 
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  //cout<<"path: "<< path_input_sino_1<<endl;
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  ////cout<<"path: "<< path_input_sino_1<<endl;
+  //Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+  //name_sino_0="XB1BN304N-BI_gpuSimu_0_scatter_sinlge.fs";
+  //name_sino_1="XB1BN304N-BI_gpuSimu_1_scatter_sinlge.fs";
+  //name_sino_merge="scatter_single.fs";
+
+  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  ////cout<<"path: "<< path_input_sino_1<<endl;
+  //Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
 
 
 }	
 
+//get the scatter fraction 
+void main_5()
+{
+  string base_folder= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/";
+
+  const int file_num=13;
+  string run_num[file_num] ={"run_num_200/",
+                             "run_num_600/",
+                             "run_num_1000/",
+                             "run_num_1400/",
+                             "run_num_1800/",
+                             "run_num_2200/",
+                             "run_num_2600/",
+                             "run_num_3000/",
+                             "run_num_3400/",
+                             "run_num_3800/",
+                             "run_num_4200/",
+                             "run_num_4600/",
+                             "run_num_5000/"
+
+};
+
+float scatter_fraction[file_num]={0};
+for(int i=0;i<file_num;i++)
+{
+  string input_sino_scatter = base_folder + run_num[i]+"XB1BN310N-BI-01_0-1800_gpuSimu_scat_without_scaled.fs";
+  string input_sino_true_plus_scatter =base_folder + run_num[i] + "XB1BN310N-BI-01_0-1800_gpuSimu_true_scatter_sino.fs";
+
+  cout<<" run num: " <<run_num[i]<<"  ";
+ scatter_fraction[i]= Get_scatter_fraction(input_sino_true_plus_scatter, input_sino_scatter);
 
 
+
+}
+for(int i=0;i<file_num;i++)
+{
+  cout<<" run num: " <<run_num[i]<<scatter_fraction[i]<<endl;
+
+}
+
+ 
+
+}
+
+
+// scaling refer of MCS
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/scatterMCS/run_num_4000_no_detect/";
-   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/sinos/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
-  string path_sino_input_scatter = base_folder_input +"scatter.fs";
+  string path_sino_input_scatter = base_folder_input +"scatter_multi_plus_single.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
   string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
   string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_old.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
-  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed_old.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
 
 
 
@@ -191,6 +252,80 @@ Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_
 
 
 }
+
+
+// scaling refer of measurement 
+void main_4()
+{
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/";
+
+
+   //string part_scatter= "_multi_plus_single.fs";
+   string part_scatter= "_multi.fs";
+   //string part_scatter= "_single.fs";
+
+  string path_sino_input_true= base_folder_input +"true.fs" ;
+  string path_sino_input_scatter = base_folder_input +"scatter"+ part_scatter;
+
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs";
+  //string path_sino_input_scatter_normed = base_folder_input +"scatter_normed" + part_scatter;
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_multi_bad_plane_cor.fs";
+  string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
+  //string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
+  string path_sino_input_true_plus_scatter_normed = base_folder_input +"scatter_multi_bad_plane_cor.fs";
+
+
+  //string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
+  string path_sino_refer_true_plus_scatter_normed= base_folder_input +"scatter_multi_subtract.fs";
+
+  //string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_not_normed" + part_scatter;
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_multi_bad_plane_cor_scaled.fs" ;
+
+
+  cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
+  cout << " path_sino_input_scatter: "<< path_sino_input_scatter <<endl;
+  cout << " path_sino_input_true_plus_scatter: "<< path_sino_input_true_plus_scatter <<endl;
+  cout << " path_sino_input_true_plus_scatter_normed: "<< path_sino_input_true_plus_scatter_normed <<endl;
+  
+  cout << " path_sino_refer_true_plus_scatter_normed: "<< path_sino_refer_true_plus_scatter_normed <<endl;
+
+
+//Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);
+
+
+
+//Cor_norm( path_sino_input_true_plus_scatter, path_sino_input_norm,path_sino_input_true_plus_scatter_normed);
+//Cor_norm( path_sino_refer_true_plus_scatter, path_sino_refer_norm,path_sino_refer_true_plus_scatter_normed);
+
+//Cor_norm( path_sino_input_scatter, path_sino_input_norm,path_sino_input_scatter_normed);
+//Cor_norm( path_sino_refer_scatter, path_sino_refer_norm,path_sino_refer_scatter_normed);
+
+
+
+  double total_events_input = get_total_events_simu_data( path_sino_input_true_plus_scatter_normed);
+  double total_events_refer = get_total_events_simu_data( path_sino_refer_true_plus_scatter_normed);
+
+  cout<<"total_events_input is: "<<  total_events_input<<endl;
+  cout<<"total_events_refer is: "<<  total_events_refer<<endl;
+
+
+  //// 4.3 calculate the scaling factor
+
+  float  scaling_factor=total_events_refer/total_events_input;
+
+  cout <<" scaling factor is:  " <<scaling_factor <<endl;
+  // 4.4 save the scaled scatter sino
+
+  Sino_scale_whole( path_sino_input_scatter_normed, path_sino_scaled_scatter_normed,scaling_factor);
+
+  cout<<"------------4: finish scaling the simu scatter--------------"<<endl;
+
+  cout<<"------------all finished! You can reconstruct now!--------------"<<endl;
+
+
+}
+
 
 
 void main_2()
@@ -2289,9 +2424,102 @@ double get_total_events_simu_data(string path_sino_simu_true_plus_scatter)
 }
 
 
+void Get_segment_sino(string input_sino,bool is_short=false)
+{
+  cout<< input_sino<<endl;
+
+
+  //class including all the basic information of the MRPET.
+  MRPET_dump *dump = new MRPET_dump();	
+
+  ///---measurement data, correction of random and norm//////////////////////////////////////////////////
+  BrainPET_Sinograms* whole_sinogram=new BrainPET_Sinograms(dump,"whole_sinogram"); 
+
+  whole_sinogram->read_flatSinogram(input_sino, is_short);
+  cout<<"end of reading  sino data from: "<<input_sino<<endl;
+
+  //Get plane number of a sino.
+  int plane_num=whole_sinogram->get_n_planes();
+
+  for(int j=0;j<plane_num;j++)
+  {
+    //single sino plane
+    BrainPET_SinogramData* single_sinogram=whole_sinogram->get_plane(j);
+    int seg_num=single_sinogram->getSegment();
+    cout<<"plane num: "<< j<<" seg num: "<<seg_num<<endl;
+
+    //event counts of a sino plane.
+    //sino_plane_counts[j]=single_sinogram->get_n_Events();
+  }
+
+  if(dump!=NULL)
+  {
+    delete dump;
+    dump=NULL;
+  }
+
+  if(whole_sinogram!=NULL)
+  {
+    delete whole_sinogram;
+    whole_sinogram=NULL;
+  }
+
+  return ;
+
+
+}
 
 
 
+float Get_scatter_fraction(string input_sino_true_plus_scatter, string input_sino_scatter,bool is_short=false)
+{
+
+
+  //class including all the basic information of the MRPET.
+  MRPET_dump *dump = new MRPET_dump();	
+
+  ///---measurement data, correction of random and norm//////////////////////////////////////////////////
+  BrainPET_Sinograms* sino_true_plus_scatter=new BrainPET_Sinograms(dump,"whole_sinogram"); 
+  sino_true_plus_scatter->read_flatSinogram(input_sino_true_plus_scatter, is_short);
+  cout<<"end of reading  sino data from: "<<input_sino_true_plus_scatter<<endl;
+
+  BrainPET_Sinograms* sino_scatter=new BrainPET_Sinograms(dump,"whole_sinogram"); 
+  sino_scatter->read_flatSinogram(input_sino_scatter, is_short);
+  cout<<"end of reading  sino data from: "<<input_sino_scatter<<endl;
+
+  float total_true_plus_scatter=sino_true_plus_scatter->get_n_Events();
+  float total_scatter=sino_scatter->get_n_Events();
+  float scatter_fraction = total_scatter/total_true_plus_scatter;
+
+  cout<< "scatter_fraction is: "<<scatter_fraction<<endl;
+
+  
+
+      //sino_plane_counts[j]=single_sinogram->get_n_Events();
+
+  if(dump!=NULL)
+  {
+    delete dump;
+    dump=NULL;
+  }
+
+  if(sino_true_plus_scatter!=NULL)
+  {
+    delete sino_true_plus_scatter;
+    sino_true_plus_scatter=NULL;
+  }
+
+   if(sino_scatter!=NULL)
+  {
+    delete sino_scatter;
+    sino_scatter=NULL;
+  }
+
+
+  return scatter_fraction;
+
+
+}
 
 
 

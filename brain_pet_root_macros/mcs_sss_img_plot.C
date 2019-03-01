@@ -44,6 +44,8 @@ Version:1.0
  *         20: void SUV_convert(float* input_image,float SUV_factor,int z_min=20,int z_max=149,int dimx=256,int dimy=256,int dimz=153)
  *         21: float Get_max_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)
  *         22: float Get_min_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)
+ *         23: float Get_suv_factor(string path_image_sss,float total_activity,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)
+
  *
  * Editor: Bo Ma
  *
@@ -59,12 +61,32 @@ void mcs_sss_img_plot()
 {
 
 
-  string base_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/";
-  string path_image_mcs = base_path + "img/mcs/real_2_fov_mcs.i";
-  string path_image_sss = base_path + "img/sss/XB1BN305N-BI-01_0-1800.i";
+/*  string base_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FET/FE2BP034F-BI/";*/
+  //string path_image_mcs = base_path + "img/mcs/photon48E9_sub2_ite32/FE2BP034F-BI_0-3000_gpuSimu.i";
+  /*string path_image_sss = base_path + "img/sss/FE2BP034F-BI_0-3000.i";*/
+
+//string base_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FET/FE2BP034F-BI_20-40_min/";
+  //string path_image_mcs = base_path + "img/mcs/FE2BP034F-BI_1200-2400_gpuSimu.i";
+  /*string path_image_sss = base_path + "img/sss/FE2BP034F-BI_1200-2400.i";*/
+
+//string base_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
+  //string path_image_mcs = base_path + "img/mcs/recon_img_with_detec_s2_i64_norm_old.i";
+  /*string path_image_sss = base_path + "img/sss/recon_img_with_detec_s2_i64.i";*/
 
 
-  int z_slice=70;
+   string base_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
+
+  string path_image_mcs = base_path + "img/mcs/photonPair48E9/HM1BP081F-BI_0-3600_gpuSimu.i";
+  string path_image_sss = base_path + "img/sss/HM1BP081F-BI_0-3600.i";
+
+  int z_slice=65;
+
+
+
+
+  //int z_slice=87;
+  //int z_slice=54;
+  //int z_slice=76;
 
   string saved_root_file = base_path + "root_file/compare_MCS_SSS_scatter_reconstructed_img.root";
   //string saved_img_hist_name="./pictures/mcs_sss_hist_zSlice_"+IntToString(z_slice)+".png";
@@ -126,8 +148,21 @@ void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string sa
   //---------------------------------1: create hist from img;---------------------------------------
 
   // return value: the total counts of the histogram.
-  float total_counts_mcs = get_histgram_from_img(path_image_mcs,h2_mcs,z_slice,dimx,dimy,dimz, spacing);
-  float total_counts_sss = get_histgram_from_img(path_image_sss,h2_sss,z_slice,dimx,dimy,dimz, spacing);
+  bool is_suv_convert=true;
+  float suv_factor=1;
+  if(is_suv_convert==true)
+  {
+     float total_activity=23592000;//HM1BP081F
+     //float total_activity=9746000;//FE2BP034F
+     //float total_activity=11918540;//XB1BN310N-BI-01
+     //float total_activity=11918540*1.5;//XB1BN310N-BI-01
+     suv_factor=Get_suv_factor(path_image_sss,total_activity);
+
+     
+  }
+
+  float total_counts_mcs = get_histgram_from_img(path_image_mcs,h2_mcs,suv_factor,z_slice,dimx,dimy,dimz, spacing);
+  float total_counts_sss = get_histgram_from_img(path_image_sss,h2_sss,suv_factor,z_slice,dimx,dimy,dimz, spacing);
 
 
   float max_val_mcs=h2_mcs->GetMaximum();	
@@ -155,6 +190,14 @@ void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string sa
 
   DrawHistgram(can_hist,h2_mcs,palette_mcs,1);
   DrawHistgram(can_hist,h2_sss,palette_sss,2);
+
+   TPaveText *pt_pallete = new TPaveText(.05,.7,.35,.9,"brNDC");
+
+   TText *t1 = pt_pallete->AddText("kBq/cm^{3}");
+  //t1->SetTextColor(text_color);
+  pt_pallete->Draw();
+  pt_pallete->SetFillColor(0);
+
 
 
   TPaveText *pt = new TPaveText(.05,.7,.35,.9,"brNDC");
@@ -193,6 +236,8 @@ void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string sa
   Gernerate_pave_text(pt, sss_text.c_str(),sss_color);
   Gernerate_pave_text(pt, difference_text.c_str(),diff_color);
 
+
+
   gPad->Update();
   gPad->Modified();
 
@@ -221,6 +266,13 @@ void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string sa
     pt=NULL;
   }
 
+  if(pt_pallete!=NULL)
+  {
+    delete pt_pallete;
+    pt_pallete=NULL;
+  }
+
+
 
   if(can_hist!=NULL)
   {
@@ -234,9 +286,8 @@ void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string sa
 
 
 
-
 // return value: the total counts of the histogram.
-float get_histgram_from_img(string path_image,TH2F *h2,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)
+float get_histgram_from_img(string path_image,TH2F *h2,float suv_factor=1,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)
 {
 
 
@@ -249,8 +300,9 @@ float get_histgram_from_img(string path_image,TH2F *h2,int z_slice=70,int dimx=2
   //read data from disk to memory
   Read_image(path_image, image_data,nVoxels);
 
-
   Remove_image_noise(image_data);
+  SUV_convert(image_data,suv_factor);
+
 
   int zRange=2;
   GenerateHistogram(h2,image_data,z_slice,zRange);
@@ -277,7 +329,7 @@ float get_histgram_from_img(string path_image,TH2F *h2,int z_slice=70,int dimx=2
 // draw the profile of defined region of the 2d slice img
 // the yRange and zrange should be setup in the function to 
 // reduce noise in the profile.
-void Draw_plot_mcs_sss(TH2F *h2_mcs,TH2F *h2_sss,string saved_root_file,int z_slice=70,int yValue=155;int dimx=256)
+void Draw_plot_mcs_sss(TH2F *h2_mcs,TH2F *h2_sss,string saved_root_file,int z_slice=70,int yValue=155,int dimx=256)
 {
 
   string canvasTitle="canvas_MCS_vs_SSS_plot";
@@ -419,6 +471,36 @@ void Draw_plot_mcs_sss(TH2F *h2_mcs,TH2F *h2_sss,string saved_root_file,int z_sl
   }
 
   return;
+
+}
+
+
+float Get_suv_factor(string path_image_sss,float total_activity,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)
+{
+   int nVoxels = dimx*dimy*dimz;
+float *image_data_sss=new float[nVoxels];
+  memset(image_data_sss,0,sizeof(float)*nVoxels);
+
+  Read_image(path_image_sss, image_data_sss,nVoxels);
+
+ 
+  float total_intensity_sss= Remove_image_noise(image_data_sss);
+
+  float SUV_factor=total_activity/total_intensity_sss;
+
+  float voxel_volume=spacing*spacing*spacing;
+  
+  SUV_factor=SUV_factor/voxel_volume;
+
+  if(image_data_sss!=NULL)
+{
+  delete [] image_data_sss;
+  image_data_sss=NULL;
+}
+
+
+  return SUV_factor;
+
 
 }
 
@@ -930,8 +1012,8 @@ float Remove_image_noise(float* input_image,int dimx=256,int dimy=256,int dimz=1
 {
   float Maximu_after_scale=256.0;
 
-  //float threshold_val=5.0;
-  float threshold_val=3;
+  float threshold_val=5.0;
+  //float threshold_val=3;
   //float threshold_val=10.0;
   //truncate the original data with the head and tail which is really noisy
   int z_min=20;
@@ -979,4 +1061,32 @@ float Remove_image_noise(float* input_image,int dimx=256,int dimy=256,int dimz=1
 
   return total_value_before;
 }
+
+/* function name:SUV_convert(float* input_image, float* output_image,float total_activity)
+ * Parametors: total_activity: the total activity in kBq
+ *
+ *
+ * */
+void SUV_convert(float* input_image,float SUV_factor,int z_min=20,int z_max=149,int dimx=256,int dimy=256,int dimz=153)
+{
+  //truncate the original data with the head and tail which is really noisy
+  //int z_min=20;
+  //int z_max=149;
+
+ for(int z=z_min;z<z_max;z++)
+ {
+   for(int y = 0; y < dimy; y++)
+   {
+
+     for(int x= 0; x< dimx; x++)
+     {
+       float val= input_image[z*dimx*dimy + y*dimx + x];
+       input_image[z*dimx*dimy + y*dimx + x]=val*SUV_factor;
+     }
+
+   }	
+ }
+
+}
+
 
