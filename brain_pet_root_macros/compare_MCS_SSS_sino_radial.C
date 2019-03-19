@@ -60,6 +60,7 @@ typedef std::vector<float> float_vec_t;
 void compare_MCS_SSS_sino_radial()
 {
 
+ gROOT->Reset();
 
 
 /////////////running without input parameters//////////////////////////////////////////////////

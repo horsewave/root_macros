@@ -72,9 +72,6 @@ if iModel==0, needs file name which have Optional parameters
 									
 
 
-
-
-
 void FwdProjSiemens()
 {
 
@@ -95,13 +92,14 @@ void fwd_presto_siemens()
 
 
    //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/" ;
-   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/scatterSSS/" ;
+   //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/" ;
+   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/" ;
 
  
-   string input_img = inputFolder  + "recon_img_no_norm.i" ;
-   string out_sino = inputFolder + "scatter_fwd.fs" ;
-   bool is_calACF = false;
-   //bool is_calACF = true;
+   string input_img = inputFolder  + "att_fwd.i" ;
+   string out_sino = inputFolder + "att_fwp.fs" ;
+   //bool is_calACF = false;
+   bool is_calACF = true;
    int software_version = 1 ;
 
  stools->SIEMENS_FWDPROJ( input_img ,out_sino , is_calACF, software_version);

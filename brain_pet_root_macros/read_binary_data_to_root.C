@@ -44,8 +44,8 @@ typedef unsigned char BYTE;
 typedef struct {
   int icry1;
   int icry2;
-  short int icry1_ofov_scatter_z_pos;
-  short int icry2_ofov_scatter_z_pos;
+  //short int icry1_ofov_scatter_z_pos;
+  //short int icry2_ofov_scatter_z_pos;
 
   // type=1: true events,no scatter;
   // type=2: ofov source, scatter occur
@@ -53,6 +53,8 @@ typedef struct {
   // type=4: normal scatter,e.g: source ifov, scatter ifov. 
   // type=5: random events
   char type;
+  double time1;
+  double time2;
 } Coincidence;
 
 
@@ -62,33 +64,34 @@ void read_binary_data_to_root()
 
 
 
-  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/";
+  string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/phantom_gate_mcs_tof_comp/";
 
-  string binary_file_path= base_folder + "scatterMCS/XB1BN305N-BI-01_gpuSimu_0.bin"; 
+  string binary_file_path= base_folder + "scatterMCS/cylinder_gpuSimu_1.bin"; 
 
-  string saved_root_file_path=base_folder+"root_file/coincidence_root_file.root";
+  string saved_root_file_path=base_folder+"root_file/tof_mcs.root";
 
-  string tree_tag="coincidence_scatter";
-  string tree_title="scatter coincedence from GPU MCS";
+  string tree_tag="Coincidences";
+  string tree_title="coincidences from GPU MCS";
 
 
 
   // ----------------1: create the tree and read binary data-------------------------------
   //read_binary_data_to_root_tree(binary_file_path,saved_root_file_path,tree_tag,tree_title);
+  read_binary_data_to_root_tree_tof(binary_file_path,saved_root_file_path,tree_tag,tree_title);
 
   // ----------------2: if there are more binary data to read in the same tree, then add binary data-------------------------
 
-  binary_file_path= base_folder + "scatterMCS/XB1BN305N-BI-01_gpuSimu_1.bin"; 
+  //binary_file_path= base_folder + "scatterMCS/XB1BN305N-BI-01_gpuSimu_1.bin"; 
   //add_binary_data_to_existing_tree(binary_file_path,saved_root_file_path,tree_tag);
 
 
   // ----------------3: draw the tree and save the canvas-------------------------
-  tree_draw(saved_root_file_path,tree_tag);
+  //tree_draw(saved_root_file_path,tree_tag);
 
 
   // ----------------4: save all the branches to vector for further processing.------------------------
 
-save_all_branch_to_vector(saved_root_file_path);
+//save_all_branch_to_vector(saved_root_file_path);
 
 
 
@@ -208,6 +211,109 @@ void save_branch_to_vector(string root_file_name,string tree_tag,string branch_n
 
 }
 
+
+
+void read_binary_data_to_root_tree_tof(string binary_file_path,string saved_root_file_name,string tree_tag,string tree_title)
+{
+
+  Coincidence coin;
+
+
+  string branch_tag_cry1="cry1";
+  string leaf_list_cry1="cry1/I";
+
+  string branch_tag_cry2="cry2";
+  string leaf_list_cry2="cry2/I";
+
+  string branch_tag_type="coincidence_type";
+  string leaf_list_type="coincedence_type/S";
+
+  string branch_tag_time1="time1";
+  string leaf_list_time1="time1/D";
+ 
+  string branch_tag_time2="time2";
+  string leaf_list_time2="time2/D";
+
+
+  // char can not store correctly in branch, so need to change it to short int 
+  // but when automatically convert char to  short int ,there maybe problems ,sometimes
+  // the value is wrong. so it is better to convert the char to int.
+  short int branch_value_type;
+  //int branch_value_type;
+
+  TTree* t=new TTree(tree_tag.c_str(),tree_title.c_str());
+  t->Branch(branch_tag_cry1.c_str(),&coin.icry1,leaf_list_cry1.c_str());
+  t->Branch(branch_tag_cry2.c_str(),&coin.icry2,leaf_list_cry2.c_str());
+  t->Branch(branch_tag_type.c_str(),&branch_value_type,leaf_list_type.c_str());
+  t->Branch(branch_tag_time1.c_str(),&coin.time1,leaf_list_time1.c_str());
+  t->Branch(branch_tag_time2.c_str(),&coin.time2,leaf_list_time2.c_str());
+
+
+  //string binary_file_path = "./cylinder_phantom_3_fov_20_cm_gpuSimu_0.bin"; 
+  fstream file;
+  file.open(binary_file_path.c_str(), ios::in | ios::out | ios::binary);
+  //file.open(filePath, fstream::in | fstream::out | fstream::binary);
+
+  if (file.fail())
+  {
+    cout << "ERROR: Cannot open the file..." << endl;
+    return 0;
+  }
+
+  int count_i=0;
+  while(!file.eof())
+  {
+
+
+    //read orderingly to the structure
+    file.read((char* )(&coin.icry1), sizeof(int));
+    file.read((char* )(&coin.icry2), sizeof(int));
+    file.read((char* )(&coin.type), sizeof(char));
+    file.read((char* )(&coin.time1), sizeof(double));
+    file.read((char* )(&coin.time2), sizeof(double));
+
+    branch_value_type=(short)coin.type;
+
+    //cout<< setw(15) << coin.icry1
+    //<< setw(15)  << coin.icry2
+    //<< setw(15)  << coin.icry1_ofov_scatter_z_pos
+    //<< setw(15)  << coin.icry2_ofov_scatter_z_pos
+    //<< setw(15)  << (int)coin.type
+    /*<< endl;*/
+
+    // save only scatter events, without true and random
+
+      t->Fill();
+    count_i++;
+    cout<<"count:"<<count_i<<"  time1: "<<coin.time1<<"  time2: "<<coin.time2<<" time diff: "<<(coin.time1-coin.time2)<<endl;
+
+    
+
+
+  }
+
+  file.close();
+
+
+  TFile* f=new TFile(saved_root_file_name.c_str(),"update");
+  //TFile* f=new TFile(saved_root_file_name.c_str());
+
+  t->Write();//// save only the new version of the tree
+  //t->Write("",TObject::kOverwrite);
+  //t->Write("",TObject::kSingleKey);
+
+  //t->Write("",TObject::kWriteDelete );
+
+  f->Close();
+
+
+  delete f;
+  f=NULL;
+
+  delete t;
+  t=NULL;
+
+}
 
 
 

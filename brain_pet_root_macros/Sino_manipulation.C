@@ -20,7 +20,7 @@
  * 20: void create_sino_with_defined_value( string path_saved_sino, float bin_value)
  * 21: void set_norm_sino_gaps(string path_norm_sino_with_gap,string path_sino_temp, string path_saved_sino_without_gap,float gap_value)
  * 22: void sino_divid(string path_sino_numerator , string path_sino_denominator, string path_saved_sino)
- * 23: void set_sino_gaps(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_without_gap,float gap_value=0)
+ * 23: void add_gaps_to_sino(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_without_gap,float gap_value=0)
  *
  * 24: void set_sino_value_except_gaps(string path_sino_with_gap, string path_saved_sino,float set_value=1)
  * 25: void get_gaps_sino(string path_sino_with_gap, string path_saved_sino,float set_value=1)
@@ -62,14 +62,17 @@ void Sino_manipulation()
 /*Cor_scatter( sino_total, sino_single,sino_multi);*/
 
 
-//main_1();
-main_4();
+main_1();
+//main_4();
 
   //main_2() ;
   //main_3() ;
   //
-  
+ /* string input_sino_no_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/att_fwp.fs";*/
+  //string input_sino_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_ones_with_gaps.fs";
+  //string saved_sino_with_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/att_fwp_with_gaps.fs";
 
+/*add_gaps_to_sino(input_sino_no_gap,input_sino_gap, saved_sino_with_gap);*/
 
   gApplication->Terminate();
 
@@ -88,15 +91,15 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/";
 
-  string name_sino_0="scatter_multi.fs";
-  string name_sino_1="scatter_single.fs";
-  string name_sino_merge="scatter_multi_plus_single.fs";
+  string name_sino_0="true.fs";
+  string name_sino_1="true.fs";
+  string name_sino_merge="true.fs";
 
-  string sub_folder_1 = "" ;
-  string sub_folder_2 = "" ;
-  string sub_folder_merge = "" ;
+  string sub_folder_1 = "merged_with_detector_modual/" ;
+  string sub_folder_2 = "run_5000_with_detector_modual_4/" ;
+  string sub_folder_merge = "merged_with_detector_modual/" ;
 
   string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
   string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
@@ -104,27 +107,15 @@ void main_1( )
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
-  //name_sino_0="XB1BN304N-BI_gpuSimu_0_scatter_multi.fs";
-  //name_sino_1="XB1BN304N-BI_gpuSimu_1_scatter_multi.fs";
-  //name_sino_merge="scatter_multi.fs";
+  name_sino_0="scatter.fs";
+  name_sino_1="scatter.fs";
+  name_sino_merge="scatter.fs";
 
-  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  ////cout<<"path: "<< path_input_sino_1<<endl;
-  //Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-  //name_sino_0="XB1BN304N-BI_gpuSimu_0_scatter_sinlge.fs";
-  //name_sino_1="XB1BN304N-BI_gpuSimu_1_scatter_sinlge.fs";
-  //name_sino_merge="scatter_single.fs";
-
-  //path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  //path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  //path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  ////cout<<"path: "<< path_input_sino_1<<endl;
-  //Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  //cout<<"path: "<< path_input_sino_1<<endl;
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
 }	
@@ -1898,8 +1889,9 @@ void remove_gap_sino_bad_lor(string path_sino_gap_ori,string path_saved_sino_wit
  *
  *
  */
-void set_sino_gaps(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_without_gap,float gap_value=0)
+void add_gaps_to_sino(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_with_gap,float gap_value=0)
 {
+ //string input_sino_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/gaps_sino.fs";
 
   //class including all the basic information of the MRPET.
   MRPET_dump *dump = new MRPET_dump();	
@@ -1977,7 +1969,7 @@ void set_sino_gaps(string path_sino_no_gap,string path_sino_with_gap, string pat
 
   cout<<" the total events of merged sino is: " << sino_input_1->get_n_Events()<< endl;
 
-  sino_input_1->write_flat_sinograms(path_saved_sino_without_gap,is_int);
+  sino_input_1->write_flat_sinograms(path_saved_sino_with_gap,is_int);
 
 
   if(sino_input_1!=NULL)

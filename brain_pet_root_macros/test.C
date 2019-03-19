@@ -1,14 +1,11 @@
 void test()
 {
 
-  TVector* v=new TVector(100);
-  for(int i=0;i<100;i++)
-  {
-    v(i)=i;
-  }
+   	BrainPET_DeadTimeCorrection* class_dead_time = new BrainPET_DeadTimeCorrection(1);
+    int level= 1;
+class_dead_time-> set_deadtime_correction_level(level);	
 
+cout<<"execute successfully!"<< endl;
 
-  v->Print();
-  cout<<"vector size is: "<<v->GetNrows()<<endl;
 
 }

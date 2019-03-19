@@ -38,10 +38,26 @@
 void Lor_to_sino()
 {
 
+  gROOT->Reset();
   //main_1();
   main_2();
 
+  //main_norm();
+
    gApplication->Terminate();
+
+}
+
+
+void main_norm()
+{
+  string sino_before_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/merged_with_detector_modual/true.fs";
+  string sino_after_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/merged_with_detector_modual/true_normed.fs";
+  string sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/commonFiles/norm_files/BrainPET_cylinder_norm_12cm_gpu_wdwellcorr.fs";
+
+norm_correct_simu_sino(sino_before_norm,sino_norm,sino_after_norm);
+
+
 
 }
 
@@ -55,37 +71,97 @@ void main_2()
 
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_1/" ;
   
-  string path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_true.flor";
-  string path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_true.fs";
+  string path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
+  string path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_true.fs";
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter_sinlge.flor";
-  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter_sinlge.fs";
+   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
   
-  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter_sinlge.flor";
-  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter_sinlge.fs";
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
 
- path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter_multi.flor";
-  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter_multi.fs";
+input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_2/" ;
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
- path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter_multi.flor";
-  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter_multi.fs";
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+
+
+input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_3/" ;
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+
+
+input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_4/" ;
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  
+  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+
+
 
   return;
   

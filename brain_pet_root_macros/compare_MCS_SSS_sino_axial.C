@@ -64,12 +64,12 @@ void compare_MCS_SSS_sino_axial()
 
 /////////////running without input parameters//////////////////////////////////////////////////
 
-   string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
+   string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/merged_with_detector_modual/";
    //string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/patients/FDG/HM1BP081F-BI/";
   //string part_name_mcs="scatterMCS/run_num_4000/error_norm/scater_bad_plane_cor.fs";
   //string part_name_mcs="scatterSSS/test/scatter_sino_scaled_no_dwell.fs";
-  string part_name_mcs="scatterSSS/range_0-1800_uscal_scat.fs";
-  string part_name_sss="scatterSSS/scater_bad_plane_cor.fs";
+  string part_name_mcs="true.fs";
+  string part_name_sss="true_normed.fs";
   
     
   string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino_test.root";
