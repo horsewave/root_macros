@@ -93,10 +93,10 @@ void fwd_presto_siemens()
 
    //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/" ;
    //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/" ;
-   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/" ;
+   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/" ;
 
  
-   string input_img = inputFolder  + "att_fwd.i" ;
+   string input_img = inputFolder  + "att_coeff.i" ;
    string out_sino = inputFolder + "att_fwp.fs" ;
    //bool is_calACF = false;
    bool is_calACF = true;

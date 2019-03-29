@@ -72,15 +72,11 @@ void compare_MCS_SSS_sino_matrix()
 
   string base_folder="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN310N-BI/XB1BN310N-BI-01/";
   
-
-  string run_1 = "4600";
-  string run_2 = "5000";
-
-  string part_name_mcs="scatterMCS/run_num_"+ run_1+"/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
-  string part_name_sss="scatterMCS/run_num_"+ run_2+ "/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
+  string part_name_mcs="scatterMCS/run_num_200/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
+  string part_name_sss="scatterMCS/run_num_5000/XB1BN310N-BI-01_0-1800_gpuSimu_scattersino_scaled.fs";
 
   
-  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino_plane_dif_runs_"+run_1+"-"+ run_2+".root";
+  string part_root_file_name="root_file/compare_MCS_SSS_scatter_sino_plane_dif_runs_4600-5000_test.root";
 
   string path_sino_mcs = base_folder + part_name_mcs;
   string path_sino_sss = base_folder + part_name_sss;
@@ -111,8 +107,8 @@ void compare_MCS_SSS_sino_matrix()
 
    //draw the sino matrix
    //draw the sino matrix
-   string can_name_mcs="canvas_sino_"+ run_1;
-   string can_name_sss="canvas_sino_"+run_2;
+   string can_name_mcs="canvas_sino_4600";
+   string can_name_sss="canvas_sino_5000";
 
   save_sino_matrix_to_root(mat_mcs,can_name_mcs,saved_path_root_file);
   save_sino_matrix_to_root(mat_sss,can_name_sss,saved_path_root_file);
@@ -482,7 +478,7 @@ can_hist->Range(-143.2065,-24.25806,300.5859,216);
 
 
 
-  string Th_Title="h2_sino";
+  string Th_Title="hist_sino";
   TH2F *h2_sino = new TH2F(Th_Title.c_str(),Th_Title.c_str(), row, 0 , row, column, 0, column);
   
   h2_sino->SetMaximum(60);
@@ -500,62 +496,8 @@ can_hist->Range(-143.2065,-24.25806,300.5859,216);
 
   h2_sino->GetXaxis()->SetTitle("x");
   h2_sino->GetYaxis()->SetTitle("y");
+
   h2_sino->Draw("colz");
-
-  TPaletteAxis *palette = new TPaletteAxis(239.4648,1.903503e-07,254.8189,192,h2_sino);
-palette->SetLabelColor(1);
-palette->SetLabelFont(42);
-palette->SetLabelOffset(0.005);
-palette->SetLabelSize(0.035);
-palette->SetTitleOffset(1);
-palette->SetTitleSize(0.04);
-   palette->SetFillColor(100);
-   palette->SetFillStyle(1001);
-   h2_sino->GetListOfFunctions()->Add(palette,"br");
-   h2_sino->SetLineColor(10);
-   h2_sino->SetLineWidth(0);
-   h2_sino->GetXaxis()->SetTitle("View");
-   h2_sino->GetXaxis()->CenterTitle(true);
-   h2_sino->GetXaxis()->SetNdivisions(508);
-   h2_sino->GetXaxis()->SetLabelFont(22);
-   h2_sino->GetXaxis()->SetLabelOffset(0.01);
-   h2_sino->GetXaxis()->SetLabelSize(0.05);
-   h2_sino->GetXaxis()->SetTitleSize(0.05);
-   h2_sino->GetXaxis()->SetTitleOffset(0.9);
-   h2_sino->GetXaxis()->SetTitleFont(22);
-   h2_sino->GetYaxis()->SetTitle("Projection Angle");
-   h2_sino->GetYaxis()->CenterTitle(true);
-   h2_sino->GetYaxis()->SetNdivisions(508);
-   h2_sino->GetYaxis()->SetLabelFont(22);
-   h2_sino->GetYaxis()->SetLabelOffset(0.008);
-   h2_sino->GetYaxis()->SetLabelSize(0.05);
-   h2_sino->GetYaxis()->SetTitleSize(0.05);
-   h2_sino->GetYaxis()->SetTitleOffset(0.9);
-   h2_sino->GetYaxis()->SetTitleFont(22);
-   h2_sino->GetZaxis()->SetLabelFont(42);
-   h2_sino->GetZaxis()->SetLabelSize(0.035);
-   h2_sino->GetZaxis()->SetTitleFont(42);
-   h2_sino->Draw("colz");
-   
-   TPaveText *pt = new TPaveText(0.4023246,0.9345349,0.5976754,0.995,"blNDC");
-   pt->SetName("title");
-   pt->SetBorderSize(0);
-   pt->SetFillColor(0);
-   pt->SetFillStyle(0);
-   pt->SetTextFont(42);
-   pt->Draw();
-   
-   pt = new TPaveText(226.6139,195.6348,270.7459,208.0086,"br");
-   pt->SetBorderSize(0);
-   pt->SetFillColor(0);
-   TText *text = pt->AddText("counts");
-   pt->Draw();
-   can_hist->Modified();
-   can_hist->cd();
-   can_hist->SetSelected(can_hist);
-   can_hist->ToggleToolBar();
-
-
 
 
   gPad->Update();

@@ -1,6 +1,16 @@
 #include <stdlib.h>
 #include <iomanip> 
 using namespace std;
+
+
+/*
+ * To get the average value of the spheres and their responding bg;
+ * for each voi img, the sphere is set 1, while the three bg is set 2,3,4;
+ *
+ *
+ */
+
+
 void img_voi_ave_std_calc_310()
 {
   

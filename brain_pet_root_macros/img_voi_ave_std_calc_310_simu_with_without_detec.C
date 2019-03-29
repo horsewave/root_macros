@@ -1,23 +1,73 @@
 #include <stdlib.h>
 #include <iomanip> 
 using namespace std;
-void img_voi_ave_std_calc_304()
+
+
+/*
+ * To get the average value of the spheres and their responding bg;
+ * for each voi img, the sphere is set 1, while the three bg is set 2,3,4;
+ *
+ *
+ */
+
+
+void img_voi_ave_std_calc_310_simu_with_without_detec()
 {
-  /* //photoelectric_hits*/
-  //const int run_num=10;
-  //mean=TMath::Mean(run_num,a_float_photoelectric_hits);
-  //std_s=TMath::RMS(run_num,a_float_photoelectric_hits);
-  //cout<<"mean_photoelectric_hits is: "<<mean<<endl;
-  //cout<<"std_photoelectric_hits is: "<<std_s<<endl;
+  
+ rc_real_region();
 
-  string path_base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30-set_insert_size/img/" ;
-  string path_img_data =path_base_folder + "mcs/img_recon_ite64_true_without_coil.i" ;
-  //string path_img_data =path_base_folder + "sss/recon_img_with_detec_s2_i64_norm_old.i";
-  string path_img_voi= path_base_folder + "voi_img.i" ;
+  gApplication->Terminate();
 
-  //string saved_data_path = path_base_folder +"mcs_ave_std.txt" ;
-  string saved_data_path = path_base_folder +"mcs_true_without_coil_ave_std.txt" ;
+}
 
+
+void rc_real_region()
+{
+
+   string path_base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/img/" ;
+ 
+
+   //string path_img_data =path_base_folder + "recon_img/img_recon_with_detec_ite64.i" ;
+  //string path_img_data =path_base_folder + "recon_img/img_recon_no_detec_ite64.i" ;
+  string path_img_data ="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/merge_sino_with_detect/img_recon_with_true_4run_ite64_true_no_norm_scat_norm.i" ;
+
+
+
+  string saved_data_path = path_base_folder +"img_true_ave_std_.txt" ;
+
+  string path_img_voi= path_base_folder + "voi_img/img_voi_27mm.i" ;
+  string sphere_name ="27mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+
+
+ path_img_voi= path_base_folder + "voi_img/img_voi_22mm.i" ;
+ sphere_name ="22mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+ path_img_voi= path_base_folder + "voi_img/img_voi_17mm.i" ;
+ sphere_name ="17mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+path_img_voi= path_base_folder + "voi_img/img_voi_13mm.i" ;
+ sphere_name ="13mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+ path_img_voi= path_base_folder + "voi_img/img_voi_10mm.i" ;
+ sphere_name ="10mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+ path_img_voi= path_base_folder + "voi_img/img_voi_8mm.i" ;
+ sphere_name ="8mm real region";
+ get_rc_single_sphere(path_img_data, path_img_voi,saved_data_path ,sphere_name );
+
+}
+
+
+
+
+void get_rc_single_sphere(string path_img_data, string path_img_voi, string saved_data_path ,string sphere_name )
+{
   int dimx=256;
   int dimy=256;
   int dimz=153;
@@ -32,7 +82,7 @@ void img_voi_ave_std_calc_304()
   Read_image(path_img_data, img_data);
   Read_image(path_img_voi, img_voi);
 
-  const int voi_num_per_slice=12;
+  const int voi_num_per_slice=4;
   //const int voi_num_per_slice=1;
 
   float array_voi_val[voi_num_per_slice]={0};
@@ -43,13 +93,12 @@ void img_voi_ave_std_calc_304()
   for (int i=0;i<voi_num_per_slice;i++)
   {
 
-    array_voi_val[i]=voi_val;
+      array_voi_val[i]=voi_val;
+      voi_val++;
 
-    voi_val+=1;
-    cout << "voxel values for voi: " <<i<<"  is : "<< array_voi_val[i]<<endl;
   }
 
-  int planes_num_voi=0;
+  int planes_num_voi[voi_num_per_slice]={0};
   int z_start[voi_num_per_slice] ={0};
   int z_end [voi_num_per_slice] ={0};
   int pix_num_per_voi[voi_num_per_slice] ={0};
@@ -57,12 +106,24 @@ void img_voi_ave_std_calc_304()
   for(int i=0;i<voi_num_per_slice;i++)
   {
 
-    Get_voi_info(img_voi, array_voi_val[i],  planes_num_voi, z_start[i],z_end[i],pix_num_per_voi[i]);
+    Get_voi_info(img_voi, array_voi_val[i],  planes_num_voi[i], z_start[i],z_end[i],pix_num_per_voi[i]);
+
+    cout<<"****pix number: i: "<<i<<"  :" <<pix_num_per_voi[i]<<endl; 
 
   }
 
 
-  const int voi_plane_num = planes_num_voi;
+  int planes_num_voi_max=0;
+  for(int i=0;i<voi_num_per_slice;i++)
+  {
+    if(planes_num_voi[i]>planes_num_voi_max)
+    {
+      planes_num_voi_max=planes_num_voi[i];
+    }
+  }
+
+
+  const int voi_plane_num = planes_num_voi_max;
 
 
   float array_voi_res[voi_num_per_slice][voi_plane_num] ={0};
@@ -87,71 +148,9 @@ void img_voi_ave_std_calc_304()
   cout<<" get the ave data voi finished"<<endl;
 
  
-  
-  double array_voi_ave[voi_num_per_slice] = {0};
-  double array_voi_std[voi_num_per_slice] = {0};
-
-  for (int i=0;i<voi_num_per_slice;i++)
-  {
-
-    Get_ave_std_array( array_voi_res[i], array_voi_ave[i],array_voi_std[i], voi_plane_num);
-
-  }
-  cout<<" get the std ave finished"<<endl;
-  
-
- // 3:merge backgroun;
-  int bg_per_plane=9;
-  const int merge_plane_num=bg_per_plane * voi_plane_num;
-
-  float merge_bg_voi[merge_plane_num] = {0};
-  int bg_start=3;
-
-  for(int i=bg_start; i<voi_num_per_slice;i++)
-  {
-    for(int j=0;j<voi_plane_num;j++)
-    {
-
-    int i_merge=(i-bg_start)*voi_plane_num+j;
-    merge_bg_voi[i_merge]=array_voi_res[i][j];
-    }
-  }
-
-  double merged_bg_ave = 0;
-  double merged_bg_std = 0;
-
- Get_ave_std_array( merge_bg_voi, merged_bg_ave,merged_bg_std, merge_plane_num);
-
-
- cout<<" merged_ave is: "<< merged_bg_ave <<endl;
- cout<<" merged_std is: "<< merged_bg_std <<endl;
-
- double array_voi_merged_ave[voi_num_per_slice] = {0};
- double array_voi_merged_std[voi_num_per_slice] = {0};
-
-
- 
- for(int i=0;i<voi_num_per_slice;i++)
- {
-   array_voi_merged_ave[i]=merged_bg_ave;
-   array_voi_merged_std[i]=merged_bg_std;
-
- }
-
-  int rod_end=3;
-
- for(int i=0;i<rod_end;i++)
- {
-   Get_error_propagation_dived(array_voi_merged_std[i], array_voi_ave[i],array_voi_std[i],merged_bg_ave, merged_bg_std);
-
- }
-
-
-
   // 3: save data
 
-save_data(saved_data_path, array_voi_val, array_voi_ave, array_voi_std, array_voi_merged_ave, array_voi_merged_std,  pix_num_per_voi, array_voi_res, voi_num_per_slice,voi_plane_num);
-
+save_data(saved_data_path, array_voi_val,  pix_num_per_voi, array_voi_res, voi_num_per_slice,voi_plane_num,sphere_name);
 
 
 
@@ -171,8 +170,6 @@ save_data(saved_data_path, array_voi_val, array_voi_ave, array_voi_std, array_vo
     img_voi=NULL;
 
   }
-
-  gApplication->Terminate();
 
 }
 
@@ -205,8 +202,8 @@ void Get_ave_per_roi(float* array_voi,int pix_num_per_voi,int array_size )
     }
     else
     {
-      cout<<" ERROR: the pixel number for the ROI is ZERO!"<<endl;
-      exit(EXIT_FAILURE);
+      array_voi[i]=0;
+
     }
   }
 
@@ -215,23 +212,26 @@ void Get_ave_per_roi(float* array_voi,int pix_num_per_voi,int array_size )
 
 
 
-const int voi_num_per_slice=12;
-const int voi_plane_num=90; 
+const int voi_num_per_slice=4;
+const int voi_plane_num=5; 
 /*
  * array_voi_val contains the defined value of the voi;
  * array_voi_res: is the calculated results for each voi;
  *
  *
  */
-//void save_data(string saved_data_path, float *array_voi_val,float* array_voi_ave, float* array_voi_std,int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num) 
-void save_data(string saved_data_path, float *array_voi_val,double* array_voi_ave, double* array_voi_std, double* array_voi_merge_ave, double* array_voi_merge_std, int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num) 
+void save_data(string saved_data_path, float *array_voi_val,int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num, string sphere_name) 
 
 {
 
   ofstream of;
-  //of.open(path_saved_data.c_str(),std::ofstream::out | std::ofstream::app);
-  of.open(saved_data_path.c_str(),std::ofstream::out);
+  of.open(saved_data_path.c_str(),std::ofstream::out | std::ofstream::app);
+  //of.open(saved_data_path.c_str(),std::ofstream::out);
 
+  
+  of<<endl;
+  of<<endl;
+  of<<"********"<< sphere_name<<"********* "<<endl; ;
   of<<setw(9)<<"voi index"<< setw(3)<<" " ;
 
   for(int j=0;j<voi_num_per_slice;j++)
@@ -240,44 +240,8 @@ void save_data(string saved_data_path, float *array_voi_val,double* array_voi_av
   }
 
   of<< endl;
-  of<<setw(9)<<"average:"<< setw(3)<<" " ;
-
-  for(int j=0;j<voi_num_per_slice;j++)
-  {
-    of<< setw(10) <<array_voi_ave[j];
-    //of<< setw(10) <<"0.1";
-  }
-  of<< endl;
-
-  of<<setw(9)<<"std: "<< setw(3)<<" " ;
-  for(int j=0;j<voi_num_per_slice;j++)
-  {
-    of<< setw(10) <<array_voi_std[j];
-    //of<< setw(10) <<"0.1";
-  }
-  of<< endl;
-
-
-  of<< endl;
-  of<<setw(9)<<"merg_ave:"<< setw(3)<<" " ;
-
-  for(int j=0;j<voi_num_per_slice;j++)
-  {
-    of<< setw(10) <<array_voi_merge_ave[j];
-    //of<< setw(10) <<"0.1";
-  }
-  of<< endl;
-
-  of<<setw(9)<<"merg_std:"<< setw(3)<<" " ;
-  for(int j=0;j<voi_num_per_slice;j++)
-  {
-    of<< setw(10) <<array_voi_merge_std[j];
-    //of<< setw(10) <<"0.1";
-  }
-  of<< endl;
-
-
-
+  
+ 
 
   of<<setw(9)<<"pix_num: "<< setw(3)<<" " ;
   for(int j=0;j<voi_num_per_slice;j++)
@@ -287,7 +251,6 @@ void save_data(string saved_data_path, float *array_voi_val,double* array_voi_av
 
 
   of<< endl;
-
 
 
   for (int i=0;i<voi_plane_num;i++)
@@ -303,7 +266,6 @@ void save_data(string saved_data_path, float *array_voi_val,double* array_voi_av
 
   }
 
-  of<<endl;
 
   of.close();
 
@@ -322,6 +284,7 @@ void Read_image(string path_img, float* img_data, int dimx=256, int dimy=256, in
   ifstream fin;
   fin.open(path_img.c_str());
 
+  cout<< "path image: "<< path_img<<endl;
   if(fin.good()){
     cout<<"Reading emission file from "<<path_img.c_str()<<endl;
     fin.read((char *)img_data, (dimx* dimy* dimz* wordlength));
@@ -592,3 +555,4 @@ void Get_error_propagation_dived(double& std_result, double ave_num,double std_n
 
 
 }
+

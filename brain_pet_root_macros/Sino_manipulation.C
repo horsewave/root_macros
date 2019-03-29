@@ -55,12 +55,7 @@ void Sino_manipulation()
 {
 
 
- /* string base_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/" ;*/
-  //string sino_total = base_folder + "scatter_scaled_normed_multi_plus_single_bad_plane_cor.fs" ;
-  //string sino_single = base_folder + "scatter_scaled_normed_single_bad_plane_cor.fs" ;
-  //string sino_multi = base_folder + "scatter_multi_subtract.fs" ;
-/*Cor_scatter( sino_total, sino_single,sino_multi);*/
-
+ 
 
 main_1();
 //main_4();
@@ -91,30 +86,82 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/scatterMCS/";
 
-  string name_sino_0="true.fs";
-  string name_sino_1="true.fs";
-  string name_sino_merge="true.fs";
+  string name_sino_0="scatter.fs";
+  string name_sino_1="scatter.fs";
+  string name_sino_merge="scatter.fs";
 
-  string sub_folder_1 = "merged_with_detector_modual/" ;
-  string sub_folder_2 = "run_5000_with_detector_modual_4/" ;
-  string sub_folder_merge = "merged_with_detector_modual/" ;
+  string sub_folder_1 = "run_num_4000_1/" ;
+  string sub_folder_2 = "run_num_4000_2/" ;
+  string sub_folder_merge = "merged/" ;
 
   string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
   string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
   string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
+ 
 
-  name_sino_0="scatter.fs";
-  name_sino_1="scatter.fs";
-  name_sino_merge="scatter.fs";
+
+   sub_folder_1 = "run_num_4000_3/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
 
   path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
   path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
   path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  //cout<<"path: "<< path_input_sino_1<<endl;
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+   sub_folder_1 = "run_num_4000_4/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+ sub_folder_1 = "run_num_4000_5/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+
+   sub_folder_1 = "run_num_4000_6/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+ sub_folder_1 = "run_num_4000_7/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+
+   sub_folder_1 = "run_num_4000_8/" ;
+  sub_folder_2 = "merged/" ;
+  sub_folder_merge = "merged/" ;
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
 
@@ -168,32 +215,33 @@ for(int i=0;i<file_num;i++)
 // scaling refer of MCS
 void main_3()
 {
-   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/scatterMCS/";
-   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30/sinos/";
+   string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_no_detect/";
+   //string base_folder_input = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_1/";
+   string base_folder_refer = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/merge_sino_with_detect/";
 
 
   string path_sino_input_true= base_folder_input +"true.fs";
-  string path_sino_input_scatter = base_folder_input +"scatter_multi_plus_single.fs";
-  //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs";
+  string path_sino_input_scatter = base_folder_input +"scatter.fs";
+  //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_no_detection_modual/norm_sino_320_192_no_detection_modual.fs";
+  string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
+  //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_mcs.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
   //string path_sino_input_norm = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
-  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed_old.fs";
+  string path_sino_input_scatter_normed = base_folder_input +"scatter_normed.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
   string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
 
 
 
-  string path_sino_refer_true = base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
+  string path_sino_refer_true = base_folder_refer +"true.fs";
   string path_sino_refer_scatter = base_folder_refer +"scatter.fs";
   string path_sino_refer_norm ="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
 
   string path_sino_refer_scatter_normed = base_folder_refer +"scatter_normed.fs";
   string path_sino_refer_true_plus_scatter= base_folder_refer +"true_plus_scatter.fs";
-  string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"sinos/prompt_rand_norm_cor.fs";
+  string path_sino_refer_true_plus_scatter_normed= base_folder_refer +"true_plus_scatter_normed.fs";
 
-  string path_sino_scaled_scatter = base_folder_input +"scatter_scaled.fs";
-  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed_old.fs";
+  string path_sino_scaled_scatter_normed = base_folder_input +"scatter_scaled_normed.fs";
 
 
   cout << " path_sino_input_true : "<< path_sino_input_true <<endl;
@@ -205,7 +253,6 @@ void main_3()
   cout << " path_sino_refer_scatter: "<< path_sino_refer_scatter <<endl;
   cout << " path_sino_refer_true_plus_scatter: "<< path_sino_refer_true_plus_scatter <<endl;
   cout << " path_sino_refer_true_plus_scatter_normed: "<< path_sino_refer_true_plus_scatter_normed <<endl;
-  cout << " path_sino_scaled_scatter: "<<  path_sino_scaled_scatter<<endl;
 
 
 //Add_sino( path_sino_input_scatter, path_sino_input_true,path_sino_input_true_plus_scatter);

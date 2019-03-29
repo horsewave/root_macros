@@ -71,96 +71,71 @@ void main_2()
 
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_1/" ;
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30-set_insert_size/scatterMCS/without_coil_1/" ;
   
-  string path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
-  string path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
+  string path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_true.flor";
+  string path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
-
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-  
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
-
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-
-input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_2/" ;
-  
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
+   path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
   
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
 
-
-input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_3/" ;
+  input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30-set_insert_size/scatterMCS/without_coil_2/" ;
   
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_true.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
-
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-  
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
-
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-
-
-input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/scatterMCS/run_num_4000_4/" ;
-  
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-   path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_0_scatter.fs";
+   path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
   
-  path_lor_data = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.flor";
-  path_saved_sino = input_folder + "sphere_phantom_ideal_gpuSimu_1_scatter.fs";
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
 
+
+input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN304N-BI/30min-data_0-30-set_insert_size/scatterMCS/without_coil_3/" ;
+  
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_true.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_true.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_true.fs";
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+   path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_0_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
+
+  
+  path_lor_data = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.flor";
+  path_saved_sino = input_folder + "XB1BN304N-BI_gpuSimu_1_scatter.fs";
+
+  convert_lor_to_sino(path_lor_data,path_saved_sino);
 
 
   return;
