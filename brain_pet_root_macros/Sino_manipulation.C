@@ -67,13 +67,21 @@ main_1();
   //string input_sino_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_ones_with_gaps.fs";
   //string saved_sino_with_gap = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/att_fwp_with_gaps.fs";
 
+/*string path_sino_numerator = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/att_forward_projection_with_gaps.fs";*/
+//string path_sino_denominator = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/scatterMCS/merged/scatter.fs";
+//string path_saved_sino = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/scatterMCS/merged/norm_sino_for_scatter.fs";
+
+
+/*sino_divid_presto(path_sino_numerator , path_sino_denominator, path_saved_sino);*/
+
+
+
 /*add_gaps_to_sino(input_sino_no_gap,input_sino_gap, saved_sino_with_gap);*/
 
   gApplication->Terminate();
 
 
 }	
-
 
 
 /*
@@ -86,14 +94,15 @@ void main_1( )
   //diff_scatter_methods()
   //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/scatterMCS/";
+  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/Brain_phantom_ma/gpu_mcs/scatterMCS/";
 
-  string name_sino_0="scatter.fs";
-  string name_sino_1="scatter.fs";
-  string name_sino_merge="scatter.fs";
+  
+  string name_sino_0="true.fs";
+  string name_sino_1="true.fs";
+  string name_sino_merge="true.fs";
 
-  string sub_folder_1 = "run_num_4000_1/" ;
-  string sub_folder_2 = "run_num_4000_2/" ;
+  string sub_folder_1 = "run_1/" ;
+  string sub_folder_2 = "run_2/" ;
   string sub_folder_merge = "merged/" ;
 
   string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
@@ -101,69 +110,15 @@ void main_1( )
   string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
- 
+name_sino_0="scatter.fs";
+  name_sino_1="scatter.fs";
+  name_sino_merge="scatter.fs";
 
-
-   sub_folder_1 = "run_num_4000_3/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
 
   path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
   path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
   path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
   Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
-   sub_folder_1 = "run_num_4000_4/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
-
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
- sub_folder_1 = "run_num_4000_5/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
-
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
-
-   sub_folder_1 = "run_num_4000_6/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
-
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
- sub_folder_1 = "run_num_4000_7/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
-
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
-
-   sub_folder_1 = "run_num_4000_8/" ;
-  sub_folder_2 = "merged/" ;
-  sub_folder_merge = "merged/" ;
-
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
-
 
 }	
 

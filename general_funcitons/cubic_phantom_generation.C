@@ -1,3 +1,8 @@
+/*
+ * creat the cubic phantom used to compare gate and ggems.
+ *
+ */
+
 void cubic_phantom_generation()
 {
 

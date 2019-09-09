@@ -1,3 +1,10 @@
+/*
+ * whole procedure for the sss
+ *
+ *
+ */
+
+
 void siemens_sss()
 {
   //sss_81();

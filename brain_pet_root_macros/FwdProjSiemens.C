@@ -1,11 +1,13 @@
+/* Bo Ma
 
-// L. Caldeira 
-// Bo Ma
+   * Description: this macro is used to forward projection the image, you can either choose to get the attenuation map or get the common sino.
 
 // Time:2016.06.08
+//
   // Editor: Bo Ma
- // Questions to L. Caldeira
+
  
+ */
  /*parameters for the  reconstruction:
 sprintf(cmd,".! %s -i %s -T 1 -F 1,0 -h %s -I 0 ",file_path_FWPexe.c_str(),input_img.c_str(),out_sino.c_str());
  OP_OSEM3D V3.1.3 27-May-2010
@@ -91,12 +93,10 @@ void fwd_presto_siemens()
 {
 
 
-   //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/" ;
-   //string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_310/" ;
-   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_for_scatter_recon/" ;
+   string inputFolder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/Brain_phantom_ma/gpu_mcs/" ;
 
  
-   string input_img = inputFolder  + "att_coeff.i" ;
+   string input_img = inputFolder  + "att_true_att_coeff.i" ;
    string out_sino = inputFolder + "att_fwp.fs" ;
    //bool is_calACF = false;
    bool is_calACF = true;

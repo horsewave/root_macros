@@ -18,8 +18,9 @@
   string user            = gSystem->Getenv("USER");
   string rootsys         = gSystem->Getenv("ROOTSYS");
   //string presto_project  = gSystem->Getenv("PRESTO_PROJECT");
-  //string presto_project  = "/localdata/Ma/PRESTO";
-  string presto_project  = "/data/PET/mr_pet_temp/Ma/PRESTO";
+  //string presto_project  = "/data/mr_pet_temp/Ma/PRESTO";
+  string presto_project  = "/home/mabo/software/src/PRESTO";
+  //string presto_project  = "/home/mabo/software/src/PRESTO/PRESTO";
   cout << "----> rootlogon.C" << endl;
   cout << "----> HOST           = " << hostname << endl;
   cout << "----> USER           = " << user << endl;
@@ -33,6 +34,8 @@
   presto_lib_path=presto_project+"/libs";
   cout << "----> PRESTO software lib path: " << presto_lib_path << endl;
 
+  //shell setups for root 
+  gSystem->Exec("source /home/mabo/software/src/PRESTO/macros/variables_root.sh");
 
   //-----------------------------------------------------------------------------------------
   //---load relevant software libraries
@@ -59,14 +62,14 @@
       string libname="lib_"+modul_name[i]+"_ROOT.so";
       string libfile=presto_lib_path+"/"+libname;
       cout << "----> load library:  " << libname << endl;
-      gSystem.Load(libfile.c_str());
+      //gSystem.Load(libfile.c_str());
+      gSystem->Load(libfile.c_str());
     }
   
   gSystem.Load("libGpad.so");
-  //gSystem.Load("/data/mr_pet_temp/Ma/software/src/gpupet/pet/libs/libBrainPET_MCS_ROOT.so");
-  //cout << "----> load library:   Bo Ma MCS library   " << endl;
-
+  //gSystem->Load("libGpad.so");
   puts("  ");
+  cout << "Load finished"<< endl;
 
 
   //-----------------------------------------------------------------------------------------
@@ -115,9 +118,10 @@
   gROOT->ForceStyle();
 
 
- /* //---Utilities toolbox init  */
+  //---Utilities toolbox init  
   #include "./Utilities.C"
   gROOT->ProcessLine(".x ./UtilitiesInit.C");
+
 
 
 

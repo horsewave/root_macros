@@ -1,4 +1,7 @@
 /***
+ *
+ * Get the axial distribution of the events in the lor data and save it to root file.
+ *
  * ***get_axial_ring_counts.C*
  * Function: get the  events sum of all the crystals in one transaxile ring;
  * Editor: Bo Ma;

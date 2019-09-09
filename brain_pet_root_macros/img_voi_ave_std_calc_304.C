@@ -1,3 +1,14 @@
+/*
+ *
+ * Calculating the RC using pmod is time consuming, so this macro is used to calculate the RC and its standard error.
+ * Editor: Bo Ma
+ * Input: the voi image: for each Roi, there is a value corresponding to it. Detail check the image data.
+ * reconstructed img.
+
+ *
+ */
+
+
 #include <stdlib.h>
 #include <iomanip> 
 using namespace std;

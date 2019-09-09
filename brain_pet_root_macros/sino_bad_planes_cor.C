@@ -1,3 +1,9 @@
+/*
+ * There are four bad planes in the sino, this is used to set the bad planes with the value of the neighbouring planes.
+ *
+ * Editor: Bo Ma
+ */
+
 void sino_bad_planes_cor()
 {
 

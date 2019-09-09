@@ -1,5 +1,5 @@
 /*
- *Discription: enOFOV the image to the default image size for BrainPET(320*320*153)
+ *Discription: combine the phantom and the coil. to the default image size for BrainPET(320*320*153)
 Editor: Bo Ma
 Time: 2018.08.22
  * */

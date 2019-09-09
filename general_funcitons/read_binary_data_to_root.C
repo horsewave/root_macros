@@ -2,6 +2,9 @@
  *  read binary file with different data types:
  * int,int, short int,short int, char
  *
+ * Editor: Bo Ma
+ *
+ *
  */
 
 #include<stdio.h>

@@ -1,5 +1,5 @@
 /*
- *Discription: enOFOV the image to the default image size for BrainPET(256*256*153)
+ *Discription: merge two images in the z direction, to generate the OFOV phantom
 Editor: Bo Ma
 Time: 2018.08.22
  * */

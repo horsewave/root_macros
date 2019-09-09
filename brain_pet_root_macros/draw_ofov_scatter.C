@@ -61,7 +61,7 @@ void draw_ofov_scatter()
 
 
  // -------------- 1: read the tree from the big raw data to a new small root file;
- //save_all_branch_to_vector(root_file_name_raw,root_file_name_saved);
+ save_all_branch_to_vector(root_file_name_raw,root_file_name_saved);
 
  // -------------- 2: draw the vector;
 draw_vector(root_file_name_saved);
