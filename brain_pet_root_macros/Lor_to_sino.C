@@ -71,26 +71,18 @@ void main_2()
 
 {
     // saved sino data
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/Brain_phantom_ma/gpu_mcs/scatterMCS/run_2/" ;
+  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/" ;
   
-  string path_lor_data = input_folder + "brain_phantom_gpuSimu_0_true.flor";
-  string path_saved_sino = input_folder + "brain_phantom_gpuSimu_0_true.fs";
+  string path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_true.flor";
+  string path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_true.fs";
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  path_lor_data = input_folder + "brain_phantom_gpuSimu_1_true.flor";
-  path_saved_sino = input_folder + "brain_phantom_gpuSimu_1_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
-
-   path_lor_data = input_folder + "brain_phantom_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "brain_phantom_gpuSimu_0_scatter.fs";
+   path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.flor";
+  path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.fs";
 
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
   
-  path_lor_data = input_folder + "brain_phantom_gpuSimu_1_scatter.flor";
-  path_saved_sino = input_folder + "brain_phantom_gpuSimu_1_scatter.fs";
-
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
 
 
 
@@ -548,7 +540,8 @@ int convert_lor_to_sino(string path_lor,string path_saved_sino_data,bool is_floa
   int total_lor_counts=(int)lor_data->get_count_sum();
 
   //converter used to convert lor data to sinogram
-  BrainPET_QuickConverter* converter=new BrainPET_QuickConverter("/data/BrainPET_Sys/Software/TemplateProcData/version1/lookups/LookupTable.BrainPET_QuickConverter.dat");
+  //BrainPET_QuickConverter* converter=new BrainPET_QuickConverter("/data/BrainPET_Sys/Software/TemplateProcData/version1/lookups/LookupTable.BrainPET_QuickConverter.dat");
+  BrainPET_QuickConverter* converter=new BrainPET_QuickConverter("/home/mabo/software/src/PRESTO/setup_files/files_needed/TemplateProcData/version1/lookups/LookupTable.BrainPET_QuickConverter.dat");
 
   //...procedure to convert a lor to sinogram
   int nelements;

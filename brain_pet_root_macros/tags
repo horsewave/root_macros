@@ -1,0 +1,968 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Add_sino	Sino_manipulation.C	/^void Add_sino( string path_sino_input_1, string path_sino_input_2,string saved_sino)$/;"	f
+BYTE	convert_listmode_to_lor.C	/^typedef unsigned char BYTE;$/;"	t	file:
+BYTE	read_binary_data_to_root.C	/^typedef unsigned char BYTE;$/;"	t	file:
+BrainPET1	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    MRPET_dump *BrainPET1;$/;"	m	class:BrainPET_Sinograms
+BrainPET_DetHitMap	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^class BrainPET_DetHitMap$/;"	c
+BrainPET_LMStreamManager	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ BrainPET_LMStreamManager::BrainPET_LMStreamManager(string RUNID_x){$/;"	f	class:BrainPET_LMStreamManager
+BrainPET_LMStreamManager	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ class BrainPET_LMStreamManager$/;"	c
+BrainPET_LORfileData	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ BrainPET_LORfileData::BrainPET_LORfileData(StreamReader* stream)$/;"	f	class:BrainPET_LORfileData
+BrainPET_LORfileData	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ BrainPET_LORfileData::BrainPET_LORfileData(int n_modul_pairs0, int n_modulpair_size0,$/;"	f	class:BrainPET_LORfileData
+BrainPET_LORfileData	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ class BrainPET_LORfileData$/;"	c
+BrainPET_QuickConverter	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ BrainPET_QuickConverter::BrainPET_QuickConverter(string converter_filename)$/;"	f	class:BrainPET_QuickConverter
+BrainPET_QuickConverter	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ BrainPET_QuickConverter::BrainPET_QuickConverter(void)$/;"	f	class:BrainPET_QuickConverter
+BrainPET_QuickConverter	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ class BrainPET_QuickConverter$/;"	c
+BrainPET_Sinograms	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^BrainPET_Sinograms::BrainPET_Sinograms(MRPET_dump *brainPET1, string title0,$/;"	f	class:BrainPET_Sinograms
+BrainPET_Sinograms	cpp_code/PRESTO/BrainPET_Sinograms.h	/^class BrainPET_Sinograms$/;"	c
+BrainPET_VarianceReduction	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ BrainPET_VarianceReduction::BrainPET_VarianceReduction(int cwin_x){$/;"	f	class:BrainPET_VarianceReduction
+BrainPET_VarianceReduction	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ class BrainPET_VarianceReduction{$/;"	c
+BrainPETbasics_ABC	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ BrainPETbasics_ABC::BrainPETbasics_ABC(void):EPMpattern()$/;"	f	class:BrainPETbasics_ABC
+BrainPETbasics_ABC	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ class BrainPETbasics_ABC: public EPMpattern$/;"	c
+Coincidence	convert_listmode_to_lor.C	/^} Coincidence;$/;"	t	typeref:struct:__anon1	file:
+Coincidence	read_binary_data_to_root.C	/^} Coincidence;$/;"	t	typeref:struct:__anon2	file:
+Cor_att	Sino_manipulation.C	/^void Cor_att( string path_sino_input, string path_sino_att,string saved_sino_att_cor)$/;"	f
+Cor_norm	Sino_manipulation.C	/^void Cor_norm( string path_sino_input, string path_sino_norm,string saved_sino_norm_cor)$/;"	f
+Cor_random	Sino_manipulation.C	/^void Cor_random( string path_sino_prompt,string path_sino_rand,string saved_sino_rand_cor)$/;"	f
+Cor_scatter	Sino_manipulation.C	/^void Cor_scatter( string path_sino_input, string path_sino_scatter,string saved_sino_scatter_cor)$/;"	f
+Corr_rand_norm	Lor_to_sino.C	/^int Corr_rand_norm(string prompt_sino,string random_sino, string norm_sino, BrainPET_Sinograms *s0)$/;"	f
+Create_graph_from_vector	draw_ofov_scatter.C	/^void Create_graph_from_vector( string saved_data_path, TVector* vector_ofov_source,TVector* vector_ifov_source_ofov_scatter,TVector* vector_ifov_scatter,bool is_whole_range=true,bool is_only_ofov=false)$/;"	f
+DrawHistgram	mcs_sss_img_plot.C	/^void DrawHistgram(TCanvas* can_hist,TH2F* pHistgram,TPaletteAxis *palette, int subImage_indext)$/;"	f
+Draw_histgram_mcs_sss	mcs_sss_img_plot.C	/^void Draw_histgram_mcs_sss(string path_image_mcs,string path_image_sss,string saved_img_root_file,TH2F *h2_mcs,TH2F *h2_sss,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+Draw_plot_mcs_sss	mcs_sss_img_plot.C	/^void Draw_plot_mcs_sss(TH2F *h2_mcs,TH2F *h2_sss,string saved_root_file,int z_slice=70,int yValue=155,int dimx=256)$/;"	f
+Float_to_string	Sino_manipulation.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_prompt_sino_axial.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_prompt_sino_radial.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_axial.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_axial_multi_run.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_axial_seg_0.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_matrix.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_matrix_multi_runs.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_radial.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_radial_mult_run.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_radial_seg_0.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	draw_ofov_scatter.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	mcs_sss_img_plot.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+Float_to_string	write_array_to_root.C	/^string Float_to_string(float input_float,int precision_num)$/;"	f
+FwdProjSiemens	FwdProjSiemens.C	/^void FwdProjSiemens()$/;"	f
+GATE_GGEMS_TOF_compare	GATE_GGEMS_TOF_compare.C	/^void GATE_GGEMS_TOF_compare()$/;"	f
+GenerateGraphData	GATE_GGEMS_TOF_compare.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_prompt_sino_axial.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_prompt_sino_radial.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_axial.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_axial_multi_run.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_axial_seg_0.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_matrix.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_radial.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_radial_mult_run.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_radial_seg_0.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	draw_ofov_scatter.C	/^void GenerateGraphData(TGraph *myGraph,TVector* imageData)$/;"	f
+GenerateGraphData	draw_ofov_scatter.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateGraphData	mcs_sss_img_plot.C	/^float GenerateGraphData(TGraph *myGraph,TH2F* pHistgram,TVector* p_vector,int yValue,int yRange)$/;"	f
+GenerateGraphData	mcs_sss_img_plot.C	/^float GenerateGraphData(TGraph *myGraph,float* imageData,int yValue,int yRange, int z_slice,int zRange)$/;"	f
+GenerateGraphData	write_array_to_root.C	/^void GenerateGraphData(TGraph *myGraph,float* imageData)$/;"	f
+GenerateHistogram	mcs_sss_img_plot.C	/^float GenerateHistogram(TH2F* pHistgram, float * imageData, int z_slice,int zRange)$/;"	f
+GenerateHistogram	save_histograms_to_root.C	/^float GenerateHistogram(TH2F* pHistgram, float * imageData, int z_slice,int zRange)$/;"	f
+Generate_save_mcs_gate_sino_plot	GATE_GGEMS_TOF_compare.C	/^void Generate_save_mcs_gate_sino_plot(float*tof_diff_mcs, float* tof_diff_gate,int array_size_mcs,int array_size_gate,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_prompt_sino_plot	compare_MCS_SSS_prompt_sino_axial.C	/^void Generate_save_mcs_sss_prompt_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss, float* array_events_per_z_prompt, int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_prompt_sino_plot	compare_MCS_SSS_prompt_sino_radial.C	/^void Generate_save_mcs_sss_prompt_sino_plot(float*array_events_radial_mcs, float* array_events_radial_sss, float* array_events_radial_prompt, int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_prompt_sino_plot	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void Generate_save_mcs_sss_prompt_sino_plot(float*array_events_radial_mcs, float* array_events_radial_sss, float* array_events_radial_prompt, int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_axial.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_axial_multi_run.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_axial_seg_0.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_matrix.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs[mcs_num], float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_radial.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_radial_mult_run.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs[mcs_num], float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs[mcs_num], float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_radial_seg_0.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs, float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_per_z_mcs[mcs_num], float* array_events_per_z_sss,int array_size,string saved_data_path)$/;"	f
+Generate_save_mcs_sss_sino_plot	write_array_to_root.C	/^void Generate_save_mcs_sss_sino_plot(float*array_events_ifov_scat, float* array_events_ofov_source,float* array_events_ifov_source,int array_size,string saved_data_path)$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_prompt_sino_axial.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_prompt_sino_radial.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_axial.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_axial_multi_run.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_axial_seg_0.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_matrix.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_radial.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_radial_mult_run.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_radial_seg_0.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	draw_ofov_scatter.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	mcs_sss_img_plot.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	save_histograms_to_root.C	/^void Gernerate_pave_text(TPaveText *pt,string insert_text,Color_t text_color )$/;"	f
+Gernerate_pave_text	write_array_to_root.C	/^void Gernerate_pave_text(TPaveText *pt,char* insert_text,Color_t text_color )$/;"	f
+Get_Sino_counts_per_plane	Sino_manipulation.C	/^void Get_Sino_counts_per_plane(string sino_data_path,double* sino_plane_counts, bool is_short=false)$/;"	f
+Get_Sino_counts_per_z	Sino_manipulation.C	/^void Get_Sino_counts_per_z(string sino_data_path,double* sino_z_counts,bool is_short=false)$/;"	f
+Get_Sino_scale_factor_whole	Sino_manipulation.C	/^float Get_Sino_scale_factor_whole(string path_sino_measured, string path_sino_simulated)$/;"	f
+Get_ave_per_roi	img_voi_ave_std_calc_304.C	/^void Get_ave_per_roi(float* array_voi,int pix_num_per_voi,int array_size )$/;"	f
+Get_ave_per_roi	img_voi_ave_std_calc_310.C	/^void Get_ave_per_roi(float* array_voi,int pix_num_per_voi,int array_size )$/;"	f
+Get_ave_per_roi	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Get_ave_per_roi(float* array_voi,int pix_num_per_voi,int array_size )$/;"	f
+Get_ave_std_array	img_voi_ave_std_calc_304.C	/^void Get_ave_std_array( float* array_data, double& array_voi_ave, double& array_voi_std,const int array_size)$/;"	f
+Get_ave_std_array	img_voi_ave_std_calc_310.C	/^void Get_ave_std_array( float* array_data, double& array_voi_ave, double& array_voi_std,const int array_size)$/;"	f
+Get_ave_std_array	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Get_ave_std_array( float* array_data, double& array_voi_ave, double& array_voi_std,const int array_size)$/;"	f
+Get_axile_events_sino	Sino_manipulation.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino	compare_MCS_SSS_prompt_sino_axial.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino	compare_MCS_SSS_sino_axial.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino	compare_MCS_SSS_sino_axial_multi_run.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino	compare_MCS_SSS_sino_axial_seg_0.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino	write_array_to_root.C	/^float_vec_t Get_axile_events_sino(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino_seg_0	compare_MCS_SSS_sino_axial_multi_run.C	/^float_vec_t Get_axile_events_sino_seg_0(string sino_data_path,bool is_float)$/;"	f
+Get_axile_events_sino_seg_0	compare_MCS_SSS_sino_axial_seg_0.C	/^float_vec_t Get_axile_events_sino_seg_0(string sino_data_path,bool is_float)$/;"	f
+Get_error_propagation_dived	img_voi_ave_std_calc_304.C	/^void Get_error_propagation_dived(double& std_result, double ave_num,double std_num,double ave_deno, double std_deno)$/;"	f
+Get_error_propagation_dived	img_voi_ave_std_calc_310.C	/^void Get_error_propagation_dived(double& std_result, double ave_num,double std_num,double ave_deno, double std_deno)$/;"	f
+Get_error_propagation_dived	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Get_error_propagation_dived(double& std_result, double ave_num,double std_num,double ave_deno, double std_deno)$/;"	f
+Get_max_image	convert_img_intensity_to_suv.C	/^float Get_max_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_max_image	mcs_sss_img_plot.C	/^float Get_max_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_max_image	save_histograms_to_root.C	/^float Get_max_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_min_image	convert_img_intensity_to_suv.C	/^float Get_min_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_min_image	mcs_sss_img_plot.C	/^float Get_min_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_min_image	save_histograms_to_root.C	/^float Get_min_image(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Get_proj_per_view_sino	compare_MCS_SSS_sino_matrix.C	/^float_vec_t Get_proj_per_view_sino(string path_sino_input, TMatrix* mat,int view_index)$/;"	f
+Get_proj_per_view_sino	compare_MCS_SSS_sino_matrix_multi_runs.C	/^float_vec_t Get_proj_per_view_sino(string path_sino_input,int view_index)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_prompt_sino_radial.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_sino_radial.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_sino_radial_mult_run.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_sino_radial_seg_0.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_radial_events_sino	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^float_vec_t Get_radial_events_sino(string path_sino_input)$/;"	f
+Get_scatter_fraction	Sino_manipulation.C	/^float Get_scatter_fraction(string input_sino_true_plus_scatter, string input_sino_scatter,bool is_short=false)$/;"	f
+Get_segment_sino	Sino_manipulation.C	/^void Get_segment_sino(string input_sino,bool is_short=false)$/;"	f
+Get_sum_data_voi	img_voi_ave_std_calc_304.C	/^void Get_sum_data_voi(float* img_data,float* img_voi, float voi_val, float* array_voi_total, int z_start, int z_end,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Get_sum_data_voi	img_voi_ave_std_calc_310.C	/^void Get_sum_data_voi(float* img_data,float* img_voi, float voi_val, float* array_voi_total, int z_start, int z_end,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Get_sum_data_voi	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Get_sum_data_voi(float* img_data,float* img_voi, float voi_val, float* array_voi_total, int z_start, int z_end,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Get_suv_factor	mcs_sss_img_plot.C	/^float Get_suv_factor(string path_image_sss,float total_activity,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+Get_total_counts_LOR_data	presto_Get_total_counts_lor_data.C	/^void Get_total_counts_LOR_data()$/;"	f
+Get_voi_info	img_voi_ave_std_calc_304.C	/^void Get_voi_info(float* img_voi, float voi_val, int& voi_num, int& z_start,int& z_end,int& pix_num_per_voi,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Get_voi_info	img_voi_ave_std_calc_310.C	/^void Get_voi_info(float* img_voi, float voi_val, int& voi_num, int& z_start,int& z_end,int& pix_num_per_voi,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Get_voi_info	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Get_voi_info(float* img_voi, float voi_val, int& voi_num, int& z_start,int& z_end,int& pix_num_per_voi,int dimx=256, int dimy=256, int dimz=153)$/;"	f
+GraphAttributeSet	GATE_GGEMS_TOF_compare.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_prompt_sino_axial.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_prompt_sino_radial.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_axial.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_axial_multi_run.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_axial_seg_0.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_matrix.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_radial.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_radial_mult_run.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_radial_seg_0.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	draw_ofov_scatter.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	mcs_sss_img_plot.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+GraphAttributeSet	write_array_to_root.C	/^void GraphAttributeSet(TGraph *myGraph,Color_t lcolor)$/;"	f
+Image_reconstruction_Simens	Image_reconstruction_Simens.C	/^void Image_reconstruction_Simens()$/;"	f
+IntToString	Sino_manipulation.C	/^string IntToString (int a)$/;"	f
+IntToString	compare_MCS_SSS_prompt_sino_axial.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_prompt_sino_radial.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_axial.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_axial_multi_run.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_axial_seg_0.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_matrix.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_matrix_multi_runs.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_radial.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_radial_mult_run.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_radial_seg_0.C	/^string IntToString (long long a)$/;"	f
+IntToString	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^string IntToString (long long a)$/;"	f
+IntToString	draw_ofov_scatter.C	/^string IntToString (long long a)$/;"	f
+IntToString	mcs_sss_img_plot.C	/^string IntToString (int a)$/;"	f
+IntToString	save_histograms_to_root.C	/^string IntToString (int a)$/;"	f
+IntToString	write_array_to_root.C	/^string IntToString (long long a)$/;"	f
+IsotopePET	cpp_code/PRESTO/IsotopePET.cpp	/^ IsotopePET::IsotopePET(string isotope_x, int verbose0)$/;"	f	class:IsotopePET
+IsotopePET	cpp_code/PRESTO/IsotopePET.hh	/^ class IsotopePET$/;"	c
+LOR2Sino	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::LOR2Sino(BrainPET_LORfileData *lor_data,$/;"	f	class:BrainPET_Sinograms
+LOR_Data_IS_FLOAT	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ bool LOR_Data_IS_FLOAT;$/;"	m	class:BrainPET_QuickConverter
+LOR_Data_float	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ float* LOR_Data_float;$/;"	m	class:BrainPET_QuickConverter
+LOR_Data_short	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ short int* LOR_Data_short;$/;"	m	class:BrainPET_QuickConverter
+Lor_to_sino	Lor_to_sino.C	/^void Lor_to_sino()$/;"	f
+Lor_to_sino_run	Lor_to_sino.C	/^void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sino_measured_prompt,string path_sino_measured_random,string path_sino_measured_norm,int gpu_num=2, bool is_float_lor=true)$/;"	f
+MRPET_dump	cpp_code/PRESTO/MRPET_dump.cpp	/^ MRPET_dump::MRPET_dump(int nViews, int nProjs, $/;"	f	class:MRPET_dump
+MRPET_dump	cpp_code/PRESTO/MRPET_dump.hh	/^ class MRPET_dump{$/;"	c
+Merge_lordata	Lor_to_sino.C	/^int Merge_lordata(string path_lor_data_1,string path_lor_data_2,string path_saved_merged_lor,bool is_float_lor=true)$/;"	f
+MultiGraphAttributeSet	GATE_GGEMS_TOF_compare.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_gate)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_prompt_sino_axial.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss, TGraph *gr_prompt)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_prompt_sino_radial.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss, TGraph *gr_prompt)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss, TGraph *gr_prompt)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_axial.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_axial_multi_run.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_axial_seg_0.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_matrix.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr,string legend_name)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_radial.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_radial_mult_run.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr,string legend_name)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr,string legend_name)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_radial_seg_0.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGraph *gr_sss)$/;"	f
+MultiGraphAttributeSet	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr,string legend_name)$/;"	f
+MultiGraphAttributeSet	draw_ofov_scatter.C	/^void MultiGraphAttributeSet(TMultiGraph *mg)$/;"	f
+MultiGraphAttributeSet	mcs_sss_img_plot.C	/^void MultiGraphAttributeSet(TMultiGraph *mg)$/;"	f
+MultiGraphAttributeSet	write_array_to_root.C	/^void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_ifov_scatter,TGraph *gr_ofov_source,TGraph *gr_ifov_source_ofov_scat)$/;"	f
+Ndata	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int* Ndata;$/;"	m	class:BrainPET_DetHitMap
+RUNID	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ string RUNID;$/;"	m	class:BrainPET_LMStreamManager
+Read_image	convert_img_intensity_to_suv.C	/^void Read_image(string file_path,float* imageData,int voxel_num)$/;"	f
+Read_image	img_voi_ave_std_calc_304.C	/^void Read_image(string path_img, float* img_data, int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Read_image	img_voi_ave_std_calc_310.C	/^void Read_image(string path_img, float* img_data, int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Read_image	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void Read_image(string path_img, float* img_data, int dimx=256, int dimy=256, int dimz=153)$/;"	f
+Read_image	mcs_sss_img_plot.C	/^void Read_image(string file_path,float* imageData,int voxel_num)$/;"	f
+Read_image	save_histograms_to_root.C	/^void Read_image(string file_path,float* imageData,int voxel_num)$/;"	f
+Remove_image_noise	convert_img_intensity_to_suv.C	/^float Remove_image_noise(float* input_image, float* output_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Remove_image_noise	mcs_sss_img_plot.C	/^float Remove_image_noise(float* input_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Remove_image_noise	save_histograms_to_root.C	/^float Remove_image_noise(float* input_image, float* output_image,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+Root_data_analize_gate	GATE_GGEMS_TOF_compare.C	/^float_vec_t Root_data_analize_gate(string full_path)$/;"	f
+Root_data_analize_mcs	GATE_GGEMS_TOF_compare.C	/^float_vec_t Root_data_analize_mcs(string full_path)$/;"	f
+SUV_convert	convert_img_intensity_to_suv.C	/^void SUV_convert(float* input_image,float SUV_factor,int z_min=20,int z_max=149,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+SUV_convert	mcs_sss_img_plot.C	/^void SUV_convert(float* input_image,float SUV_factor,int z_min=20,int z_max=149,int dimx=256,int dimy=256,int dimz=153)$/;"	f
+SUV_convert	save_histograms_to_root.C	/^void SUV_convert(float* input_image,float total_activity_ori,float total_intensity_ori,int dimx=256,int dimy=256,int dimz=153,float spacing=1.25)$/;"	f
+Save_sino_axile_counts	Sino_manipulation.C	/^void Save_sino_axile_counts(float* array_axial_count, string saved_path_data int arry_size)$/;"	f
+ScaleHistogram	mcs_sss_img_plot.C	/^float ScaleHistogram(TH2F* pHistgram, float Maximu_after_scale,float threshold_val)$/;"	f
+Simens_recon	Image_reconstruction_Simens.C	/^void Simens_recon(string prompt_sino, string random_sino, string norm_sino, string atte_sino ,string scatter_sino_scaled ,string reconstructe_img, int niterations,int nsubsets)$/;"	f
+Simens_recon_single	FwdProjSiemens.C	/^void Simens_recon_single(int niterations,int nsubsets)$/;"	f
+Sino_3D_seginfo	Sino_manipulation.C	/^void Sino_3D_seginfo(int nViews = 192, int nProjs = 256,$/;"	f
+Sino_Data_IS_FLOAT	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ bool Sino_Data_IS_FLOAT;$/;"	m	class:BrainPET_QuickConverter
+Sino_Data_float	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ float* Sino_Data_float;$/;"	m	class:BrainPET_QuickConverter
+Sino_Data_short	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ short int* Sino_Data_short;$/;"	m	class:BrainPET_QuickConverter
+Sino_get_z_position	Sino_manipulation.C	/^void Sino_get_z_position(string path_sino_input,bool is_short=false)$/;"	f
+Sino_info	Sino_manipulation.C	/^void Sino_info()$/;"	f
+Sino_manipulation	Sino_manipulation.C	/^void Sino_manipulation()$/;"	f
+Sino_scale_by_z_position	Sino_manipulation.C	/^void Sino_scale_by_z_position(string path_sino_input,string path_sino_saved,float* scale_factors,bool is_short=false)$/;"	f
+Sino_scale_slice_by_slice	Sino_manipulation.C	/^void Sino_scale_slice_by_slice(string path_sino_input,string path_sino_saved,float* scale_factors,bool is_short=false)$/;"	f
+Sino_scale_slice_by_slice	Sino_manipulation.C	/^void Sino_scale_slice_by_slice(string saved_sino_random_norm_cor_prompt, string path_sino_true_and_scatter_mcs,string path_sino_scatter_no_scale_mcs,string saved_sino_scatter_slice_scale_mcs)$/;"	f
+Sino_scale_whole	Lor_to_sino.C	/^void Sino_scale_whole( string path_sino_input, string saved_sino_scaled,float scale_factor)$/;"	f
+Sino_scale_whole	Sino_manipulation.C	/^void Sino_scale_whole( string path_sino_input, string saved_sino_scaled,float scale_factor)$/;"	f
+SumHistogram	mcs_sss_img_plot.C	/^float SumHistogram(TH2F* pHistgram)$/;"	f
+Utilities_init	Utilities.C	/^void Utilities_init(void)$/;"	f
+Write_image	convert_img_intensity_to_suv.C	/^void Write_image(string file_path,float* imageData,int voxel_num,bool is_float=true)$/;"	f
+Write_lor_file	convert_listmode_to_lor.C	/^void Write_lor_file(float *lorval_true,string file_name,int data_length )$/;"	f
+_BPET_DETHITMAP_H	cpp_code/PRESTO/BrainPET_DetHitMap.hh	3;"	d
+_BRAINPETBASICS_ABC_H	cpp_code/PRESTO/BrainPETbasics_ABC.hh	3;"	d
+_BRAINPET_LORFILEDATA_H	cpp_code/PRESTO/BrainPET_LORfileData.hh	3;"	d
+_BRAINPET_QUICKCONVERTER_H	cpp_code/PRESTO/BrainPET_QuickConverter.hh	3;"	d
+_BRAINPET_SINOGRAMS_HH_	cpp_code/PRESTO/BrainPET_Sinograms.h	3;"	d
+__BRAINPET_LMSTREAMMANAGER_H__	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	3;"	d
+__BRAINPET_VARIANCE_REDUCTION__	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	3;"	d
+__ISOTOPEPET__	cpp_code/PRESTO/IsotopePET.hh	3;"	d
+__MRPET_DUMP_HH__	cpp_code/PRESTO/MRPET_dump.hh	3;"	d
+add_binary_data_to_existing_tree	read_binary_data_to_root.C	/^void add_binary_data_to_existing_tree(string binary_file_path,string saved_root_file_name,string tree_tag)$/;"	f
+add_data_from	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::add_data_from(BrainPET_LORfileData* lordata)$/;"	f	class:BrainPET_LORfileData
+add_event_to_sinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::add_event_to_sinogram(int h1, int b1, int crys1,$/;"	f	class:BrainPET_Sinograms
+add_event_to_sinogram1	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::add_event_to_sinogram1(int addr, float value){$/;"	f	class:BrainPET_Sinograms
+add_gaps_to_sino	Sino_manipulation.C	/^void add_gaps_to_sino(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_with_gap,float gap_value=0)$/;"	f
+add_gaps_to_sino	sino_add_gaps.C	/^void add_gaps_to_sino(string path_sino_no_gap,string path_sino_with_gap, string path_saved_sino_with_gap,float gap_value=0)$/;"	f
+add_lor_event	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::add_lor_event(int h1, int b1, int c1,$/;"	f	class:BrainPET_LORfileData
+add_sinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::add_sinogram(BrainPET_Sinograms *sinogram){$/;"	f	class:BrainPET_Sinograms
+addr_to_view_proj_plane	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::addr_to_view_proj_plane(int addr, int &view, int &proj, int &plane){$/;"	f	class:MRPET_dump
+apply_dwell_correction	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^bool BrainPET_Sinograms::apply_dwell_correction(BrainPET_Sinograms *dwell_sino){$/;"	f	class:BrainPET_Sinograms
+apply_dwell_correction	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^bool BrainPET_Sinograms::apply_dwell_correction(bool use_lookup,$/;"	f	class:BrainPET_Sinograms
+array_divid	Sino_manipulation.C	/^void array_divid(double* numerator, double* denominator, float* array_result, int array_size)$/;"	f
+backup	Sino_manipulation.C	/^void backup()$/;"	f
+bad_hp	cpp_code/PRESTO/MRPET_dump.hh	/^ int bad_hp;$/;"	m	class:MRPET_dump
+binsize	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ float binsize; \/\/---bin size$/;"	m	class:BrainPETbasics_ABC
+binsize	cpp_code/PRESTO/MRPET_dump.hh	/^ float binsize;$/;"	m	class:MRPET_dump
+blut	cpp_code/PRESTO/MRPET_dump.hh	/^ int *blut;$/;"	m	class:MRPET_dump
+bpet_basics	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  BrainPETbasics_ABC* bpet_basics;$/;"	m	class:BrainPET_DetHitMap
+branching_fraction	cpp_code/PRESTO/IsotopePET.hh	/^ float branching_fraction;$/;"	m	class:IsotopePET
+calc_srates	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ void BrainPET_VarianceReduction::calc_srates(BrainPET_DetHitMap *dcmap0){$/;"	f	class:BrainPET_VarianceReduction
+calc_srates	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ void BrainPET_VarianceReduction::calc_srates(char *dcmap_filename){$/;"	f	class:BrainPET_VarianceReduction
+calc_srates_kernel	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ void BrainPET_VarianceReduction::calc_srates_kernel(float *dcmap){$/;"	f	class:BrainPET_VarianceReduction
+can	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  TCanvas* can;$/;"	m	class:BrainPET_DetHitMap
+can2	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  TCanvas* can2;$/;"	m	class:BrainPET_DetHitMap
+change_data_typ_to_float	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::change_data_typ_to_float(void)$/;"	f	class:BrainPET_LORfileData
+check_files_lst	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ bool BrainPET_LMStreamManager::check_files_lst(string* filenames_lst, int nFiles_lst_x){$/;"	f	class:BrainPET_LMStreamManager
+check_processing	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ bool BrainPET_LMStreamManager::check_processing(string path, string listmode_header){$/;"	f	class:BrainPET_LMStreamManager
+cnt_cdf	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int cnt_cdf [192]; \/\/tmp counter$/;"	m	class:BrainPET_LMStreamManager
+cnt_qual	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int cnt_qual[192]; \/\/tmp counter$/;"	m	class:BrainPET_LMStreamManager
+cnt_rio	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int cnt_rio [192]; \/\/tmp counter$/;"	m	class:BrainPET_LMStreamManager
+cnt_xye	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int cnt_xye [192]; \/\/tmp counter$/;"	m	class:BrainPET_LMStreamManager
+code	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::code(int ay, int ax, int by, int bx)$/;"	f	class:BrainPETbasics_ABC
+compare_MCS_SSS_prompt_sino_axial	compare_MCS_SSS_prompt_sino_axial.C	/^void compare_MCS_SSS_prompt_sino_axial()$/;"	f
+compare_MCS_SSS_prompt_sino_radial	compare_MCS_SSS_prompt_sino_radial.C	/^void compare_MCS_SSS_prompt_sino_radial()$/;"	f
+compare_MCS_SSS_prompt_sino_radial_seg_0	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void compare_MCS_SSS_prompt_sino_radial_seg_0()$/;"	f
+compare_MCS_SSS_sino_axial	compare_MCS_SSS_sino_axial.C	/^void compare_MCS_SSS_sino_axial()$/;"	f
+compare_MCS_SSS_sino_axial_seg_0	compare_MCS_SSS_sino_axial_multi_run.C	/^void compare_MCS_SSS_sino_axial_seg_0()$/;"	f
+compare_MCS_SSS_sino_axial_seg_0	compare_MCS_SSS_sino_axial_seg_0.C	/^void compare_MCS_SSS_sino_axial_seg_0()$/;"	f
+compare_MCS_SSS_sino_matrix	compare_MCS_SSS_sino_matrix.C	/^void compare_MCS_SSS_sino_matrix()$/;"	f
+compare_MCS_SSS_sino_matrix_multi_runs	compare_MCS_SSS_sino_matrix_multi_runs.C	/^  void compare_MCS_SSS_sino_matrix_multi_runs(int view_index)$/;"	f
+compare_MCS_SSS_sino_radial	compare_MCS_SSS_sino_radial.C	/^void compare_MCS_SSS_sino_radial()$/;"	f
+compare_MCS_SSS_sino_radial_mult_run	compare_MCS_SSS_sino_radial_mult_run.C	/^void compare_MCS_SSS_sino_radial_mult_run()$/;"	f
+compare_MCS_SSS_sino_radial_mult_run	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void compare_MCS_SSS_sino_radial_mult_run()$/;"	f
+compare_MCS_SSS_sino_radial_seg_0	compare_MCS_SSS_sino_radial_seg_0.C	/^void compare_MCS_SSS_sino_radial_seg_0()$/;"	f
+compare_MCS_SSS_sino_radial_single_multi_scat	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void compare_MCS_SSS_sino_radial_single_multi_scat()$/;"	f
+compute_bin_inverse	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^bool BrainPET_Sinograms::compute_bin_inverse(float bin_zero_value){$/;"	f	class:BrainPET_Sinograms
+compute_crystal_positions	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::compute_crystal_positions(void)$/;"	f	class:BrainPETbasics_ABC
+compute_crystal_positions	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::compute_crystal_positions()$/;"	f	class:MRPET_dump
+compute_dwell_sino	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^bool BrainPET_Sinograms::compute_dwell_sino(BrainPET_Sinograms *dwell_sino, bool use_lookup,$/;"	f	class:BrainPET_Sinograms
+compute_flat_address	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::compute_flat_address(int h1, int b1, int c1, $/;"	f	class:MRPET_dump
+compute_lor_addr	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::compute_lor_addr(int block1, int crystal1, int block2, int crystal2, $/;"	f	class:MRPET_dump
+convert_LOR2sino	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^   void BrainPET_QuickConverter::convert_LOR2sino(void)$/;"	f	class:BrainPET_QuickConverter
+convert_LOR2sino	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_LOR2sino(float* lordata, int nlordata,$/;"	f	class:BrainPET_QuickConverter
+convert_LOR2sino	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_LOR2sino(string lor_fname, string sino_fname,$/;"	f	class:BrainPET_QuickConverter
+convert_LOR2sino_norm	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_LOR2sino_norm(string lor_fname, string sino_fname, $/;"	f	class:BrainPET_QuickConverter
+convert_Sino2LOR	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_Sino2LOR(float* sinodata, int nsinodata,$/;"	f	class:BrainPET_QuickConverter
+convert_Sino2LOR	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_Sino2LOR(string sino_fname, string lor_fname,$/;"	f	class:BrainPET_QuickConverter
+convert_address	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ crystal_pos_typ BrainPETbasics_ABC::convert_address(crystal_pos_typII &crystal_pos)$/;"	f	class:BrainPETbasics_ABC
+convert_address	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ crystal_pos_typII BrainPETbasics_ABC::convert_address(crystal_pos_typ &crystal_pos)$/;"	f	class:BrainPETbasics_ABC
+convert_img_intensity_to_suv	convert_img_intensity_to_suv.C	/^void convert_img_intensity_to_suv()$/;"	f
+convert_intensity_to_suv	convert_img_intensity_to_suv.C	/^void convert_intensity_to_suv(string path_input_img,string path_image_sss,string path_output_img,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+convert_listmode_to_lor	convert_listmode_to_lor.C	/^void convert_listmode_to_lor()$/;"	f
+convert_lor_to_sino	Lor_to_sino.C	/^int convert_lor_to_sino(string path_lor,string path_saved_sino_data,bool is_float_lor=true)$/;"	f
+convert_sino2LOR	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::convert_sino2LOR(void)$/;"	f	class:BrainPET_QuickConverter
+copy_planes_for_hi_scatter_est	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::copy_planes_for_hi_scatter_est(){$/;"	f	class:BrainPET_Sinograms
+countrate_CFD	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned long int *countrate_CFD; \/\/ cfd counts\/sec$/;"	m	class:BrainPET_LMStreamManager
+countrate_XYE	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned long int *countrate_XYE; \/\/ stored xy events\/sec$/;"	m	class:BrainPET_LMStreamManager
+countrate_qual	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned long int *countrate_qual; \/\/ qualified energy events\/sec$/;"	m	class:BrainPET_LMStreamManager
+countrate_rio_singles	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned long int *countrate_rio_singles; \/\/ RIO Singles Events Counter\/sec$/;"	m	class:BrainPET_LMStreamManager
+cpoint	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ point3D_typ* cpoint;$/;"	m	class:BrainPETbasics_ABC
+cpoint_SiemensConvention	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ point3D_typ* cpoint_SiemensConvention;$/;"	m	class:BrainPETbasics_ABC
+create_hplookup	convert_listmode_to_lor.C	/^void create_hplookup(short *hplookup){$/;"	f
+create_quick_lookup	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::create_quick_lookup(string lookupfilename)$/;"	f	class:BrainPET_QuickConverter
+create_root	write_array_to_root.C	/^void create_root()$/;"	f
+create_sino_with_defined_value	Sino_manipulation.C	/^void create_sino_with_defined_value( string path_saved_sino, float bin_value)$/;"	f
+crystalPositions	cpp_code/PRESTO/MRPET_dump.hh	/^ point3D_typ *crystalPositions;$/;"	m	class:MRPET_dump
+crystal_coordinates	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ point3D_typ BrainPETbasics_ABC::crystal_coordinates(crystal_pos_typ &cpos)$/;"	f	class:BrainPETbasics_ABC
+crystal_coordinates	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ point3D_typ BrainPETbasics_ABC::crystal_coordinates(int ihead, int iblock, $/;"	f	class:BrainPETbasics_ABC
+crystal_coordinates	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ point3D_typ BrainPETbasics_ABC::crystal_coordinates(int index)$/;"	f	class:BrainPETbasics_ABC
+crystal_coordinates_SiemensConvention	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ point3D_typ BrainPETbasics_ABC::crystal_coordinates_SiemensConvention(int index)$/;"	f	class:BrainPETbasics_ABC
+crystal_radius	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    float crystal_radius;$/;"	m	class:BrainPET_Sinograms
+crystal_radius	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ float crystal_radius; \/\/---radius$/;"	m	class:BrainPETbasics_ABC
+crystal_radius	cpp_code/PRESTO/MRPET_dump.hh	/^ float crystal_radius;$/;"	m	class:MRPET_dump
+cwin	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int cwin;$/;"	m	class:BrainPET_VarianceReduction
+d_tan_theta	cpp_code/PRESTO/MRPET_dump.hh	/^ float d_tan_theta; \/\/ tilt angle of segments$/;"	m	class:MRPET_dump
+data	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  float* data;$/;"	m	class:BrainPET_DetHitMap
+data	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ float* data;$/;"	m	class:BrainPET_LORfileData
+data_float	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ bool data_float;$/;"	m	class:BrainPET_LORfileData
+data_is_float	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ bool BrainPET_LORfileData::data_is_float(void)$/;"	f	class:BrainPET_LORfileData
+data_short	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ short int* data_short;$/;"	m	class:BrainPET_LORfileData
+decode	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::decode(int ipair_data, int &ay, int &ax, int &by, int &bx)$/;"	f	class:BrainPETbasics_ABC
+decoder_lookup	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ modul_combi_decoder_lookup_typ* decoder_lookup;$/;"	m	class:BrainPETbasics_ABC
+define_shared_mem	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::define_shared_mem(SharedMem* sh_mem0)$/;"	f	class:BrainPET_LMStreamManager
+delayeds_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ long int *delayeds_hc; $/;"	m	class:BrainPET_LMStreamManager
+deleteData	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::deleteData(void)$/;"	f	class:BrainPET_LORfileData
+destimate	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float *destimate;$/;"	m	class:BrainPET_VarianceReduction
+det_to_phy	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::det_to_phy(int mod, int x, int y, point3D_typ &ccoord)$/;"	f	class:BrainPETbasics_ABC
+det_to_phy	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::det_to_phy(int mod, int x, int y, float pos[3]){$/;"	f	class:MRPET_dump
+det_to_phy_SiemensConvention	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::det_to_phy_SiemensConvention(int mod, int x, int y, $/;"	f	class:BrainPETbasics_ABC
+df	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float df;$/;"	m	class:BrainPET_VarianceReduction
+displayDelayeds_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ bool BrainPET_LMStreamManager::displayDelayeds_hc(){$/;"	f	class:BrainPET_LMStreamManager
+displayPrompts_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ bool BrainPET_LMStreamManager::displayPrompts_hc(){$/;"	f	class:BrainPET_LMStreamManager
+divide_by_sinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::divide_by_sinogram(BrainPET_Sinograms *sinogram){$/;"	f	class:BrainPET_Sinograms
+divide_data_by	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::divide_data_by(BrainPET_LORfileData* lordata)$/;"	f	class:BrainPET_LORfileData
+draw_ofov_scatter	draw_ofov_scatter.C	/^void draw_ofov_scatter()$/;"	f
+draw_root_data	draw_root_data.C	/^void draw_root_data()$/;"	f
+draw_sino_matrix	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void draw_sino_matrix(TMatrix *mat, int row=256, int column=192)$/;"	f
+draw_vector	draw_ofov_scatter.C	/^void draw_vector(string root_file_name)$/;"	f
+dump	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ MRPET_dump *dump;$/;"	m	class:BrainPET_LORfileData
+dwell_map	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ short int* dwell_map;$/;"	m	class:BrainPET_QuickConverter
+end_time	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned int end_time;$/;"	m	class:BrainPET_LMStreamManager
+epm_pattern	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ EPMpattern *epm_pattern;$/;"	m	class:BrainPET_LMStreamManager
+estimate_delay_factor	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ float BrainPET_VarianceReduction::estimate_delay_factor(int cwin, int offset)$/;"	f	class:BrainPET_VarianceReduction
+export_to_ASCII	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::export_to_ASCII(char *filename){$/;"	f	class:BrainPET_LMStreamManager
+export_to_ASCII	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::export_to_ASCII(char *filename, char *mr_trigger_filename){$/;"	f	class:BrainPET_LMStreamManager
+fheader	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  TextStream* fheader;$/;"	m	class:BrainPET_DetHitMap
+filenames_lst	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ string* filenames_lst;$/;"	m	class:BrainPET_LMStreamManager
+fill_maps	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::fill_maps(string listmode_path,$/;"	f	class:BrainPET_LMStreamManager
+fill_maps_by_countdef	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::fill_maps_by_countdef(string listmode_path,$/;"	f	class:BrainPET_LMStreamManager
+fill_maps_by_timedef	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::fill_maps_by_timedef(string listmode_path,$/;"	f	class:BrainPET_LMStreamManager
+fill_sinogram_homogeniously	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void  BrainPET_Sinograms::fill_sinogram_homogeniously(float value){$/;"	f	class:BrainPET_Sinograms
+float_vec_t	GATE_GGEMS_TOF_compare.C	/^typedef std::vector<float> float_vec_t;$/;"	t	file:
+float_vec_t	Sino_manipulation.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_prompt_sino_axial.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_prompt_sino_radial.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_axial.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_axial_multi_run.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_axial_seg_0.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_matrix.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_matrix_multi_runs.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_radial.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_radial_mult_run.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_radial_seg_0.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	draw_ofov_scatter.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+float_vec_t	write_array_to_root.C	/^typedef std::vector<float> float_vec_t; $/;"	t	file:
+format_version	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    unsigned short int format_version;$/;"	m	class:BrainPET_Sinograms
+fov	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int fov;$/;"	m	class:BrainPET_VarianceReduction
+frame_length	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned int frame_length;$/;"	m	class:BrainPET_LMStreamManager
+ftellx	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ off_t BrainPET_LMStreamManager::ftellx(FILE *stream) {$/;"	f	class:BrainPET_LMStreamManager
+fwd_direct	FwdProjSiemens.C	/^void fwd_direct()$/;"	f
+fwd_presto_siemens	FwdProjSiemens.C	/^void fwd_presto_siemens()$/;"	f
+generate_dwell_map	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::generate_dwell_map(void)$/;"	f	class:BrainPET_QuickConverter
+getMPairSize	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ int BrainPET_LORfileData::getMPairSize(){$/;"	f	class:BrainPET_LORfileData
+get_2d_matrix_from_root	write_array_to_root.C	/^void get_2d_matrix_from_root( string path_root_file,string matrix_name)$/;"	f
+get_LOR_flat_address	convert_listmode_to_lor.C	/^void get_LOR_flat_address(short*hplookup, int h1, int b1, int c1,int h2, int b2,int c2){$/;"	f
+get_LORfile_reader	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ BrainPET_LORfileData* BrainPETbasics_ABC::get_LORfile_reader(bool use_floats)$/;"	f	class:BrainPETbasics_ABC
+get_MR_TriggerManager	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ MR_TriggerManager* BrainPET_LMStreamManager::get_MR_TriggerManager(void)$/;"	f	class:BrainPET_LMStreamManager
+get_SYMMETRIC_SinoSegmentStructure	cpp_code/PRESTO/MRPET_dump.cpp	/^ SinoSegmentStructure* MRPET_dump::get_SYMMETRIC_SinoSegmentStructure(void)$/;"	f	class:MRPET_dump
+get_SinoSegmentStructure	cpp_code/PRESTO/MRPET_dump.cpp	/^ SinoSegmentStructure* MRPET_dump::get_SinoSegmentStructure(void)$/;"	f	class:MRPET_dump
+get_TGraph_delayed_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ TGraph* BrainPET_LMStreamManager::get_TGraph_delayed_hc(int max_sec)$/;"	f	class:BrainPET_LMStreamManager
+get_TGraph_prompts_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ TGraph* BrainPET_LMStreamManager::get_TGraph_prompts_hc(int max_sec)$/;"	f	class:BrainPET_LMStreamManager
+get_angular_binsize	cpp_code/PRESTO/MRPET_dump.cpp	/^ float MRPET_dump::get_angular_binsize()$/;"	f	class:MRPET_dump
+get_binsize	cpp_code/PRESTO/MRPET_dump.cpp	/^ float MRPET_dump::get_binsize(){$/;"	f	class:MRPET_dump
+get_branching_fraction	cpp_code/PRESTO/IsotopePET.cpp	/^ float IsotopePET::get_branching_fraction(void)$/;"	f	class:IsotopePET
+get_cfd_countrate_for_second	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ unsigned long int *BrainPET_LMStreamManager::get_cfd_countrate_for_second(int second){$/;"	f	class:BrainPET_LMStreamManager
+get_count_sum	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ double BrainPET_LORfileData::get_count_sum(void)$/;"	f	class:BrainPET_LORfileData
+get_crystalID_on_ring	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_crystalID_on_ring(crystal_pos_typ &crystal_pos)$/;"	f	class:BrainPETbasics_ABC
+get_crystalID_on_ring	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_crystalID_on_ring(int ihead, int itransaxial)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_address	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ crystal_pos_typ BrainPETbasics_ABC::get_crystal_address(int index)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_address_typII	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ crystal_pos_typII BrainPETbasics_ABC::get_crystal_address_typII(int index)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_combis_for_modulpair	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::get_crystal_combis_for_modulpair(int impair, int* ic1, int *ic2)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_index	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_crystal_index(crystal_pos_typ &crystal_pos)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_index	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_crystal_index(int imod, int ix, int iy)$/;"	f	class:BrainPETbasics_ABC
+get_crystal_position	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::get_crystal_position(int block_x, int crystal, float pos[3])$/;"	f	class:MRPET_dump
+get_data_pointer_float	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ float* BrainPET_LORfileData::get_data_pointer_float(int &size){$/;"	f	class:BrainPET_LORfileData
+get_data_pointer_int	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ short int* BrainPET_LORfileData::get_data_pointer_int(int &size){$/;"	f	class:BrainPET_LORfileData
+get_decay_correction_factor	cpp_code/PRESTO/IsotopePET.cpp	/^ double IsotopePET::get_decay_correction_factor(int istart_time_sec, int istop_time_sec)$/;"	f	class:IsotopePET
+get_end_time	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ unsigned int BrainPET_LMStreamManager::get_end_time(){$/;"	f	class:BrainPET_LMStreamManager
+get_event_from_address	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^float BrainPET_Sinograms::get_event_from_address(int addr){$/;"	f	class:BrainPET_Sinograms
+get_frame_length	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ unsigned int BrainPET_LMStreamManager::get_frame_length(){$/;"	f	class:BrainPET_LMStreamManager
+get_gaps_sino	Sino_manipulation.C	/^void get_gaps_sino(string path_sino_with_gap, string path_saved_sino,float set_value=1)$/;"	f
+get_halflife_time	cpp_code/PRESTO/IsotopePET.cpp	/^ float IsotopePET::get_halflife_time(void)$/;"	f	class:IsotopePET
+get_handle_flat_float	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^float* BrainPET_Sinograms::get_handle_flat_float(int &nfloats)$/;"	f	class:BrainPET_Sinograms
+get_histgram_from_img	mcs_sss_img_plot.C	/^float get_histgram_from_img(string path_image,TH2F *h2,float suv_factor=1,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+get_hp_lookup	cpp_code/PRESTO/MRPET_dump.cpp	/^ short int MRPET_dump::get_hp_lookup(int headA, int headB){$/;"	f	class:MRPET_dump
+get_image_data_for_root	save_histograms_to_root.C	/^void get_image_data_for_root(string path_image_data,float* image_data,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+get_info	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::get_info(){$/;"	f	class:BrainPET_LMStreamManager
+get_info	cpp_code/PRESTO/IsotopePET.cpp	/^ void IsotopePET::get_info(void)$/;"	f	class:IsotopePET
+get_isotope	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ Isotope* BrainPET_LMStreamManager::get_isotope(){$/;"	f	class:BrainPET_LMStreamManager
+get_isotope_name	cpp_code/PRESTO/IsotopePET.cpp	/^ string IsotopePET::get_isotope_name(void)$/;"	f	class:IsotopePET
+get_listmode_filenames	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ string* BrainPET_LMStreamManager::get_listmode_filenames(int &n_lst_files){$/;"	f	class:BrainPET_LMStreamManager
+get_lor_data	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ float BrainPET_LORfileData::get_lor_data(int addr){$/;"	f	class:BrainPET_LORfileData
+get_max_ringdiff	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_max_ringdiff(){$/;"	f	class:MRPET_dump
+get_min_max_values	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::get_min_max_values(float &min, float &max)$/;"	f	class:BrainPET_LORfileData
+get_min_max_values	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::get_min_max_values(double &min, double &max)$/;"	f	class:BrainPET_Sinograms
+get_mod_nx	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_mod_nx(){$/;"	f	class:MRPET_dump
+get_mod_ny	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_mod_ny(){$/;"	f	class:MRPET_dump
+get_modul_pairID	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_modul_pairID(int imodA, int imodB)$/;"	f	class:BrainPETbasics_ABC
+get_modul_pair_LOR_value	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ float BrainPET_LORfileData::get_modul_pair_LOR_value(int imodul_pair, int ilor)$/;"	f	class:BrainPET_LORfileData
+get_modul_pair_data_float	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ float* BrainPET_LORfileData::get_modul_pair_data_float(int imodul_pair)$/;"	f	class:BrainPET_LORfileData
+get_modul_pair_data_short	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ short int* BrainPET_LORfileData::get_modul_pair_data_short(int imodul_pair)$/;"	f	class:BrainPET_LORfileData
+get_n_Events	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^double BrainPET_Sinograms::get_n_Events(){$/;"	f	class:BrainPET_Sinograms
+get_n_mpairs	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_n_mpairs(){$/;"	f	class:MRPET_dump
+get_n_planes	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^int BrainPET_Sinograms::get_n_planes(){$/;"	f	class:BrainPET_Sinograms
+get_n_planes	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_n_planes(){$/;"	f	class:MRPET_dump
+get_n_projs	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^int BrainPET_Sinograms::get_n_projs(){$/;"	f	class:BrainPET_Sinograms
+get_n_projs	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_n_projs(){$/;"	f	class:MRPET_dump
+get_n_views	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^int BrainPET_Sinograms::get_n_views(){$/;"	f	class:BrainPET_Sinograms
+get_n_views	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_n_views(){$/;"	f	class:MRPET_dump
+get_nblocks_per_head	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_nblocks_per_head(void)$/;"	f	class:BrainPETbasics_ABC
+get_nrystals_per_block_axial	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_nrystals_per_block_axial(void)$/;"	f	class:BrainPETbasics_ABC
+get_nrystals_per_block_transaxial	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_nrystals_per_block_transaxial(void)$/;"	f	class:BrainPETbasics_ABC
+get_number_of_heads	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_number_of_heads(void)$/;"	f	class:BrainPETbasics_ABC
+get_number_of_sinos_siemens	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_number_of_sinos_siemens(void)$/;"	f	class:MRPET_dump
+get_number_of_trigger_events	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ int BrainPET_LMStreamManager::get_number_of_trigger_events(void)$/;"	f	class:BrainPET_LMStreamManager
+get_plane	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^R_BrainPET_SinogramData* BrainPET_Sinograms::get_plane(int planeNumber){$/;"	f	class:BrainPET_Sinograms
+get_rc_single_sphere	img_voi_ave_std_calc_310.C	/^void get_rc_single_sphere(string path_img_data, string path_img_voi, string saved_data_path ,string sphere_name )$/;"	f
+get_rc_single_sphere	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void get_rc_single_sphere(string path_img_data, string path_img_voi, string saved_data_path ,string sphere_name )$/;"	f
+get_ringID	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_ringID(crystal_pos_typ &crystal_pos)$/;"	f	class:BrainPETbasics_ABC
+get_run_id	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ string BrainPET_LMStreamManager::get_run_id(){$/;"	f	class:BrainPET_LMStreamManager
+get_seg_info	Sino_manipulation.C	/^void get_seg_info(int planeNumber, int &segment, int &z_value, $/;"	f
+get_seg_info	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::get_seg_info(int planeNumber, int &segment, int &z_value, $/;"	f	class:MRPET_dump
+get_sequential_data_sizes	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::get_sequential_data_sizes(int &nblocks, int &nblock_size)$/;"	f	class:BrainPETbasics_ABC
+get_sino_matrix	compare_MCS_SSS_sino_matrix.C	/^void get_sino_matrix(float* sino_data, TMatrix* mat,int dimx=256, int dimy=192, int dimz=1399,int row=256, int column=192)$/;"	f
+get_sino_matrix	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void get_sino_matrix(float* sino_data, TMatrix* mat,int dimx=256, int dimy=192, int dimz=1399,int row=256, int column=192)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_prompt_sino_radial.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_matrix.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_radial.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_radial_mult_run.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_radial_seg_0.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_gaps_ratio	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void get_sino_radial_gaps_ratio(float* sino_gaps_bad_plane_cor, double* radial_gap_ratio,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_prompt_sino_radial.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_matrix.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_radial.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_radial_mult_run.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_radial_seg_0.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro	read_sino.C	/^void get_sino_radial_pro(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+get_sino_radial_pro_seg_0	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void get_sino_radial_pro_seg_0(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=153)$/;"	f
+get_sino_radial_pro_seg_0	compare_MCS_SSS_sino_radial_mult_run.C	/^void get_sino_radial_pro_seg_0(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=153)$/;"	f
+get_sino_radial_pro_seg_0	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void get_sino_radial_pro_seg_0(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=153)$/;"	f
+get_sino_radial_pro_seg_0	compare_MCS_SSS_sino_radial_seg_0.C	/^void get_sino_radial_pro_seg_0(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=153)$/;"	f
+get_sino_radial_pro_seg_0	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void get_sino_radial_pro_seg_0(float* sino_data, double* radial_sino,int dimx=256, int dimy=192, int dimz=153)$/;"	f
+get_span	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::get_span(){$/;"	f	class:MRPET_dump
+get_start_time	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ unsigned int BrainPET_LMStreamManager::get_start_time(){$/;"	f	class:BrainPET_LMStreamManager
+get_string_count_diff	compare_MCS_SSS_prompt_sino_axial.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_prompt_sino_radial.C	/^string get_string_count_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^string get_string_count_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_axial.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_axial_multi_run.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_axial_seg_0.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_matrix.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_matrix_multi_runs.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_radial.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_radial_mult_run.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_radial_seg_0.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	draw_ofov_scatter.C	/^string get_string_count_diff(TVector* array_events_per_z_ofov,TVector* array_events_per_z_total)$/;"	f
+get_string_count_diff	draw_ofov_scatter.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_diff	write_array_to_root.C	/^string get_string_count_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_prompt_sino_axial.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_prompt_sino_radial.C	/^string get_string_count_max_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^string get_string_count_max_diff(float* array_events_radial_mcs,float* array_events_radial_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_axial.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_axial_multi_run.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_axial_seg_0.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_matrix.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_matrix_multi_runs.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_radial.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_radial_mult_run.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_radial_seg_0.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	draw_ofov_scatter.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_count_max_diff	write_array_to_root.C	/^string get_string_count_max_diff(float* array_events_per_z_mcs,float* array_events_per_z_sss,int array_size,int z_start,int z_end)$/;"	f
+get_string_total_counts	compare_MCS_SSS_prompt_sino_axial.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_prompt_sino_radial.C	/^string get_string_total_counts(float* array_events_radial,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^string get_string_total_counts(float* array_events_radial,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_axial.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_axial_multi_run.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_axial_seg_0.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_matrix.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_matrix_multi_runs.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_radial.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_radial_mult_run.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_radial_seg_0.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	draw_ofov_scatter.C	/^string get_string_total_counts(TVector* array_events_per_z)$/;"	f
+get_string_total_counts	draw_ofov_scatter.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_string_total_counts	write_array_to_root.C	/^string get_string_total_counts(float* array_events_per_z,int array_size)$/;"	f
+get_total_events_measured_data	Lor_to_sino.C	/^double get_total_events_measured_data(string path_sino_measured_prompt,string path_sino_measured_random,string path_sino_measured_norm)$/;"	f
+get_total_events_simu_data	Lor_to_sino.C	/^double get_total_events_simu_data(string path_sino_simu_true_plus_scatter)$/;"	f
+get_total_events_simu_data	Sino_manipulation.C	/^double get_total_events_simu_data(string path_sino_simu_true_plus_scatter)$/;"	f
+get_triggerevent_time	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ long long int BrainPET_LMStreamManager::get_triggerevent_time(int trig_number)$/;"	f	class:BrainPET_LMStreamManager
+get_triggerevent_time_sec	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ float BrainPET_LMStreamManager::get_triggerevent_time_sec(int trig_number)$/;"	f	class:BrainPET_LMStreamManager
+get_true_ringID	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_true_ringID(int iringID)$/;"	f	class:BrainPETbasics_ABC
+get_true_ring_diff	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::get_true_ring_diff(int iy1, int iy2)$/;"	f	class:BrainPETbasics_ABC
+get_vector_from_root	write_array_to_root.C	/^void get_vector_from_root(string path_root_file ,string vector_name,float* float_array)$/;"	f
+get_vector_from_tree	write_array_to_root.C	/^void get_vector_from_tree()$/;"	f
+graycode_sync_file	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ int BrainPET_LMStreamManager::graycode_sync_file(FILE *fptr){$/;"	f	class:BrainPET_LMStreamManager
+h	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  TH1F* h[10];$/;"	m	class:BrainPET_DetHitMap
+h2	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  TH2D* h2;$/;"	m	class:BrainPET_DetHitMap
+halflife_time	cpp_code/PRESTO/IsotopePET.hh	/^ float halflife_time;$/;"	m	class:IsotopePET
+halflifetime	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ float halflifetime;$/;"	m	class:BrainPET_LMStreamManager
+hp_list	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int *hp_list;$/;"	m	class:BrainPET_VarianceReduction
+hpair	cpp_code/PRESTO/MRPET_dump.hh	/^ short int *hpair;$/;"	m	class:MRPET_dump
+hpairs	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int *hpairs;$/;"	m	class:BrainPET_VarianceReduction
+hplookup	cpp_code/PRESTO/MRPET_dump.hh	/^ short int *hplookup;$/;"	m	class:MRPET_dump
+hpmap	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int *hpmap;$/;"	m	class:BrainPET_VarianceReduction
+hrates	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float *hrates;$/;"	m	class:BrainPET_VarianceReduction
+htr1	save_histograms_to_root.C	/^void htr1() {$/;"	f
+htr2	save_histograms_to_root.C	/^void htr2() {$/;"	f
+htr3	save_histograms_to_root.C	/^void htr3() {$/;"	f
+htr4	save_histograms_to_root.C	/^void htr4() {$/;"	f
+htw	save_histograms_to_root.C	/^void htw() {$/;"	f
+htw1	save_histograms_to_root.C	/^void htw1() {$/;"	f
+iax	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^     short int iax;$/;"	m	struct:modul_combi_decoder_lookup_typ
+iax	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ short int iax;$/;"	m	struct:BrainPETbasics_ABC::modul_combi_decoder_lookup_typ
+iay	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^     short int iay;  \/\/---0..71$/;"	m	struct:modul_combi_decoder_lookup_typ
+iay	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ short int iay; \/\/---0..71$/;"	m	struct:BrainPETbasics_ABC::modul_combi_decoder_lookup_typ
+iblock_size	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int iblock_size;$/;"	m	class:BrainPET_DetHitMap
+ibx	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^     short int ibx;$/;"	m	struct:modul_combi_decoder_lookup_typ
+ibx	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ short int ibx;$/;"	m	struct:BrainPETbasics_ABC::modul_combi_decoder_lookup_typ
+iby	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^     short int iby;  \/\/---0..71$/;"	m	struct:modul_combi_decoder_lookup_typ
+iby	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ short int iby; \/\/---0..71$/;"	m	struct:BrainPETbasics_ABC::modul_combi_decoder_lookup_typ
+icry1	convert_listmode_to_lor.C	/^  int icry1;$/;"	m	struct:__anon1	file:
+icry1	read_binary_data_to_root.C	/^  int icry1;$/;"	m	struct:__anon2	file:
+icry1_ofov_scatter_z_pos	convert_listmode_to_lor.C	/^  short int icry1_ofov_scatter_z_pos;$/;"	m	struct:__anon1	file:
+icry2	convert_listmode_to_lor.C	/^  int icry2;$/;"	m	struct:__anon1	file:
+icry2	read_binary_data_to_root.C	/^  int icry2;$/;"	m	struct:__anon2	file:
+icry2_ofov_scatter_z_pos	convert_listmode_to_lor.C	/^  short int icry2_ofov_scatter_z_pos;$/;"	m	struct:__anon1	file:
+icrystal_adr	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ crystal_pos_typ* icrystal_adr;$/;"	m	class:BrainPETbasics_ABC
+icrystal_adr_typII	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ crystal_pos_typII* icrystal_adr_typII; $/;"	m	class:BrainPETbasics_ABC
+ihead_size	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int ihead_size;$/;"	m	class:BrainPET_DetHitMap
+img_voi_ave_std_calc_304	img_voi_ave_std_calc_304.C	/^void img_voi_ave_std_calc_304()$/;"	f
+img_voi_ave_std_calc_310	img_voi_ave_std_calc_310.C	/^void img_voi_ave_std_calc_310()$/;"	f
+img_voi_ave_std_calc_310_simu_with_without_detec	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void img_voi_ave_std_calc_310_simu_with_without_detec()$/;"	f
+init	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::init(){$/;"	f	class:BrainPET_LMStreamManager
+init_hpair_data	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ void BrainPET_VarianceReduction::init_hpair_data(int fov)$/;"	f	class:BrainPET_VarianceReduction
+init_lor_info	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::init_lor_info(){$/;"	f	class:MRPET_dump
+init_mpair_data	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ void BrainPETbasics_ABC::init_mpair_data(void)$/;"	f	class:BrainPETbasics_ABC
+init_mpair_data	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::init_mpair_data()$/;"	f	class:MRPET_dump
+init_seginfo	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::init_seginfo(){$/;"	f	class:MRPET_dump
+int_vec_t	GATE_GGEMS_TOF_compare.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	Sino_manipulation.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_prompt_sino_axial.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_prompt_sino_radial.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_axial.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_axial_multi_run.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_axial_seg_0.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_matrix.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_matrix_multi_runs.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_radial.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_radial_mult_run.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_radial_seg_0.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	draw_ofov_scatter.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t	write_array_to_root.C	/^typedef std::vector<int> int_vec_t; $/;"	t	file:
+int_vec_t_2d	Sino_manipulation.C	/^typedef std::vector<std::vector<int>> int_vec_t_2d; $/;"	t	file:
+isotope	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ Isotope *isotope;$/;"	m	class:BrainPET_LMStreamManager
+isotope	cpp_code/PRESTO/IsotopePET.hh	/^ char isotope;$/;"	m	class:IsotopePET
+isotope_number	cpp_code/PRESTO/IsotopePET.hh	/^ int isotope_number;$/;"	m	class:IsotopePET
+lambda	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ float lambda;$/;"	m	class:BrainPET_LMStreamManager
+listmode_file_number	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int *listmode_file_number;$/;"	m	class:BrainPET_LMStreamManager
+listmode_file_pointer	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ long int *listmode_file_pointer;$/;"	m	class:BrainPET_LMStreamManager
+load_data	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::load_data(char* filename, bool expect_floats)$/;"	f	class:BrainPET_LORfileData
+load_from_stream	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::load_from_stream(StreamReader* stream)$/;"	f	class:BrainPET_QuickConverter
+load_from_stream	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::load_from_stream(StreamReader *stream){$/;"	f	class:BrainPET_Sinograms
+lookup_fast	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ int* lookup_fast;$/;"	m	class:BrainPET_QuickConverter
+main_1	Sino_manipulation.C	/^void main_1( )$/;"	f
+main_1	convert_listmode_to_lor.C	/^void main_1()$/;"	f
+main_2	Lor_to_sino.C	/^void main_2()$/;"	f
+main_2	Sino_manipulation.C	/^void main_2()$/;"	f
+main_2	convert_listmode_to_lor.C	/^void main_2()$/;"	f
+main_3	Sino_manipulation.C	/^void main_3()$/;"	f
+main_4	Sino_manipulation.C	/^void main_4()$/;"	f
+main_5	Sino_manipulation.C	/^void main_5()$/;"	f
+main_norm	Lor_to_sino.C	/^void main_norm()$/;"	f
+main_set_value	img_set_value.C	/^void main_set_value()$/;"	f
+make_slut	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::make_slut(){$/;"	f	class:MRPET_dump
+maxRingdiff	cpp_code/PRESTO/MRPET_dump.hh	/^ int maxRingdiff;$/;"	m	class:MRPET_dump
+max_angle_lut	cpp_code/PRESTO/MRPET_dump.hh	/^ float *max_angle_lut;$/;"	m	class:MRPET_dump
+maxrd	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int maxrd; $/;"	m	class:BrainPET_Sinograms
+maxrd	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int maxrd; \/\/---default ring differnce (if used)$/;"	m	class:BrainPETbasics_ABC
+maxseg	cpp_code/PRESTO/MRPET_dump.hh	/^ int maxseg; \/\/ $/;"	m	class:MRPET_dump
+mcs_num	compare_MCS_SSS_sino_matrix_multi_runs.C	/^const int mcs_num=5;$/;"	v
+mcs_num	compare_MCS_SSS_sino_radial_mult_run.C	/^const int mcs_num=2;$/;"	v
+mcs_num	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^const int mcs_num=4;$/;"	v
+mcs_num	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^const int mcs_num=3;$/;"	v
+mcs_sss_img_plot	mcs_sss_img_plot.C	/^void mcs_sss_img_plot()$/;"	f
+mean_angle_lut	cpp_code/PRESTO/MRPET_dump.hh	/^ float *mean_angle_lut;$/;"	m	class:MRPET_dump
+message_to_shared_mem	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::message_to_shared_mem(string message)$/;"	f	class:BrainPET_LMStreamManager
+min_angle_lut	cpp_code/PRESTO/MRPET_dump.hh	/^ float *min_angle_lut;$/;"	m	class:MRPET_dump
+mod_fov	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int mod_fov; \/\/---fan size of opposite moduls$/;"	m	class:BrainPETbasics_ABC
+mod_fov	cpp_code/PRESTO/MRPET_dump.hh	/^ int mod_fov;$/;"	m	class:MRPET_dump
+mod_nrings	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int mod_nrings; \/\/---number of blocks per modul$/;"	m	class:BrainPETbasics_ABC
+mod_nrings	cpp_code/PRESTO/MRPET_dump.hh	/^ int mod_nrings;$/;"	m	class:MRPET_dump
+mod_nx	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int mod_nx; \/\/---transaxial number of crystals per block$/;"	m	class:BrainPETbasics_ABC
+mod_nx	cpp_code/PRESTO/MRPET_dump.hh	/^ int mod_nx;$/;"	m	class:MRPET_dump
+mod_ny	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int mod_ny; \/\/---axial number of crystals (6x12=72) for 6 blocks 12 crystals each$/;"	m	class:BrainPETbasics_ABC
+mod_ny	cpp_code/PRESTO/MRPET_dump.hh	/^ int mod_ny;$/;"	m	class:MRPET_dump
+mod_pairID	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ Array2D_NxM<int>* mod_pairID;$/;"	m	class:BrainPETbasics_ABC
+modul_combi_decoder_lookup_typ	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^   struct modul_combi_decoder_lookup_typ$/;"	s
+modul_combi_decoder_lookup_typ	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ struct modul_combi_decoder_lookup_typ$/;"	s	class:BrainPETbasics_ABC
+mpair_a	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int* mpair_a; \/\/---modul number A of modul pair$/;"	m	class:BrainPETbasics_ABC
+mpair_a	cpp_code/PRESTO/MRPET_dump.hh	/^ char *mpair_a;$/;"	m	class:MRPET_dump
+mpair_b	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int* mpair_b; \/\/---modul number B of modul pair$/;"	m	class:BrainPETbasics_ABC
+mpair_b	cpp_code/PRESTO/MRPET_dump.hh	/^ char *mpair_b;$/;"	m	class:MRPET_dump
+mpair_data	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ float** mpair_data;$/;"	m	class:BrainPET_LORfileData
+mpair_data_short	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ short int** mpair_data_short;$/;"	m	class:BrainPET_LORfileData
+mpair_lookup	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::mpair_lookup(int &amod, int &bmod, int index){$/;"	f	class:MRPET_dump
+mpair_lookup2	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::mpair_lookup2(int amod, int bmod){$/;"	f	class:MRPET_dump
+mpsize	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int mpsize; \/\/---modul pair size$/;"	m	class:BrainPETbasics_ABC
+mrpet_dump	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ MRPET_dump *mrpet_dump;$/;"	m	class:BrainPET_LMStreamManager
+multiply_by_sinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::multiply_by_sinogram(BrainPET_Sinograms *sinogram){$/;"	f	class:BrainPET_Sinograms
+multiply_data_by	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::multiply_data_by(BrainPET_LORfileData* lordata)$/;"	f	class:BrainPET_LORfileData
+nEvents_all	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    double nEvents_all;$/;"	m	class:BrainPET_Sinograms
+nFiles_lst	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ int nFiles_lst;$/;"	m	class:BrainPET_LMStreamManager
+nPlanes	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int nPlanes;$/;"	m	class:BrainPET_Sinograms
+nProjs	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int nProjs;$/;"	m	class:BrainPET_Sinograms
+nViews	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int nViews;$/;"	m	class:BrainPET_Sinograms
+n_delayeds_total	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned int n_delayeds_total;$/;"	m	class:BrainPET_LMStreamManager
+n_heads	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int n_heads;$/;"	m	class:BrainPET_VarianceReduction
+n_hpairs	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int n_hpairs;$/;"	m	class:BrainPET_VarianceReduction
+n_mods	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int n_mods; \/\/---number of moduls $/;"	m	class:BrainPETbasics_ABC
+n_mods	cpp_code/PRESTO/MRPET_dump.hh	/^ int n_mods;$/;"	m	class:MRPET_dump
+n_mpair_size	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ int n_mpair_size;$/;"	m	class:BrainPET_LORfileData
+n_mpairs	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ int n_mpairs;$/;"	m	class:BrainPET_LORfileData
+n_mpairs	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int n_mpairs; \/\/--- number of modul pairs$/;"	m	class:BrainPETbasics_ABC
+n_mpairs	cpp_code/PRESTO/MRPET_dump.hh	/^ int n_mpairs;$/;"	m	class:MRPET_dump
+n_prompts_total	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned int n_prompts_total;$/;"	m	class:BrainPET_LMStreamManager
+name	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  char name[200];$/;"	m	class:BrainPET_DetHitMap
+name	cpp_code/PRESTO/IsotopePET.hh	/^ string name;$/;"	m	class:IsotopePET
+naxial_block	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int naxial_block;$/;"	m	class:BrainPET_DetHitMap
+nblocks_per_head	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int nblocks_per_head;$/;"	m	class:BrainPET_DetHitMap
+ncrystals	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int ncrystals;$/;"	m	class:BrainPET_DetHitMap
+ncrystals	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int ncrystals; \/\/---number of crystals (total)$/;"	m	class:BrainPETbasics_ABC
+ncrystals	cpp_code/PRESTO/MRPET_dump.hh	/^ int ncrystals; $/;"	m	class:MRPET_dump
+ncrystals_per_ring	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int ncrystals_per_ring;\/\/---number of crystals per ring$/;"	m	class:BrainPETbasics_ABC
+ncrystals_per_ring	cpp_code/PRESTO/MRPET_dump.hh	/^ int ncrystals_per_ring;$/;"	m	class:MRPET_dump
+nheads	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int nheads;$/;"	m	class:BrainPET_DetHitMap
+nheads	cpp_code/PRESTO/MRPET_dump.hh	/^ int nheads;$/;"	m	class:MRPET_dump
+nlors	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ int nlors;$/;"	m	class:BrainPET_QuickConverter
+norm_correct_simu_sino	Lor_to_sino.C	/^void norm_correct_simu_sino(string path_input_sino,string path_norm_simu_sino,string path_saved_norm_sino)$/;"	f
+normlized_sino	Sino_manipulation.C	/^void normlized_sino( string input_sino,string saved_sino)$/;"	f
+nplanes	cpp_code/PRESTO/MRPET_dump.hh	/^ int nplanes;$/;"	m	class:MRPET_dump
+nprojs	cpp_code/PRESTO/MRPET_dump.hh	/^ int nprojs;$/;"	m	class:MRPET_dump
+nrings	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int nrings; \/\/---number of rings (including gaps)$/;"	m	class:BrainPETbasics_ABC
+nrings	cpp_code/PRESTO/MRPET_dump.hh	/^ int nrings; \/\/ number of detector rings$/;"	m	class:MRPET_dump
+nsegs	cpp_code/PRESTO/MRPET_dump.hh	/^ int nsegs; \/\/ number of segments (always odd)$/;"	m	class:MRPET_dump
+nsino_bins	cpp_code/PRESTO/BrainPET_QuickConverter.hh	/^ int nsino_bins;$/;"	m	class:BrainPET_QuickConverter
+ntot_channels	cpp_code/PRESTO/BrainPET_LORfileData.hh	/^ int ntot_channels;$/;"	m	class:BrainPET_LORfileData
+ntrans_block	cpp_code/PRESTO/BrainPET_DetHitMap.hh	/^  int ntrans_block;$/;"	m	class:BrainPET_DetHitMap
+ntuple_draw	draw_root_data.C	/^void ntuple_draw()$/;"	f
+number_of_crystals	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ int BrainPETbasics_ABC::number_of_crystals(void)$/;"	f	class:BrainPETbasics_ABC
+nviews	cpp_code/PRESTO/MRPET_dump.hh	/^ int nviews; $/;"	m	class:MRPET_dump
+off_rates	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float *off_rates;$/;"	m	class:BrainPET_VarianceReduction
+phy_to_pro	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::phy_to_pro( float deta[3], float detb[3], float projection[4])$/;"	f	class:MRPET_dump
+plane_sep	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    float plane_sep;$/;"	m	class:BrainPET_Sinograms
+plane_sep	cpp_code/PRESTO/MRPET_dump.hh	/^ double plane_sep;$/;"	m	class:MRPET_dump
+pos	cpp_code/PRESTO/MRPET_dump.hh	/^ MMatrix *pos;$/;"	m	class:MRPET_dump
+pos_data	cpp_code/PRESTO/MRPET_dump.hh	/^ float *pos_data;$/;"	m	class:MRPET_dump
+preprocess_lst	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::preprocess_lst(string listmode_path,$/;"	f	class:BrainPET_LMStreamManager
+presto_basic_sino_operation	presto_basic_sino_operation.C	/^void presto_basic_sino_operation()$/;"	f
+pro_to_addr	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::pro_to_addr( float pro[4], int &bin, int &view, int &plane, int &segment)$/;"	f	class:MRPET_dump
+pro_to_planenumber	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::pro_to_planenumber(float z, float tan_theta)$/;"	f	class:MRPET_dump
+processing_initialised	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ bool processing_initialised;$/;"	m	class:BrainPET_LMStreamManager
+proj_to_addr	cpp_code/PRESTO/MRPET_dump.cpp	/^ void MRPET_dump::proj_to_addr(int view, int proj, int plane, int &addr)$/;"	f	class:MRPET_dump
+prompts_hc	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ long int *prompts_hc; $/;"	m	class:BrainPET_LMStreamManager
+rc_effect_region	img_voi_ave_std_calc_310.C	/^void rc_effect_region()$/;"	f
+rc_real_region	img_voi_ave_std_calc_310.C	/^void rc_real_region()$/;"	f
+rc_real_region	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void rc_real_region()$/;"	f
+read_binary_data_to_root	read_binary_data_to_root.C	/^void read_binary_data_to_root()$/;"	f
+read_binary_data_to_root_tntuple	read_binary_data_to_root.C	/^void read_binary_data_to_root_tntuple( string binary_file_path,string saved_root_file_name,string ntuple_name,string ntuple_title,string var_list)$/;"	f
+read_binary_data_to_root_tree	read_binary_data_to_root.C	/^void read_binary_data_to_root_tree(string binary_file_path,string saved_root_file_name,string tree_tag,string tree_title)$/;"	f
+read_binary_data_to_root_tree_tof	read_binary_data_to_root.C	/^void read_binary_data_to_root_tree_tof(string binary_file_path,string saved_root_file_name,string tree_tag,string tree_title)$/;"	f
+read_flatSinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::read_flatSinogram(string filename, $/;"	f	class:BrainPET_Sinograms
+read_flatSinogram_from_stream	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::read_flatSinogram_from_stream(StreamReader *r_stream, $/;"	f	class:BrainPET_Sinograms
+read_from_stream	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ bool BrainPET_LMStreamManager::read_from_stream(StreamReader* stream){$/;"	f	class:BrainPET_LMStreamManager
+read_sino	read_sino.C	/^void read_sino()$/;"	f
+read_sino_flat	compare_MCS_SSS_prompt_sino_radial.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_matrix.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_radial.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_radial_mult_run.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_radial_seg_0.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void read_sino_flat(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+read_sino_flat_ma	read_sino.C	/^void read_sino_flat_ma(string path_sino, float* sino_data, int dimx=256, int dimy=192, int dimz=1399)$/;"	f
+remove_gap_sino_bad_lor	Sino_manipulation.C	/^void remove_gap_sino_bad_lor(string path_sino_gap_ori,string path_saved_sino_without_gap,float sino_value=2)$/;"	f
+reset	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::reset(){$/;"	f	class:BrainPET_LMStreamManager
+resetAllSinograms	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::resetAllSinograms(){$/;"	f	class:BrainPET_Sinograms
+rot	cpp_code/PRESTO/MRPET_dump.hh	/^ MMatrix *rot;$/;"	m	class:MRPET_dump
+save_1d_histograms_to_root	save_histograms_to_root.C	/^void save_1d_histograms_to_root(string path_saved_root_file,float *array_data,int array_size, string hist_name,string hist_title)$/;"	f
+save_1d_histograms_to_root	save_histograms_to_root.C	/^void save_1d_histograms_to_root(string path_saved_root_file,string vector_name, string hist_name,string hist_title)$/;"	f
+save_2d_histograms_from_img_to_root	save_histograms_to_root.C	/^void save_2d_histograms_from_img_to_root(string path_image_data,string path_saved_root_file,string hist_name,string hist_title,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+save_2d_histograms_from_matrix_to_root	save_histograms_to_root.C	/^void save_2d_histograms_from_matrix_to_root(string path_saved_root_file,string matrix_name,string hist_name,string hist_title,float spacing=1)$/;"	f
+save_2d_img_slic_to_matrix_to_root	save_histograms_to_root.C	/^void save_2d_img_slic_to_matrix_to_root(string path_image_data,string path_saved_root_file,string matrix_name,int z_slice=70,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+save_3d_histograms_from_img_to_root	save_histograms_to_root.C	/^void save_3d_histograms_from_img_to_root(string path_image_data,string path_saved_root_file,string hist_name,string hist_title,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+save_3d_img_to_tntuple_to_root	save_histograms_to_root.C	/^void save_3d_img_to_tntuple_to_root(string path_image_data,string path_saved_root_file,string ntuple_name,string ntuple_title,int dimx=256,int dimy=256,int dimz=153, float spacing=1.25)$/;"	f
+save_TH2_to_root_file	mcs_sss_img_plot.C	/^void save_TH2_to_root_file(TH2F *h2, string path_saved_root_file,string hist_name)$/;"	f
+save_all_branch_to_vector	draw_ofov_scatter.C	/^void save_all_branch_to_vector(string root_file_name_raw,string root_file_name_saved)$/;"	f
+save_all_branch_to_vector	read_binary_data_to_root.C	/^void save_all_branch_to_vector(string root_file_name)$/;"	f
+save_branch_to_vector	draw_ofov_scatter.C	/^void save_branch_to_vector(string root_file_name_raw,string root_file_name_saved,string tree_tag,string branch_name, string saved_vector_name, int vector_size,short int coin_type )$/;"	f
+save_branch_to_vector	read_binary_data_to_root.C	/^void save_branch_to_vector(string root_file_name,string tree_tag,string branch_name, string saved_vector_name, int vector_size,short int coin_type )$/;"	f
+save_canvas_to_root_file	GATE_GGEMS_TOF_compare.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_gate=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_prompt_sino_axial.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_prompt_sino_radial.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_axial.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_axial_multi_run.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_axial_seg_0.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_matrix.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_radial.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_radial_mult_run.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_radial_seg_0.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	draw_ofov_scatter.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_mcs=NULL, TGraph *gr_sss=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_canvas_to_root_file	mcs_sss_img_plot.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file)$/;"	f
+save_canvas_to_root_file	write_array_to_root.C	/^void save_canvas_to_root_file(TCanvas *c1, string path_saved_root_file,TGraph *gr_ofov_source=NULL, TGraph *gr_ifov_source_ofov_scat=NULL, TMultiGraph *mg=NULL)$/;"	f
+save_coincidences_lor	convert_listmode_to_lor.C	/^void save_coincidences_lor(float* lortrue)$/;"	f
+save_coincidences_lor	convert_listmode_to_lor.C	/^void save_coincidences_lor(string path_listmode,float* lortrue)$/;"	f
+save_data	img_voi_ave_std_calc_304.C	/^void save_data(string saved_data_path, float *array_voi_val,double* array_voi_ave, double* array_voi_std, double* array_voi_merge_ave, double* array_voi_merge_std, int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num) $/;"	f
+save_data	img_voi_ave_std_calc_310.C	/^void save_data(string saved_data_path, float *array_voi_val,int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num, string sphere_name) $/;"	f
+save_data	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void save_data(string saved_data_path, float *array_voi_val,int* pix_num_per_voi,float array_voi_res[][voi_plane_num], int voi_num_per_slice,int voi_plane_num, string sphere_name) $/;"	f
+save_histograms_to_root	save_histograms_to_root.C	/^void save_histograms_to_root()$/;"	f
+save_histograms_to_tree	save_histograms_to_root.C	/^void save_histograms_to_tree() {$/;"	f
+save_image	compare_MCS_SSS_prompt_sino_axial.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_prompt_sino_radial.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_axial.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_axial_multi_run.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_axial_seg_0.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_matrix.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_radial.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_radial_mult_run.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_radial_seg_0.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	draw_ofov_scatter.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	mcs_sss_img_plot.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_image	write_array_to_root.C	/^void save_image( TCanvas* can, string saved_img_path)$/;"	f
+save_sino_matrix_to_root	compare_MCS_SSS_sino_matrix.C	/^void save_sino_matrix_to_root(TMatrix *mat,string canvasTitle,string saved_root_path, int row=256, int column=192)$/;"	f
+save_sino_simu_true_plus_scatter	Lor_to_sino.C	/^void save_sino_simu_true_plus_scatter(string path_sino_simu_true,string path_sino_simu_scatter,string path_saved_sino_simu_true_plus_scatter)$/;"	f
+save_vector_to_root_file	mcs_sss_img_plot.C	/^void save_vector_to_root_file(TVector* my_vector, string path_saved_root_file,string vector_name)$/;"	f
+scale_by_value	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::scale_by_value(float value){$/;"	f	class:BrainPET_Sinograms
+scale_data	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::scale_data(float scale_factor)$/;"	f	class:BrainPET_LORfileData
+scale_radial_gaps	compare_MCS_SSS_prompt_sino_radial.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_matrix.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_radial.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_radial_mult_run.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_radial_seg_0.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_radial_gaps	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void scale_radial_gaps(double* radial_sino, double* radial_gap_ratio, int dimx=256)$/;"	f
+scale_two_hist	GATE_GGEMS_TOF_compare.C	/^void scale_two_hist(TH1F *my_hist_mcs,TH1F *my_hist_gate, int max_scaled)$/;"	f
+seg_z_to_plane_number	Sino_manipulation.C	/^int seg_z_to_plane_number(int seg, int z)$/;"	f
+seg_z_to_plane_number	cpp_code/PRESTO/MRPET_dump.cpp	/^ int MRPET_dump::seg_z_to_plane_number(int seg, int z){$/;"	f	class:MRPET_dump
+segment_struct	cpp_code/PRESTO/MRPET_dump.hh	/^ SinoSegmentStructure* segment_struct;$/;"	m	class:MRPET_dump
+segments_lut	cpp_code/PRESTO/MRPET_dump.hh	/^ int *segments_lut;$/;"	m	class:MRPET_dump
+segnums	cpp_code/PRESTO/MRPET_dump.hh	/^ int *segnums;$/;"	m	class:MRPET_dump
+segnz	cpp_code/PRESTO/MRPET_dump.hh	/^ int *segnz;$/;"	m	class:MRPET_dump
+segz0	cpp_code/PRESTO/MRPET_dump.hh	/^ int *segz0;$/;"	m	class:MRPET_dump
+segzoff	cpp_code/PRESTO/MRPET_dump.hh	/^ int *segzoff;$/;"	m	class:MRPET_dump
+setAllSinogramBins	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::setAllSinogramBins(float value){$/;"	f	class:BrainPET_Sinograms
+set_DWELL_threshold	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_DWELL_threshold(float threshold)$/;"	f	class:BrainPET_LORfileData
+set_TH2_attribute	save_histograms_to_root.C	/^void set_TH2_attribute(TCanvas *c1,TH2F *h2,string hist_name)$/;"	f
+set_TH3_attribute	save_histograms_to_root.C	/^void set_TH3_attribute(TCanvas *c1,TH3F *h3,string hist_name)$/;"	f
+set_all_channels	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_all_channels(float value)$/;"	f	class:BrainPET_LORfileData
+set_axis_range	draw_ofov_scatter.C	/^void set_axis_range(TMultiGraph *mg,int i_start=0, int i_end=200)$/;"	f
+set_bad_plane	sino_bad_planes_cor.C	/^void set_bad_plane(string path_input_sino,string path_bad_plane_sino, string path_saved_sino)$/;"	f
+set_event_at_address	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::set_event_at_address(int addr, float value){$/;"	f	class:BrainPET_Sinograms
+set_isotope	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::set_isotope(Isotope *isotope_x){$/;"	f	class:BrainPET_LMStreamManager
+set_isotope	cpp_code/PRESTO/IsotopePET.cpp	/^ bool IsotopePET::set_isotope(string isotope_x)$/;"	f	class:IsotopePET
+set_lor_data	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_lor_data(int addr, float value){$/;"	f	class:BrainPET_LORfileData
+set_modul_pair_LOR_value	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_modul_pair_LOR_value(int imodul_pair, int ilor, float data0)$/;"	f	class:BrainPET_LORfileData
+set_mrpet_dump	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_mrpet_dump(MRPET_dump *dump_x){$/;"	f	class:BrainPET_LORfileData
+set_norm_sino_gaps	Sino_manipulation.C	/^void set_norm_sino_gaps(string path_norm_sino_with_gap,string path_sino_gaps, string path_saved_sino_without_gap,float gap_value=0)$/;"	f
+set_single_plane_to_value	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::set_single_plane_to_value(int planenumber, float value){$/;"	f	class:BrainPET_Sinograms
+set_sino_value_except_gaps	Sino_manipulation.C	/^void set_sino_value_except_gaps(string path_sino_with_gap, string path_saved_sino,float set_value=1)$/;"	f
+set_title	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::set_title(string title0)$/;"	f	class:BrainPET_Sinograms
+set_value_above	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_value_above(float threshold, float replace_value){$/;"	f	class:BrainPET_LORfileData
+set_value_above	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::set_value_above(float threshold, float replace_value){$/;"	f	class:BrainPET_Sinograms
+set_value_below	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::set_value_below(float threshold, float replace_value){$/;"	f	class:BrainPET_LORfileData
+set_value_below	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::set_value_below(float threshold, float replace_value){$/;"	f	class:BrainPET_Sinograms
+sh_mem	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ SharedMem* sh_mem;$/;"	m	class:BrainPET_LMStreamManager
+showSinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::showSinogram(int plane){$/;"	f	class:BrainPET_Sinograms
+showSinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::showSinogram(int segment, int z){$/;"	f	class:BrainPET_Sinograms
+show_frequency_values	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::show_frequency_values(void)$/;"	f	class:BrainPET_LORfileData
+show_frequency_values	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::show_frequency_values()$/;"	f	class:BrainPET_Sinograms
+show_head_pair	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::show_head_pair(int h1, int h2){$/;"	f	class:BrainPET_LORfileData
+show_plane_sums	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::show_plane_sums()$/;"	f	class:BrainPET_Sinograms
+siemens_sss	siemens_sss.C	/^void siemens_sss()$/;"	f
+sino2LOR	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::sino2LOR(BrainPET_LORfileData *lor_data,$/;"	f	class:BrainPET_Sinograms
+sino_add_gaps	sino_add_gaps.C	/^void sino_add_gaps()$/;"	f
+sino_bad_planes_cor	sino_bad_planes_cor.C	/^void sino_bad_planes_cor()$/;"	f
+sino_divid	Sino_manipulation.C	/^void sino_divid(string path_sino_numerator , string path_sino_denominator, string path_saved_sino)$/;"	f
+sino_divid_presto	Sino_manipulation.C	/^void sino_divid_presto(string path_sino_numerator , string path_sino_denominator, string path_saved_sino)$/;"	f
+sino_get_total_events	Sino_manipulation.C	/^double sino_get_total_events(string path_sino)$/;"	f
+sinogram_flatformat	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    float *sinogram_flatformat;$/;"	m	class:BrainPET_Sinograms
+sinograms	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    R_BrainPET_SinogramData **sinograms;$/;"	m	class:BrainPET_Sinograms
+slut	cpp_code/PRESTO/MRPET_dump.hh	/^ int *slut;$/;"	m	class:MRPET_dump
+span	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int span;$/;"	m	class:BrainPET_Sinograms
+span	cpp_code/PRESTO/MRPET_dump.hh	/^ int span;$/;"	m	class:MRPET_dump
+srates	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float *srates;$/;"	m	class:BrainPET_VarianceReduction
+sss_310	siemens_sss.C	/^void sss_310()$/;"	f
+sss_81	siemens_sss.C	/^void sss_81()$/;"	f
+start_time	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ unsigned int start_time;$/;"	m	class:BrainPET_LMStreamManager
+store_as_LORfileData_float	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::store_as_LORfileData_float(char *fname, bool overwrite)$/;"	f	class:BrainPET_LORfileData
+store_as_LORfileData_short_int	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::store_as_LORfileData_short_int(char *fname, bool overwrite)$/;"	f	class:BrainPET_LORfileData
+store_lookup_table	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::store_lookup_table(string fname)$/;"	f	class:BrainPET_QuickConverter
+subtract	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::subtract(BrainPET_LORfileData* lordata)$/;"	f	class:BrainPET_LORfileData
+subtract_data_from	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::subtract_data_from(BrainPET_LORfileData* lordata)$/;"	f	class:BrainPET_LORfileData
+subtract_sinogram	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::subtract_sinogram(BrainPET_Sinograms *sinogram){$/;"	f	class:BrainPET_Sinograms
+supress_negative_values	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::supress_negative_values(void)$/;"	f	class:BrainPET_LORfileData
+tau	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ float tau;$/;"	m	class:BrainPET_VarianceReduction
+test	test.C	/^void test()$/;"	f
+time1	read_binary_data_to_root.C	/^  double time1;$/;"	m	struct:__anon2	file:
+time2	read_binary_data_to_root.C	/^  double time2;$/;"	m	struct:__anon2	file:
+title	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    string title;$/;"	m	class:BrainPET_Sinograms
+tree_draw	draw_root_data.C	/^void tree_draw()$/;"	f
+tree_draw	read_binary_data_to_root.C	/^void tree_draw(string saved_root_file_name,string tree_tag)$/;"	f
+trigger_manager	cpp_code/PRESTO/BrainPET_LMStreamManager.hh	/^ MR_TriggerManager *trigger_manager;$/;"	m	class:BrainPET_LMStreamManager
+true_ringID	cpp_code/PRESTO/BrainPETbasics_ABC.hh	/^ int* true_ringID;$/;"	m	class:BrainPETbasics_ABC
+type	convert_listmode_to_lor.C	/^  char type;$/;"	m	struct:__anon1	file:
+type	read_binary_data_to_root.C	/^  char type;$/;"	m	struct:__anon2	file:
+variance_reduction	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ int BrainPET_VarianceReduction::variance_reduction(BrainPET_DetHitMap *dcmap, BrainPET_LORfileData *lor_data)$/;"	f	class:BrainPET_VarianceReduction
+variance_reduction	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ int BrainPET_VarianceReduction::variance_reduction(char *dcmap_filename, BrainPET_LORfileData *lor_data)$/;"	f	class:BrainPET_VarianceReduction
+variance_reduction_kernel	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ int BrainPET_VarianceReduction::variance_reduction_kernel(BrainPET_LORfileData *lor_data){$/;"	f	class:BrainPET_VarianceReduction
+vec	cpp_code/PRESTO/MRPET_dump.hh	/^ MMatrix *vec; $/;"	m	class:MRPET_dump
+vec_data	cpp_code/PRESTO/MRPET_dump.hh	/^ float *vec_data;$/;"	m	class:MRPET_dump
+verbose	cpp_code/PRESTO/BrainPET_Sinograms.h	/^    int verbose;$/;"	m	class:BrainPET_Sinograms
+verbose	cpp_code/PRESTO/BrainPET_VarianceReduction.hh	/^ int verbose;$/;"	m	class:BrainPET_VarianceReduction
+verbose	cpp_code/PRESTO/IsotopePET.hh	/^ int verbose;$/;"	m	class:IsotopePET
+verbose	cpp_code/PRESTO/MRPET_dump.hh	/^ int verbose;$/;"	m	class:MRPET_dump
+voi_num_per_slice	img_voi_ave_std_calc_304.C	/^const int voi_num_per_slice=12;$/;"	v
+voi_num_per_slice	img_voi_ave_std_calc_310.C	/^const int voi_num_per_slice=4;$/;"	v
+voi_num_per_slice	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^const int voi_num_per_slice=4;$/;"	v
+voi_plane_num	img_voi_ave_std_calc_304.C	/^const int voi_plane_num=90; $/;"	v
+voi_plane_num	img_voi_ave_std_calc_310.C	/^const int voi_plane_num=5; $/;"	v
+voi_plane_num	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^const int voi_plane_num=5; $/;"	v
+write_2d_array_to_root	img_voi_ave_std_calc_304.C	/^void write_2d_array_to_root(string path_root_file, TMatrix* mat, string mat_name, int row, int column)$/;"	f
+write_2d_array_to_root	img_voi_ave_std_calc_310.C	/^void write_2d_array_to_root(string path_root_file, TMatrix* mat, string mat_name, int row, int column)$/;"	f
+write_2d_array_to_root	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void write_2d_array_to_root(string path_root_file, TMatrix* mat, string mat_name, int row, int column)$/;"	f
+write_2d_matrix_to_root	write_array_to_root.C	/^void write_2d_matrix_to_root()$/;"	f
+write_2d_matrix_to_root	write_array_to_root.C	/^void write_2d_matrix_to_root(string path_root_file,string root_mem_name,TMatrix* mat,int row,int column )$/;"	f
+write_array_to_root	write_array_to_root.C	/^void write_array_to_root()$/;"	f
+write_flat_sinograms	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::write_flat_sinograms(StreamWriter *stream,$/;"	f	class:BrainPET_Sinograms
+write_flat_sinograms	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::write_flat_sinograms(string filename,$/;"	f	class:BrainPET_Sinograms
+write_into_stream	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ void BrainPET_LMStreamManager::write_into_stream(StreamWriter* stream){$/;"	f	class:BrainPET_LMStreamManager
+write_into_stream	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ void BrainPET_LORfileData::write_into_stream(StreamWriter* stream)$/;"	f	class:BrainPET_LORfileData
+write_into_stream	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ void BrainPET_QuickConverter::write_into_stream(StreamWriter* stream)$/;"	f	class:BrainPET_QuickConverter
+write_into_stream	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^void BrainPET_Sinograms::write_into_stream(StreamWriter *stream){$/;"	f	class:BrainPET_Sinograms
+write_vector_to_root	GATE_GGEMS_TOF_compare.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_save ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_prompt_sino_axial.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_prompt_sino_radial.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_axial.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_axial_multi_run.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_axial_seg_0.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_matrix.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_radial.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_radial_mult_run.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_radial_seg_0.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_radial ,string saved_vector_name)$/;"	f
+write_vector_to_root	draw_ofov_scatter.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_root	img_voi_ave_std_calc_304.C	/^void write_vector_to_root(string path_root_file, float* array_data, string vec_name, int array_size)$/;"	f
+write_vector_to_root	img_voi_ave_std_calc_310.C	/^void write_vector_to_root(string path_root_file, float* array_data, string vec_name, int array_size)$/;"	f
+write_vector_to_root	img_voi_ave_std_calc_310_simu_with_without_detec.C	/^void write_vector_to_root(string path_root_file, float* array_data, string vec_name, int array_size)$/;"	f
+write_vector_to_root	write_array_to_root.C	/^void write_vector_to_root()$/;"	f
+write_vector_to_root	write_array_to_root.C	/^void write_vector_to_root(string path_root_file,float_vec_t vector_events_per_z ,string saved_vector_name)$/;"	f
+write_vector_to_text	compare_MCS_SSS_prompt_sino_axial.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_prompt_sino_radial.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_prompt_sino_radial_seg_0.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_axial.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_axial_multi_run.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_axial_seg_0.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_matrix.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_matrix_multi_runs.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_radial.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_radial_mult_run.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_radial_mult_run_matrix.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_radial_seg_0.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	compare_MCS_SSS_sino_radial_single_multi_scat.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_radial_mcs)$/;"	f
+write_vector_to_text	draw_ofov_scatter.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_text	write_array_to_root.C	/^void write_vector_to_text(string saved_path_data, float_vec_t vector_events_per_z_mcs)$/;"	f
+write_vector_to_tree	write_array_to_root.C	/^void write_vector_to_tree()$/;"	f
+z_val_lut	cpp_code/PRESTO/MRPET_dump.hh	/^ int *z_val_lut;$/;"	m	class:MRPET_dump
+~BrainPET_LMStreamManager	cpp_code/PRESTO/BrainPET_LMStreamManager.cpp	/^ BrainPET_LMStreamManager::~BrainPET_LMStreamManager(){  $/;"	f	class:BrainPET_LMStreamManager
+~BrainPET_LORfileData	cpp_code/PRESTO/BrainPET_LORfileData.cpp	/^ BrainPET_LORfileData::~BrainPET_LORfileData(void)$/;"	f	class:BrainPET_LORfileData
+~BrainPET_QuickConverter	cpp_code/PRESTO/BrainPET_QuickConverter.cpp	/^ BrainPET_QuickConverter::~BrainPET_QuickConverter(void)$/;"	f	class:BrainPET_QuickConverter
+~BrainPET_Sinograms	cpp_code/PRESTO/BrainPET_Sinograms.cpp	/^BrainPET_Sinograms::~BrainPET_Sinograms(){$/;"	f	class:BrainPET_Sinograms
+~BrainPET_VarianceReduction	cpp_code/PRESTO/BrainPET_VarianceReduction.cpp	/^ BrainPET_VarianceReduction::~BrainPET_VarianceReduction(){$/;"	f	class:BrainPET_VarianceReduction
+~BrainPETbasics_ABC	cpp_code/PRESTO/BrainPETbasics_ABC.cpp	/^ BrainPETbasics_ABC::~BrainPETbasics_ABC(void)$/;"	f	class:BrainPETbasics_ABC
+~IsotopePET	cpp_code/PRESTO/IsotopePET.cpp	/^ IsotopePET::~IsotopePET()$/;"	f	class:IsotopePET
+~MRPET_dump	cpp_code/PRESTO/MRPET_dump.cpp	/^ MRPET_dump::~MRPET_dump(){$/;"	f	class:MRPET_dump
