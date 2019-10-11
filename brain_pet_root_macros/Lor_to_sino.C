@@ -38,7 +38,7 @@
 void Lor_to_sino()
 {
 
-  gROOT->Reset();
+       gROOT->Reset();
   //main_1();
   main_2();
 
