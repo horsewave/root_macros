@@ -5,11 +5,11 @@
  * Input: 
  * Procedure:
  *
-            ////--------1: merge two lor data----------------------------------- 
-            /// --------2: convert lor data to sino data without norm----------------------------
-            ////--------3: norm correction to all the simu sinos------------------------
-            ////--------4: scaling the simu scatter---------------------------------
- 
+////--------1: merge two lor data----------------------------------- 
+/// --------2: convert lor data to sino data without norm----------------------------
+////--------3: norm correction to all the simu sinos------------------------
+////--------4: scaling the simu scatter---------------------------------
+
  * Functions:
  *
  *         1: void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sino_measured_prompt,string path_sino_measured_random,string path_sino_measured_norm,int gpu_num=2, bool is_float_lor=true)
@@ -30,8 +30,9 @@
  */
 
 
-
-
+#include <string> 
+#include <stdlib.h> 
+using namespace std;
 
 //void Lor_to_sino(string base_folder_lor,string patient_name, int gpu_num )
 //void Lor_to_sino(string base_folder_lor,string patient_name,int gpu_num)
@@ -44,7 +45,7 @@ void Lor_to_sino()
 
   //main_norm();
 
-   gApplication->Terminate();
+  gApplication->Terminate();
 
 }
 
@@ -55,7 +56,7 @@ void main_norm()
   string sino_after_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/sphere_phantom_simu/1_fov_305/scatterMCS/merged_with_detector_modual/true_normed.fs";
   string sino_norm= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/commonFiles/norm_files/BrainPET_cylinder_norm_12cm_gpu_wdwellcorr.fs";
 
-norm_correct_simu_sino(sino_before_norm,sino_norm,sino_after_norm);
+  norm_correct_simu_sino(sino_before_norm,sino_norm,sino_after_norm);
 
 
 
@@ -70,24 +71,34 @@ norm_correct_simu_sino(sino_before_norm,sino_norm,sino_after_norm);
 void main_2()
 
 {
-    // saved sino data
-  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/" ;
-  
-  string path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_true.flor";
-  string path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_true.fs";
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-   path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.flor";
-  path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.fs";
+  // saved sino data
+  // string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/" ;
+  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-" ;
+  int file_num = 20;
+  for (i = 5; i < file_num; ++i) {
+    stringstream ss;
+    ss << i;
+    string str_i = ss.str();
+    input_folder =  input_folder + str_i + "/";
 
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
+    string path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_true.flor";
+    string path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_true.fs";
+    convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-  
+    path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.flor";
+    path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_scatter.fs";
+
+    convert_lor_to_sino(path_lor_data,path_saved_sino);
+  }
+
+
+
 
 
 
   return;
-  
+
 }
 
 
@@ -108,7 +119,7 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
   string part_name_scatter="scatter";
   string part_name_scatter_ofov="scatter_ofov";
   string part_name_true_plus_scatter="true_plus_scatter";
- string part_name_merged="merged";
+  string part_name_merged="merged";
 
   string part_name_normed="normed";
   string part_name_scaled="scaled";
@@ -122,69 +133,69 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
 
   ////---------1: merge two lor data----------------------------------- 
 
-   if(gpu_num==2)
+  if(gpu_num==2)
   {
 
-    
-  cout<<"------------1: start merge two lor data--------------"<<endl;
-  
-  string path_lor_true_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_true +suffix_lor;
-  string path_lor_scatter_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_scatter +suffix_lor; 
-  string path_lor_ofov_scatter_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_scatter_ofov +suffix_lor;
 
-  string path_lor_true_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_true +suffix_lor;
-  string path_lor_scatter_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_scatter +suffix_lor; 
-  string path_lor_ofov_scatter_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_scatter_ofov +suffix_lor;
+    cout<<"------------1: start merge two lor data--------------"<<endl;
 
+    string path_lor_true_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_true +suffix_lor;
+    string path_lor_scatter_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_scatter +suffix_lor; 
+    string path_lor_ofov_scatter_0=base_folder_lor+ patient_name+ "_"+ part_name_gpu_0 + "_"+ part_name_scatter_ofov +suffix_lor;
 
-  string merged_lor_true = base_folder_lor+ part_name_merged +"_" + part_name_true +suffix_lor;
-  string merged_lor_scatter = base_folder_lor+ part_name_merged +"_" + part_name_scatter+suffix_lor; 
-  string merged_lor_ofov_scatter = base_folder_lor+ part_name_merged +"_" + part_name_scatter_ofov+suffix_lor ;
+    string path_lor_true_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_true +suffix_lor;
+    string path_lor_scatter_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_scatter +suffix_lor; 
+    string path_lor_ofov_scatter_1=base_folder_lor+ patient_name+ "_"+ part_name_gpu_1 + "_"+ part_name_scatter_ofov +suffix_lor;
 
 
-  Merge_lordata(path_lor_true_0,path_lor_true_1,merged_lor_true);
-  Merge_lordata(path_lor_scatter_0,path_lor_scatter_1,merged_lor_scatter);
-   if(is_ofov_info)
-  {
-  Merge_lordata(path_lor_ofov_scatter_0,path_lor_ofov_scatter_1,merged_lor_ofov_scatter);
-
-  }
+    string merged_lor_true = base_folder_lor+ part_name_merged +"_" + part_name_true +suffix_lor;
+    string merged_lor_scatter = base_folder_lor+ part_name_merged +"_" + part_name_scatter+suffix_lor; 
+    string merged_lor_ofov_scatter = base_folder_lor+ part_name_merged +"_" + part_name_scatter_ofov+suffix_lor ;
 
 
- cout<<"------------1: finish merge two lor data--------------"<<endl;
+    Merge_lordata(path_lor_true_0,path_lor_true_1,merged_lor_true);
+    Merge_lordata(path_lor_scatter_0,path_lor_scatter_1,merged_lor_scatter);
+    if(is_ofov_info)
+    {
+      Merge_lordata(path_lor_ofov_scatter_0,path_lor_ofov_scatter_1,merged_lor_ofov_scatter);
+
+    }
 
 
-    
+    cout<<"------------1: finish merge two lor data--------------"<<endl;
+
+
+
 
   }
 
 
 
   // --------2: convert lor data to sino data without norm----------------------------
-  
+
   cout<<"------------2: start convert lor data to sino data without norm--------------"<<endl;
 
   if(gpu_num==2)
   {
     // //lor data
-  string path_lor_true =merged_lor_true ;
-  string path_lor_scatter = merged_lor_scatter ; 
-  string path_lor_ofov_scatter =  merged_lor_ofov_scatter;
+    string path_lor_true =merged_lor_true ;
+    string path_lor_scatter = merged_lor_scatter ; 
+    string path_lor_ofov_scatter =  merged_lor_ofov_scatter;
 
 
   }
   else if(gpu_num==1)
   {
     // //lor data
-  string path_lor_true=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_true +suffix_lor;
+    string path_lor_true=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_true +suffix_lor;
 
-  string path_lor_scatter=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_scatter +suffix_lor; 
-  string path_lor_ofov_scatter=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_scatter_ofov +suffix_lor;
+    string path_lor_scatter=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_scatter +suffix_lor; 
+    string path_lor_ofov_scatter=base_folder_lor+ patient_name+ "_"+ part_name_gpu + "_"+ part_name_scatter_ofov +suffix_lor;
 
   }
 
 
-    // saved sino data
+  // saved sino data
   string path_saved_sino_true=base_folder_lor+ part_name_true +suffix_sino;
   string path_saved_sino_scatter=base_folder_lor+ part_name_scatter +suffix_sino;
 
@@ -199,7 +210,7 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
   string path_saved_sino=path_saved_sino_true;
   convert_lor_to_sino(path_lor_data,path_saved_sino);
 
-   //  2.2 scatter lor without norm
+  //  2.2 scatter lor without norm
   path_lor_data=path_lor_scatter;
   path_saved_sino=path_saved_sino_scatter;
   convert_lor_to_sino(path_lor_data,path_saved_sino);
@@ -207,11 +218,11 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
   //  2.3 ofov lor without norm
   path_lor_data=path_lor_ofov_scatter;
   path_saved_sino=path_saved_sino_ofov_scatter;
-  
+
   if(is_ofov_info)
   {
 
-  convert_lor_to_sino(path_lor_data,path_saved_sino);
+    convert_lor_to_sino(path_lor_data,path_saved_sino);
   }
 
   //2.4 get the true+ scatter sino
@@ -241,10 +252,10 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
   norm_correct_simu_sino( path_saved_sino_scatter, path_sino_simu_norm, path_saved_sino_normed_scatter);
 
   // 3.3 ofov scatter
-   if(is_ofov_info)
+  if(is_ofov_info)
   {
 
-  norm_correct_simu_sino( path_saved_sino_ofov_scatter, path_sino_simu_norm, path_saved_sino_normed_ofov_scatter);
+    norm_correct_simu_sino( path_saved_sino_ofov_scatter, path_sino_simu_norm, path_saved_sino_normed_ofov_scatter);
   }
 
 
@@ -260,7 +271,7 @@ void Lor_to_sino_run(string base_folder_lor,string patient_name, string path_sin
 
 
   cout<<"------------4: start to scaling the simu scatter--------------"<<endl;
- 
+
   // 4.1 get the total number of measured data; with random and norm correction
   string base_folder_measure="/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/XB1BN305N-BI/XB1BN305N-BI-01/";
   //string path_sino_measured_prompt = base_folder_measure +"sinos/range_0-1800_prompt.fs";
@@ -622,5 +633,6 @@ void Sino_scale_whole( string path_sino_input, string saved_sino_scaled,float sc
   }
 
 }
+
 
 

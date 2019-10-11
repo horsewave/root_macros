@@ -46,11 +46,15 @@
 
 
 #include <vector>
+#include <string> 
+#include <stdlib.h> 
+
 
 typedef std::vector<int> int_vec_t; 
 typedef std::vector<std::vector<int>> int_vec_t_2d; 
 typedef std::vector<float> float_vec_t; 
 
+using namespace std;
 void Sino_manipulation()
 {
 
@@ -82,6 +86,42 @@ main_1();
 
 
 }	
+void main_1_single( )
+{
+
+  //diff_scatter_methods()
+  //
+
+  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/";
+
+
+  string sub_folder_1 = "run-1/" ;
+  string sub_folder_2 = "run-2/" ;
+  string sub_folder_merge = "merged/" ;
+  string name_sino_0="HM1BP081F-BI_gpuSimu_0_true.fs";
+  string name_sino_1="HM1BP081F-BI_gpuSimu_0_true.fs";
+  string name_sino_merge="HM1BP081F-BI_gpuSimu_0_true.fs";
+
+
+  string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+  string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+  string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+  name_sino_0="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+  name_sino_1="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+  name_sino_merge="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+
+
+  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0;
+  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1;
+  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge;
+  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+}	
+
+
+
 
 
 /*
@@ -90,37 +130,45 @@ main_1();
 //void main_1( string sub_folder_1,string sub_folder_2,string sub_folder_merge)
 void main_1( )
 {
+  main_1_single();
 
-  //diff_scatter_methods()
-  //
 
-  string input_folder = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/Brain_phantom_ma/gpu_mcs/scatterMCS/";
+  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/";
 
-  
-  string name_sino_0="true.fs";
-  string name_sino_1="true.fs";
-  string name_sino_merge="true.fs";
 
-  string sub_folder_1 = "run_1/" ;
-  string sub_folder_2 = "run_2/" ;
   string sub_folder_merge = "merged/" ;
+  int file_num = 21;
+  for (i = 3; i < file_num; ++i) {
 
-  string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+    stringstream ss;
+    ss << i;
+    string str_i = ss.str();
+    string sub_folder_1= "run-" + str_i + "/";
+    string sub_folder_2 = sub_folder_merge;
 
-name_sino_0="scatter.fs";
-  name_sino_1="scatter.fs";
-  name_sino_merge="scatter.fs";
+    string name_sino_0="HM1BP081F-BI_gpuSimu_0_true.fs";
+    string name_sino_1="HM1BP081F-BI_gpuSimu_0_true.fs";
+    string name_sino_merge="HM1BP081F-BI_gpuSimu_0_true.fs";
 
 
-  path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
-  path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
-  path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
-  Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+    string path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+    string path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+    string path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+    Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
 
-}	
+    name_sino_0="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+    name_sino_1="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+    name_sino_merge="HM1BP081F-BI_gpuSimu_0_scatter.fs";
+
+
+    path_input_sino_1 = input_folder + sub_folder_1+ name_sino_0; 
+    path_input_sino_2 = input_folder +  sub_folder_2+ name_sino_1; 
+    path_saved_sino = input_folder +  sub_folder_merge+ name_sino_merge; 
+    Add_sino( path_input_sino_1, path_input_sino_2,path_saved_sino);
+
+  }	
+
+}
 
 //get the scatter fraction 
 void main_5()
