@@ -58,10 +58,11 @@ using namespace std;
 void Sino_manipulation()
 {
 
+	// string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs";
+	string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs";
+sino_get_total_events(input_folder);
 
- 
-
-main_1();
+// merge_multi_sinos();
 //main_4();
 
   //main_2() ;
@@ -86,14 +87,15 @@ main_1();
 
 
 }	
-void main_1_single( )
+/**  @brief merge two sinos
+* @verbatim
+* details
+*@endverbatim
+* @param[in] two sinos to merged: 
+**/
+void merge_two_sinos()
 {
-
-  //diff_scatter_methods()
-  //
-
   string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/";
-
 
   string sub_folder_1 = "run-1/" ;
   string sub_folder_2 = "run-2/" ;
@@ -123,19 +125,18 @@ void main_1_single( )
 
 
 
+/**
+* @brief merge multiple sinos
+* @note :the beginning index is 3 for the loop, while the first two are merged
+* in a seperate function. 
+*/
 
-/*
- *  merge two sinos
- */
-//void main_1( string sub_folder_1,string sub_folder_2,string sub_folder_merge)
-void main_1( )
+//void merge_multi_sinos( string sub_folder_1,string sub_folder_2,string sub_folder_merge)
+void merge_multi_sinos( )
 {
-  main_1_single();
-
+  merge_two_sinos();
 
   string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/";
-
-
   string sub_folder_merge = "merged/" ;
   int file_num = 21;
   for (i = 3; i < file_num; ++i) {
@@ -197,13 +198,10 @@ for(int i=0;i<file_num;i++)
 {
   string input_sino_scatter = base_folder + run_num[i]+"XB1BN310N-BI-01_0-1800_gpuSimu_scat_without_scaled.fs";
   string input_sino_true_plus_scatter =base_folder + run_num[i] + "XB1BN310N-BI-01_0-1800_gpuSimu_true_scatter_sino.fs";
-
   cout<<" run num: " <<run_num[i]<<"  ";
  scatter_fraction[i]= Get_scatter_fraction(input_sino_true_plus_scatter, input_sino_scatter);
-
-
-
 }
+
 for(int i=0;i<file_num;i++)
 {
   cout<<" run num: " <<run_num[i]<<scatter_fraction[i]<<endl;
@@ -233,7 +231,6 @@ void main_3()
   string path_sino_input_scatter_normed = base_folder_input +"scatter_normed.fs";
   string path_sino_input_true_plus_scatter = base_folder_input +"true_plus_scatter.fs";
   string path_sino_input_true_plus_scatter_normed = base_folder_input +"true_plus_scatter_normed.fs";
-
 
 
   string path_sino_refer_true = base_folder_refer +"true.fs";
@@ -2122,7 +2119,7 @@ void set_sino_value_except_gaps(string path_sino_with_gap, string path_saved_sin
 
 
 
-double sino_get_total_events(string path_sino)
+double sino_get_total_events(string path_sino,bool is_int=false)
 {
 
 
@@ -2132,12 +2129,9 @@ double sino_get_total_events(string path_sino)
   ///---measurement data, correction of random and scatter//////////////////////////////////////////////////
   BrainPET_Sinograms* sino_input=new BrainPET_Sinograms(dump,"sino_norm");  
 
-  //bool is_int=false;
-  bool is_int=true;
   sino_input->read_flatSinogram(path_sino,is_int);
 
   cout<<" the total events of sino_1 is: " << sino_input->get_n_Events()<< endl;
-
 
 
   if(sino_input!=NULL)
@@ -2152,13 +2146,7 @@ double sino_get_total_events(string path_sino)
   }
 
 
-
 }
-
-
-
-
-
 
 
 void sino_divid_presto(string path_sino_numerator , string path_sino_denominator, string path_saved_sino)

@@ -1,5 +1,5 @@
 /*
- * Description: This macro is used to convert the LOR data to sino data 
+ * Description: This macro is used to convert the LOR data to sino data
  *
  *
  * Input: 
@@ -62,26 +62,21 @@ void main_norm()
 
 }
 
-
 /*
  * Just convert the LOR to sino and do nothing else
  *
  */
+void main_2(){
 
-void main_2()
-
-{
 
   // saved sino data
   // string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/" ;
-  string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-" ;
-  int file_num = 20;
-  for (i = 5; i < file_num; ++i) {
+  int file_num = 21;
+  for (i = 3; i < file_num; ++i) {
     stringstream ss;
     ss << i;
     string str_i = ss.str();
-    input_folder =  input_folder + str_i + "/";
-
+    string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-" + str_i + "/";
     string path_lor_data = input_folder + "HM1BP081F-BI_gpuSimu_0_true.flor";
     string path_saved_sino = input_folder + "HM1BP081F-BI_gpuSimu_0_true.fs";
     convert_lor_to_sino(path_lor_data,path_saved_sino);
@@ -91,11 +86,6 @@ void main_2()
 
     convert_lor_to_sino(path_lor_data,path_saved_sino);
   }
-
-
-
-
-
 
   return;
 
@@ -633,6 +623,4 @@ void Sino_scale_whole( string path_sino_input, string saved_sino_scaled,float sc
   }
 
 }
-
-
 
