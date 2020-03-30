@@ -6,7 +6,10 @@
 void cubic_phantom_generation()
 {
 
-  cubic_phantom_generation_float();
+  // cubic_phantom_generation_float();
+  // cubic_phantom_generation_unsigned_short();
+  cubic_phantom_generation_unsigned_short_point_source();
+
 }
 
 
@@ -22,8 +25,8 @@ void cubic_phantom_generation_float()
   int dimx=100;
   int dimy=100;
   int dimz=100;
- 
-/* int dimx=256;*/
+
+  /* int dimx=256;*/
   //int dimy=256;
   //int dimz=153;
 
@@ -33,11 +36,11 @@ void cubic_phantom_generation_float()
   int wordlength=sizeof(float);	
   int nVoxels = dimx*dimy*dimz;
 
-   
+
   float* output_data=new float[nVoxels];
   memset(output_data, 0, sizeof(float)*nVoxels);
 
-//total activity(Bq)
+  //total activity(Bq)
   float activity=1000000;
   float suv=activity/nVoxels;
   float voxel_value=1;
@@ -46,7 +49,7 @@ void cubic_phantom_generation_float()
   for(int x = 0; x < dimx; x++){
     for(int y = 0; y < dimy; y++){
       for(int z = 0; z < dimz; z++){
-                //why?to reduce the time?
+        //why?to reduce the time?
         output_data[z*dimx*dimy + y*dimx + x]=voxel_value;	
       }
     }
@@ -57,7 +60,7 @@ void cubic_phantom_generation_float()
   fout.write((char*) output_data, (dimx * dimy * dimz * wordlength));
   fout.close();
 
- 
+
   delete [] output_data;
   output_data=NULL;
 
@@ -88,19 +91,19 @@ void cubic_phantom_generation_unsigned_short()
   int dimx=100;
   int dimy=100;
   int dimz=100;
- 
- 
+
+
   string output_image="./cubic_phantom_att.i33";
   //string output_image="./cubic_phantom_source.i33";
 
   int wordlength=sizeof(unsigned short);	
   int nVoxels = dimx*dimy*dimz;
 
-   
+
   unsigned short* output_data=new unsigned short[nVoxels];
   memset(output_data, 0, sizeof(unsigned short)*nVoxels);
 
-//total activity(Bq)
+  //total activity(Bq)
   float activity=1000000;
   float suv=activity/nVoxels;
   unsigned short voxel_value=1;
@@ -108,7 +111,7 @@ void cubic_phantom_generation_unsigned_short()
   for(int x = 0; x < dimx; x++){
     for(int y = 0; y < dimy; y++){
       for(int z = 0; z < dimz; z++){
-                //why?to reduce the time?
+        //why?to reduce the time?
         output_data[z*dimx*dimy + y*dimx + x]=voxel_value;	
       }
     }
@@ -119,7 +122,61 @@ void cubic_phantom_generation_unsigned_short()
   fout.write((char*) output_data, (dimx * dimy * dimz * wordlength));
   fout.close();
 
- 
+
+  delete [] output_data;
+  output_data=NULL;
+
+
+}
+
+
+void cubic_phantom_generation_unsigned_short_point_source()
+{
+
+  //
+  int dimx=100;
+  int dimy=100;
+  int dimz=100;
+
+
+  string output_image="./cubic_source_point.i33";
+  //string output_image="./cubic_phantom_source.i33";
+
+  int wordlength=sizeof(unsigned short);	
+  int nVoxels = dimx*dimy*dimz;
+
+
+  unsigned short* output_data=new unsigned short[nVoxels];
+  memset(output_data, 0, sizeof(unsigned short)*nVoxels);
+
+  //total activity(Bq)
+  float activity=1000000;
+  float suv=activity/nVoxels;
+  unsigned short voxel_value=1;
+
+  for(int x = 0; x < dimx; x++){
+    for(int y = 0; y < dimy; y++){
+      for(int z = 0; z < dimz; z++){
+        //why?to reduce the time?
+        if(x==50&&y==50&&z==50)
+        {
+          output_data[z*dimx*dimy + y*dimx + x]=voxel_value;	
+        }
+        else
+        {
+          output_data[z*dimx*dimy + y*dimx + x]=0;	
+
+        }
+      }
+    }
+  }
+  //write imge to disk
+  ofstream fout;
+  fout.open(output_image.c_str());
+  fout.write((char*) output_data, (dimx * dimy * dimz * wordlength));
+  fout.close();
+
+
   delete [] output_data;
   output_data=NULL;
 
