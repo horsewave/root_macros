@@ -17,17 +17,16 @@ void GATE_GGEMS_TOF_compare()
 
 
   //string full_path_gate= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/phantom_gate_mcs_tof_comp/root_file/tof_gate.root";
-  string full_path_gate= "/home/mabo/software/data/gate/ihep_human_tof_pet_sz/ihep_cluster/results/human_szpet_cyl_sphere_activ_ration_1to8_tof_30ps/human_szpet_tof_30ps_1.root";
-  string full_path_mcs= "/home/mabo/software/data/gate/ihep_human_tof_pet_sz/ihep_cluster/results/human_szpet_cyl_sphere_activ_ration_1to8_tof_30ps/human_szpet_tof_30ps_11.root";
+  string full_path_gate= "/data/PET/mr_pet_temp/Ma/software/src/gate/gate_macros/gate_mcs_tof_compare/results/root_tof_gate_3.root";
+  string full_path_mcs= "/data/PET/mr_pet_temp/Ma/software/src/gate/gate_macros/gate_mcs_tof_compare/results/root_tof_gate_2.root";
   //string full_path_mcs= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/phantom_gate_mcs_tof_comp/root_file/tof_mcs_1.root";
 
 
-  string saved_root_path = "/home/mabo/software/data/gate/ihep_human_tof_pet_sz/ihep_cluster/results/human_szpet_cyl_sphere_activ_ration_1to8_tof_30ps/save_canvas_to_root_file.root" ;
+  string saved_root_path = "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/phantom_gate_mcs_tof_comp/root_file/saved_root.root" ;
 
 
 
-  // float_vec_t vector_time_diff_mcs=Root_data_analize_mcs(full_path_mcs);
-  // float_vec_t vector_time_diff_gate=Root_data_analize_mcs(full_path_gate);
+  //float_vec_t vector_time_diff_mcs=Root_data_analize_mcs(full_path_mcs);
   float_vec_t vector_time_diff_mcs=Root_data_analize_gate(full_path_mcs);
   cout <<"finished 1"<<endl;
   float_vec_t vector_time_diff_gate=Root_data_analize_gate(full_path_gate);
@@ -84,18 +83,18 @@ void GATE_GGEMS_TOF_compare()
 
   }
 
- /*  float scale_gate_to_mcs= total_mcs/total_gate; */
-  // //float scale_gate_to_mcs= 1;
-  // cout<<"******mcs  is"<<total_mcs<<endl;
-  // cout<<"******gate is"<<total_gate<<endl;
-  // cout<<"******scaling factor is"<<scale_gate_to_mcs<<endl;
-//
-   // for(int i=0;i<vec_size_gate;i++)
-  // {
-    // tof_diff_gate[i]=tof_diff_gate[i]*scale_gate_to_mcs;
-//
-//
-  /* } */
+  float scale_gate_to_mcs= total_mcs/total_gate;
+  //float scale_gate_to_mcs= 1;
+  cout<<"******mcs  is"<<total_mcs<<endl;
+  cout<<"******gate is"<<total_gate<<endl;
+  cout<<"******scaling factor is"<<scale_gate_to_mcs<<endl;
+
+   for(int i=0;i<vec_size_gate;i++)
+  {
+    tof_diff_gate[i]=tof_diff_gate[i]*scale_gate_to_mcs;
+
+
+  }
 
 
   cout<<"step 2"<<endl;
@@ -113,7 +112,7 @@ void GATE_GGEMS_TOF_compare()
   }
 
   if(tof_diff_gate!=NULL)
-  { 
+  {
     delete [] tof_diff_gate;
     tof_diff_gate=NULL;
   }
@@ -181,7 +180,7 @@ float_vec_t Root_data_analize_mcs(string full_path)
       {
         min_val=tof_diff_val;
       }
-      // cout<<"time1: "<<time_1_val<< " time2: "<<time_2_val<<" diff: "<< tof_diff_val<<endl;
+      cout<<"time1: "<<time_1_val<< " time2: "<<time_2_val<<" diff: "<< tof_diff_val<<endl;
 
 
     }
@@ -515,13 +514,6 @@ float_vec_t Root_data_analize_gate(string full_path)
       double time_1_val=time1*1e12;
       double time_2_val=time2*1e12;
       double tof_diff_val=time_1_val-time_2_val;
-     
-      if(i%2==0)
-      {
-        tof_diff_val=0-tof_diff_val;
-
-      }
-
 
       // this is the index of the vector
       int int_tof_diff=tof_diff_val +max_val;
@@ -529,7 +521,7 @@ float_vec_t Root_data_analize_gate(string full_path)
       // add one to this time diff
       vector_time_diff[int_tof_diff]++;
 
-      // cout<<"entry: "<< i<<"time1: "<<time_1_val<< " time2: "<<time_2_val<<" diff: "<< tof_diff_val<<endl;
+      cout<<"entry: "<< i<<"time1: "<<time_1_val<< " time2: "<<time_2_val<<" diff: "<< tof_diff_val<<endl;
 
 
     }
@@ -566,7 +558,7 @@ float_vec_t Root_data_analize_gate(string full_path)
 
 
 void scale_two_hist(TH1F *my_hist_mcs,TH1F *my_hist_gate, int max_scaled)
-{ 
+{
 
   int hist_size =my_hist_gate->GetNbinsX();
 
@@ -735,7 +727,7 @@ void MultiGraphAttributeSet(TMultiGraph *mg,TLegend *legend, TGraph *gr_mcs,TGra
 
   mg->Draw("AC");		
 
-  mg->GetXaxis()->SetTitle("time diff(ps)");
+  mg->GetXaxis()->SetTitle("time diff");
   mg->GetYaxis()->SetTitle("Event counts");
   mg->GetXaxis()->CenterTitle();
   mg->GetYaxis()->CenterTitle();	

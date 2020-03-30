@@ -1,4 +1,5 @@
 /**
+ *
  * Description: This macro is used for the image reconstruction using the Siemens reconstruction method. 
  * Input: 
  * Procedure:
@@ -12,13 +13,12 @@
 void Image_reconstruction_Simens(){
 
   gROOT->Reset();
-  // temp_recon_81_dm_scatter();
+  temp_recon_81_dm_scatter();
   // temp_recon_81_dm_true_1();
-  // temp_recon_81_dm_true_2();
-  temp_recon_81_dm_true_3();
+  temp_recon_81_dm_true_2();
+  // temp_recon_81_dm_true_3();
   gApplication->Terminate();
 }
-
 /**
 * @brief: img recon for scatter events with detector modual for patient 81
 * @verbatim
@@ -35,7 +35,7 @@ void Image_reconstruction_Simens(){
 void temp_recon_81_dm_scatter()
 {
 
-  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs";
+  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/HM1BP081F-BI_gpuSimu_0_scatter.fs";
 
   string random_sino="/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
 
@@ -51,7 +51,7 @@ void temp_recon_81_dm_scatter()
 
   // scatter with scatter modual;
   string scatter_sino_scaled = "/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
-  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/img_recon_scatter_norm_for_scatter.i";
+  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/img_recon_scatter_norm_for_scatter.i";
 
    
   int nsubsets=2;
@@ -70,12 +70,12 @@ void temp_recon_81_dm_scatter()
 
 void temp_recon_81_dm_true_1(){
 
-  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs";
+  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/HM1BP081F-BI_gpuSimu_0_true.fs";
 
   string random_sino="/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
 
   //--- Norm file for measurement data
-  //norm without coil
+  //norm  coil
   // //this norm file is specifically acquired for the GGEMS acquired true events reconstruction.
   string norm_sino= "/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/norm_with_detection_modual/norm_sino_320_192_with_detection_modual.fs";
 
@@ -85,7 +85,7 @@ void temp_recon_81_dm_true_1(){
 
   // scatter with scatter modual;
   string scatter_sino_scaled = "/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
-  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/img_recon_true_norm_for_true-1.i";
+  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/img_recon_true_norm_for_true-1.i";
 
   //string norm_sino= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_ones_with_gaps.fs";
   
@@ -105,12 +105,12 @@ void temp_recon_81_dm_true_1(){
 
 void temp_recon_81_dm_true_2(){
 
-  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs";
+  string prompt_sino="/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/HM1BP081F-BI_gpuSimu_0_true.fs";
 
   string random_sino="/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
 
   //--- Norm file for measurement data
-  //norm without coil
+  //norm with coil
   // //this norm file is specifically acquired for the GGEMS acquired true events reconstruction.
   string norm_sino= "/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/norm_with_detection_modual_with_coil/norm_sino_320_192_with_detection_modual_with_coil.fs";
 
@@ -120,7 +120,7 @@ void temp_recon_81_dm_true_2(){
 
   // scatter with scatter modual;
   string scatter_sino_scaled = "/home/mabo/software/data/phantom_data/cylinder_phantom_norm_file_mcs/common_sino_files/random.fs";
-  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/img_recon_true_norm_for_true-2.i";
+  string reconstructe_img= "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/merge_1_93/img_recon_true_norm_for_true-2.i";
 
   //string norm_sino= "/data/PET/mr_pet_temp/Ma/software/data/gpupet/phantom/cylinder_phantom_norm_file_mcs/common_sino_files/norm_ones_with_gaps.fs";
   

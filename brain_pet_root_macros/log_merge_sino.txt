@@ -1,0 +1,2113 @@
+##############################################################################
+### ROOT   version 5.34.36 
+### PRESTO devel version  (23-june-2016)
+##############################################################################
+----> rootlogon.C
+----> HOST           = mabopc1
+----> USER           = mabo
+----> ROOTSYS        = /home/mabo/program_files/root_v5.34.36
+----> PRESTO_PROJECT = /home/mabo/software/src/PRESTO
+----> PRESTO software lib path: /home/mabo/software/src/PRESTO/libs
+----> load library:  lib_utils_ROOT.so
+----> load library:  lib_BrainPET_data_ROOT.so
+----> load library:  lib_ECAT7_ROOT.so
+----> load library:  lib_geometry_ROOT.so
+----> load library:  lib_geometryV2_ROOT.so
+----> load library:  lib_reco_speedup_ROOT.so
+----> load library:  lib_efficiency_ROOT.so
+----> load library:  lib_interface2root_ROOT.so
+----> load library:  lib_dkey_maker_ROOT.so
+----> load library:  lib_emission_sim_ROOT.so
+----> load library:  lib_BrainPET_reco_ROOT.so
+----> load library:  lib_eval_tools_ROOT.so
+----> load library:  lib_BrainPET_DataBase_ROOT.so
+----> load library:  lib_motion_corr_ROOT.so
+----> load library:  lib_BrainPET_presto_proc_ROOT.so
+  
+Load finished
+##############################################################################
+### Utilities_init
+##############################################################################
+GlobalSetup::GlobalSetup: Warning: missing/undefined TracerList Setup file
+filename = /home/mabo/software/src/PRESTO/setup_files/files_needed/DBv3/TracerList/BrainPET_TracerList.dat
+use default list
+##############################################################################
+### Utilities Version 2.3 25/10/2012 J.Scheins
+### Last Compilation: Jun 23 2016 10:24:09
+##############################################################################
+Utilities::Utilities: Info: 
+access instances via variables
+==============================
+-->VirtualGeometry        :  vgeom[i]   i<13
+-->RVirtualGeometry       :  rvgeom[i]  i<13
+-->BrainPET_LORfileData   :  lordat[i]  i<13
+-->BrainPET_Sinograms     :  sinos[i]   i<13
+-->BrainPET_DetHitMap     :  hitmap[i]  i<13
+-->ImageCartesian3D       :  img[i]     i<13
+-->SinoDataWrapper        :  wrapper[i] i<13
+-->RFloatArray            :  farray[i]  i<13
+-->Note, slot 13 and 14 are reserved for temporary processing
+ 
+Standard FileSizes for PRESTO files
+=====================================
+--> Template Size VirtualGeometry = 2394205072
+--> Template Size Wrapper         = 1972876000
+--> Template Size Wrapper(comp)   = 1016400214
+Utilities::fcheck_mode: Info: 
+--> FileCheckMode DISABLED
+Utilities::Utilities: Info: 
+--> current threadID=0
+--> sessionID    = mabo_mabopc1_2019_12_26__09h34m25s
+--> Utilities Init finished correctly
+
+
+##############################################################################
+### Siemens Tools/Software Version 1.1 25/10/2012 J.Scheins
+### Last Compilation: Jun 23 2016 10:24:10
+### OSEM3D version: hi_osem3d_rm_313 (higher versions obviously corrupted)
+##############################################################################
+
+SiemensTools::SiemensTools: Info: 
+Standard FileSizes for BrainPET files
+=====================================
+--> Float LORfile                 = 907739136
+--> Float Sinofile                = 275054592
+--> Float Sinofile (extendedFOV)  = 343818240
+--> Siemens HitMap                = 110592
+--> Siemens Std Image 256x256x153 = 40108032
+--> Siemens Ext Image 320x320x153 = 62668800
+--> SiemensTools Init finished correctly
+
+
+Processing /home/mabo/software/src/root_macros/brain_pet_root_macros/Sino_manipulation.C...
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-1/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-2/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83865e+07
+ the total events of sino_2 is: 7.83782e+07
+ the total events of merged sino is: 1.56765e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-1/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-2/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06467e+07
+ the total events of sino_2 is: 5.06506e+07
+ the total events of merged sino is: 1.01297e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83755e+07
+ the total events of sino_2 is: 1.56765e+08
+ the total events of merged sino is: 2.3514e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06486e+07
+ the total events of sino_2 is: 1.01297e+08
+ the total events of merged sino is: 1.51946e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-4/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83792e+07
+ the total events of sino_2 is: 2.3514e+08
+ the total events of merged sino is: 3.13519e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-4/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06463e+07
+ the total events of sino_2 is: 1.51946e+08
+ the total events of merged sino is: 2.02592e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-5/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83838e+07
+ the total events of sino_2 is: 3.13519e+08
+ the total events of merged sino is: 3.91903e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-5/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06429e+07
+ the total events of sino_2 is: 2.02592e+08
+ the total events of merged sino is: 2.53235e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-6/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83832e+07
+ the total events of sino_2 is: 3.91903e+08
+ the total events of merged sino is: 4.70286e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-6/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06488e+07
+ the total events of sino_2 is: 2.53235e+08
+ the total events of merged sino is: 3.03884e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-7/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17579e+08
+ the total events of sino_2 is: 4.70286e+08
+ the total events of merged sino is: 5.87866e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-7/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59606e+07
+ the total events of sino_2 is: 3.03884e+08
+ the total events of merged sino is: 3.79845e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-8/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17586e+08
+ the total events of sino_2 is: 5.87866e+08
+ the total events of merged sino is: 7.05452e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-8/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59695e+07
+ the total events of sino_2 is: 3.79845e+08
+ the total events of merged sino is: 4.55814e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-9/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17583e+08
+ the total events of sino_2 is: 7.05452e+08
+ the total events of merged sino is: 8.23035e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-9/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59692e+07
+ the total events of sino_2 is: 4.55814e+08
+ the total events of merged sino is: 5.31783e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-10/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17574e+08
+ the total events of sino_2 is: 8.23035e+08
+ the total events of merged sino is: 9.40609e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-10/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59677e+07
+ the total events of sino_2 is: 5.31783e+08
+ the total events of merged sino is: 6.07751e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-11/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17574e+08
+ the total events of sino_2 is: 9.40609e+08
+ the total events of merged sino is: 1.05818e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-11/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.5974e+07
+ the total events of sino_2 is: 6.07751e+08
+ the total events of merged sino is: 6.83725e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-12/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.1758e+08
+ the total events of sino_2 is: 1.05818e+09
+ the total events of merged sino is: 1.17576e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-12/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59726e+07
+ the total events of sino_2 is: 6.83725e+08
+ the total events of merged sino is: 7.59698e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-13/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17563e+08
+ the total events of sino_2 is: 1.17576e+09
+ the total events of merged sino is: 1.29333e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-13/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59623e+07
+ the total events of sino_2 is: 7.59698e+08
+ the total events of merged sino is: 8.3566e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-14/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17576e+08
+ the total events of sino_2 is: 1.29333e+09
+ the total events of merged sino is: 1.4109e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-14/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59636e+07
+ the total events of sino_2 is: 8.3566e+08
+ the total events of merged sino is: 9.11623e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-15/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17581e+08
+ the total events of sino_2 is: 1.4109e+09
+ the total events of merged sino is: 1.52848e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-15/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59702e+07
+ the total events of sino_2 is: 9.11623e+08
+ the total events of merged sino is: 9.87594e+08
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-16/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17573e+08
+ the total events of sino_2 is: 1.52848e+09
+ the total events of merged sino is: 1.64606e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-16/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59722e+07
+ the total events of sino_2 is: 9.87594e+08
+ the total events of merged sino is: 1.06357e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-17/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17581e+08
+ the total events of sino_2 is: 1.64606e+09
+ the total events of merged sino is: 1.76364e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-17/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59718e+07
+ the total events of sino_2 is: 1.06357e+09
+ the total events of merged sino is: 1.13954e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-18/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17578e+08
+ the total events of sino_2 is: 1.76364e+09
+ the total events of merged sino is: 1.88121e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-18/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59638e+07
+ the total events of sino_2 is: 1.13954e+09
+ the total events of merged sino is: 1.2155e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-19/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17579e+08
+ the total events of sino_2 is: 1.88121e+09
+ the total events of merged sino is: 1.99879e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-19/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59634e+07
+ the total events of sino_2 is: 1.2155e+09
+ the total events of merged sino is: 1.29146e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-20/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17571e+08
+ the total events of sino_2 is: 1.99879e+09
+ the total events of merged sino is: 2.11636e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-20/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59763e+07
+ the total events of sino_2 is: 1.29146e+09
+ the total events of merged sino is: 1.36744e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-21/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17574e+08
+ the total events of sino_2 is: 2.11636e+09
+ the total events of merged sino is: 2.23394e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-21/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59661e+07
+ the total events of sino_2 is: 1.36744e+09
+ the total events of merged sino is: 1.44341e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-22/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17572e+08
+ the total events of sino_2 is: 2.23394e+09
+ the total events of merged sino is: 2.35151e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-22/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59669e+07
+ the total events of sino_2 is: 1.44341e+09
+ the total events of merged sino is: 1.51937e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-23/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17575e+08
+ the total events of sino_2 is: 2.35151e+09
+ the total events of merged sino is: 2.46908e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-23/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59709e+07
+ the total events of sino_2 is: 1.51937e+09
+ the total events of merged sino is: 1.59534e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-24/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 1.17582e+08
+ the total events of sino_2 is: 2.46908e+09
+ the total events of merged sino is: 2.58667e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-24/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.59726e+07
+ the total events of sino_2 is: 1.59534e+09
+ the total events of merged sino is: 1.67132e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-25/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8383e+07
+ the total events of sino_2 is: 2.58667e+09
+ the total events of merged sino is: 2.66505e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-25/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06494e+07
+ the total events of sino_2 is: 1.67132e+09
+ the total events of merged sino is: 1.72197e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-26/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83815e+07
+ the total events of sino_2 is: 2.66505e+09
+ the total events of merged sino is: 2.74343e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-26/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06496e+07
+ the total events of sino_2 is: 1.72197e+09
+ the total events of merged sino is: 1.77262e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-27/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83831e+07
+ the total events of sino_2 is: 2.74343e+09
+ the total events of merged sino is: 2.82181e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-27/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06543e+07
+ the total events of sino_2 is: 1.77262e+09
+ the total events of merged sino is: 1.82327e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-28/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83825e+07
+ the total events of sino_2 is: 2.82181e+09
+ the total events of merged sino is: 2.9002e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-28/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06534e+07
+ the total events of sino_2 is: 1.82327e+09
+ the total events of merged sino is: 1.87392e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-29/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83793e+07
+ the total events of sino_2 is: 2.9002e+09
+ the total events of merged sino is: 2.97858e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-29/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.065e+07
+ the total events of sino_2 is: 1.87392e+09
+ the total events of merged sino is: 1.92457e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-30/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8388e+07
+ the total events of sino_2 is: 2.97858e+09
+ the total events of merged sino is: 3.05696e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-30/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06472e+07
+ the total events of sino_2 is: 1.92457e+09
+ the total events of merged sino is: 1.97522e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-31/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83796e+07
+ the total events of sino_2 is: 3.05696e+09
+ the total events of merged sino is: 3.13534e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-31/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06407e+07
+ the total events of sino_2 is: 1.97522e+09
+ the total events of merged sino is: 2.02586e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-32/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83791e+07
+ the total events of sino_2 is: 3.13534e+09
+ the total events of merged sino is: 3.21372e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-32/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06492e+07
+ the total events of sino_2 is: 2.02586e+09
+ the total events of merged sino is: 2.07651e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-33/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83865e+07
+ the total events of sino_2 is: 3.21372e+09
+ the total events of merged sino is: 3.29211e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-33/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06461e+07
+ the total events of sino_2 is: 2.07651e+09
+ the total events of merged sino is: 2.12716e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-34/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83796e+07
+ the total events of sino_2 is: 3.29211e+09
+ the total events of merged sino is: 3.37049e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-34/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06495e+07
+ the total events of sino_2 is: 2.12716e+09
+ the total events of merged sino is: 2.17781e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-35/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83829e+07
+ the total events of sino_2 is: 3.37049e+09
+ the total events of merged sino is: 3.44887e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-35/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06411e+07
+ the total events of sino_2 is: 2.17781e+09
+ the total events of merged sino is: 2.22845e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-36/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83783e+07
+ the total events of sino_2 is: 3.44887e+09
+ the total events of merged sino is: 3.52725e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-36/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06501e+07
+ the total events of sino_2 is: 2.22845e+09
+ the total events of merged sino is: 2.2791e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-37/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83836e+07
+ the total events of sino_2 is: 3.52725e+09
+ the total events of merged sino is: 3.60563e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-37/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06431e+07
+ the total events of sino_2 is: 2.2791e+09
+ the total events of merged sino is: 2.32974e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-38/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83862e+07
+ the total events of sino_2 is: 3.60563e+09
+ the total events of merged sino is: 3.68402e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-38/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06453e+07
+ the total events of sino_2 is: 2.32974e+09
+ the total events of merged sino is: 2.38039e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-39/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83836e+07
+ the total events of sino_2 is: 3.68402e+09
+ the total events of merged sino is: 3.7624e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-39/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06461e+07
+ the total events of sino_2 is: 2.38039e+09
+ the total events of merged sino is: 2.43103e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-40/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83862e+07
+ the total events of sino_2 is: 3.7624e+09
+ the total events of merged sino is: 3.84079e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-40/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06431e+07
+ the total events of sino_2 is: 2.43103e+09
+ the total events of merged sino is: 2.48168e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-41/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83892e+07
+ the total events of sino_2 is: 3.84079e+09
+ the total events of merged sino is: 3.91918e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-41/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0652e+07
+ the total events of sino_2 is: 2.48168e+09
+ the total events of merged sino is: 2.53233e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-42/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83858e+07
+ the total events of sino_2 is: 3.91918e+09
+ the total events of merged sino is: 3.99756e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-42/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06441e+07
+ the total events of sino_2 is: 2.53233e+09
+ the total events of merged sino is: 2.58297e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-43/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83854e+07
+ the total events of sino_2 is: 3.99756e+09
+ the total events of merged sino is: 4.07595e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-43/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06428e+07
+ the total events of sino_2 is: 2.58297e+09
+ the total events of merged sino is: 2.63361e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-44/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83854e+07
+ the total events of sino_2 is: 4.07595e+09
+ the total events of merged sino is: 4.15434e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-44/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06419e+07
+ the total events of sino_2 is: 2.63361e+09
+ the total events of merged sino is: 2.68426e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-45/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83781e+07
+ the total events of sino_2 is: 4.15434e+09
+ the total events of merged sino is: 4.23271e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-45/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06443e+07
+ the total events of sino_2 is: 2.68426e+09
+ the total events of merged sino is: 2.7349e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-46/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83842e+07
+ the total events of sino_2 is: 4.23271e+09
+ the total events of merged sino is: 4.3111e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-46/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06432e+07
+ the total events of sino_2 is: 2.7349e+09
+ the total events of merged sino is: 2.78554e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-47/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83886e+07
+ the total events of sino_2 is: 4.3111e+09
+ the total events of merged sino is: 4.38949e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-47/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0639e+07
+ the total events of sino_2 is: 2.78554e+09
+ the total events of merged sino is: 2.83618e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-48/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83847e+07
+ the total events of sino_2 is: 4.38949e+09
+ the total events of merged sino is: 4.46787e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-48/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06447e+07
+ the total events of sino_2 is: 2.83618e+09
+ the total events of merged sino is: 2.88683e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-49/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83863e+07
+ the total events of sino_2 is: 4.46787e+09
+ the total events of merged sino is: 4.54626e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-49/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06444e+07
+ the total events of sino_2 is: 2.88683e+09
+ the total events of merged sino is: 2.93747e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-50/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83915e+07
+ the total events of sino_2 is: 4.54626e+09
+ the total events of merged sino is: 4.62465e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-50/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06462e+07
+ the total events of sino_2 is: 2.93747e+09
+ the total events of merged sino is: 2.98812e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-51/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83882e+07
+ the total events of sino_2 is: 4.62465e+09
+ the total events of merged sino is: 4.70304e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-51/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0649e+07
+ the total events of sino_2 is: 2.98812e+09
+ the total events of merged sino is: 3.03877e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-52/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83905e+07
+ the total events of sino_2 is: 4.70304e+09
+ the total events of merged sino is: 4.78143e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-52/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0653e+07
+ the total events of sino_2 is: 3.03877e+09
+ the total events of merged sino is: 3.08942e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-53/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83941e+07
+ the total events of sino_2 is: 4.78143e+09
+ the total events of merged sino is: 4.85982e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-53/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06491e+07
+ the total events of sino_2 is: 3.08942e+09
+ the total events of merged sino is: 3.14007e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-54/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83838e+07
+ the total events of sino_2 is: 4.85982e+09
+ the total events of merged sino is: 4.93821e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-54/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06401e+07
+ the total events of sino_2 is: 3.14007e+09
+ the total events of merged sino is: 3.19071e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-55/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8391e+07
+ the total events of sino_2 is: 4.93821e+09
+ the total events of merged sino is: 5.0166e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-55/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06392e+07
+ the total events of sino_2 is: 3.19071e+09
+ the total events of merged sino is: 3.24135e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-56/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83779e+07
+ the total events of sino_2 is: 5.0166e+09
+ the total events of merged sino is: 5.09497e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-56/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06459e+07
+ the total events of sino_2 is: 3.24135e+09
+ the total events of merged sino is: 3.29199e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-57/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83861e+07
+ the total events of sino_2 is: 5.09497e+09
+ the total events of merged sino is: 5.17336e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-57/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.064e+07
+ the total events of sino_2 is: 3.29199e+09
+ the total events of merged sino is: 3.34263e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-58/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83839e+07
+ the total events of sino_2 is: 5.17336e+09
+ the total events of merged sino is: 5.25174e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-58/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06457e+07
+ the total events of sino_2 is: 3.34263e+09
+ the total events of merged sino is: 3.39328e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-59/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83832e+07
+ the total events of sino_2 is: 5.25174e+09
+ the total events of merged sino is: 5.33013e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-59/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06463e+07
+ the total events of sino_2 is: 3.39328e+09
+ the total events of merged sino is: 3.44393e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-60/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83869e+07
+ the total events of sino_2 is: 5.33013e+09
+ the total events of merged sino is: 5.40851e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-60/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06451e+07
+ the total events of sino_2 is: 3.44393e+09
+ the total events of merged sino is: 3.49457e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-61/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83893e+07
+ the total events of sino_2 is: 5.40851e+09
+ the total events of merged sino is: 5.4869e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-61/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06486e+07
+ the total events of sino_2 is: 3.49457e+09
+ the total events of merged sino is: 3.54522e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-62/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83879e+07
+ the total events of sino_2 is: 5.4869e+09
+ the total events of merged sino is: 5.56529e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-62/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06442e+07
+ the total events of sino_2 is: 3.54522e+09
+ the total events of merged sino is: 3.59586e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-63/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83794e+07
+ the total events of sino_2 is: 5.56529e+09
+ the total events of merged sino is: 5.64367e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-63/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06522e+07
+ the total events of sino_2 is: 3.59586e+09
+ the total events of merged sino is: 3.64652e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-64/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83831e+07
+ the total events of sino_2 is: 5.64367e+09
+ the total events of merged sino is: 5.72205e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-64/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06432e+07
+ the total events of sino_2 is: 3.64652e+09
+ the total events of merged sino is: 3.69716e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-65/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83921e+07
+ the total events of sino_2 is: 5.72205e+09
+ the total events of merged sino is: 5.80045e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-65/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.065e+07
+ the total events of sino_2 is: 3.69716e+09
+ the total events of merged sino is: 3.74781e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-66/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83816e+07
+ the total events of sino_2 is: 5.80045e+09
+ the total events of merged sino is: 5.87883e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-66/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06474e+07
+ the total events of sino_2 is: 3.74781e+09
+ the total events of merged sino is: 3.79846e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-67/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83785e+07
+ the total events of sino_2 is: 5.87883e+09
+ the total events of merged sino is: 5.95721e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-67/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06441e+07
+ the total events of sino_2 is: 3.79846e+09
+ the total events of merged sino is: 3.8491e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-68/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83888e+07
+ the total events of sino_2 is: 5.95721e+09
+ the total events of merged sino is: 6.0356e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-68/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06479e+07
+ the total events of sino_2 is: 3.8491e+09
+ the total events of merged sino is: 3.89975e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-69/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83825e+07
+ the total events of sino_2 is: 6.0356e+09
+ the total events of merged sino is: 6.11398e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-69/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06422e+07
+ the total events of sino_2 is: 3.89975e+09
+ the total events of merged sino is: 3.95039e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-70/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83865e+07
+ the total events of sino_2 is: 6.11398e+09
+ the total events of merged sino is: 6.19236e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-70/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06521e+07
+ the total events of sino_2 is: 3.95039e+09
+ the total events of merged sino is: 4.00104e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-71/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8394e+07
+ the total events of sino_2 is: 6.19236e+09
+ the total events of merged sino is: 6.27076e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-71/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06504e+07
+ the total events of sino_2 is: 4.00104e+09
+ the total events of merged sino is: 4.05169e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-72/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83891e+07
+ the total events of sino_2 is: 6.27076e+09
+ the total events of merged sino is: 6.34915e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-72/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06433e+07
+ the total events of sino_2 is: 4.05169e+09
+ the total events of merged sino is: 4.10234e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-73/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83825e+07
+ the total events of sino_2 is: 6.34915e+09
+ the total events of merged sino is: 6.42753e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-73/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06501e+07
+ the total events of sino_2 is: 4.10234e+09
+ the total events of merged sino is: 4.15299e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-74/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83893e+07
+ the total events of sino_2 is: 6.42753e+09
+ the total events of merged sino is: 6.50592e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-74/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06489e+07
+ the total events of sino_2 is: 4.15299e+09
+ the total events of merged sino is: 4.20364e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-75/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83842e+07
+ the total events of sino_2 is: 6.50592e+09
+ the total events of merged sino is: 6.5843e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-75/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06445e+07
+ the total events of sino_2 is: 4.20364e+09
+ the total events of merged sino is: 4.25428e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-76/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83857e+07
+ the total events of sino_2 is: 6.5843e+09
+ the total events of merged sino is: 6.66269e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-76/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06416e+07
+ the total events of sino_2 is: 4.25428e+09
+ the total events of merged sino is: 4.30492e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-77/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83875e+07
+ the total events of sino_2 is: 6.66269e+09
+ the total events of merged sino is: 6.74108e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-77/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0647e+07
+ the total events of sino_2 is: 4.30492e+09
+ the total events of merged sino is: 4.35557e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-78/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83776e+07
+ the total events of sino_2 is: 6.74108e+09
+ the total events of merged sino is: 6.81945e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-78/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06523e+07
+ the total events of sino_2 is: 4.35557e+09
+ the total events of merged sino is: 4.40622e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-79/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8381e+07
+ the total events of sino_2 is: 6.81945e+09
+ the total events of merged sino is: 6.89784e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-79/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06512e+07
+ the total events of sino_2 is: 4.40622e+09
+ the total events of merged sino is: 4.45687e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-80/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83755e+07
+ the total events of sino_2 is: 6.89784e+09
+ the total events of merged sino is: 6.97621e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-80/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.0646e+07
+ the total events of sino_2 is: 4.45687e+09
+ the total events of merged sino is: 4.50752e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-81/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83837e+07
+ the total events of sino_2 is: 6.97621e+09
+ the total events of merged sino is: 7.05459e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-81/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06428e+07
+ the total events of sino_2 is: 4.50752e+09
+ the total events of merged sino is: 4.55816e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-82/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83817e+07
+ the total events of sino_2 is: 7.05459e+09
+ the total events of merged sino is: 7.13298e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-82/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.065e+07
+ the total events of sino_2 is: 4.55816e+09
+ the total events of merged sino is: 4.60881e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-83/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83796e+07
+ the total events of sino_2 is: 7.13298e+09
+ the total events of merged sino is: 7.21136e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-83/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06442e+07
+ the total events of sino_2 is: 4.60881e+09
+ the total events of merged sino is: 4.65946e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-84/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83875e+07
+ the total events of sino_2 is: 7.21136e+09
+ the total events of merged sino is: 7.28974e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-84/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06459e+07
+ the total events of sino_2 is: 4.65946e+09
+ the total events of merged sino is: 4.7101e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-85/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83762e+07
+ the total events of sino_2 is: 7.28974e+09
+ the total events of merged sino is: 7.36812e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-85/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06514e+07
+ the total events of sino_2 is: 4.7101e+09
+ the total events of merged sino is: 4.76075e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-86/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83842e+07
+ the total events of sino_2 is: 7.36812e+09
+ the total events of merged sino is: 7.4465e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-86/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06438e+07
+ the total events of sino_2 is: 4.76075e+09
+ the total events of merged sino is: 4.8114e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-87/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83865e+07
+ the total events of sino_2 is: 7.4465e+09
+ the total events of merged sino is: 7.52489e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-87/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06462e+07
+ the total events of sino_2 is: 4.8114e+09
+ the total events of merged sino is: 4.86204e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-88/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83872e+07
+ the total events of sino_2 is: 7.52489e+09
+ the total events of merged sino is: 7.60328e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-88/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06472e+07
+ the total events of sino_2 is: 4.86204e+09
+ the total events of merged sino is: 4.91269e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-89/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83855e+07
+ the total events of sino_2 is: 7.60328e+09
+ the total events of merged sino is: 7.68166e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-89/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06422e+07
+ the total events of sino_2 is: 4.91269e+09
+ the total events of merged sino is: 4.96333e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-90/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83775e+07
+ the total events of sino_2 is: 7.68166e+09
+ the total events of merged sino is: 7.76004e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-90/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06495e+07
+ the total events of sino_2 is: 4.96333e+09
+ the total events of merged sino is: 5.01398e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-91/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83871e+07
+ the total events of sino_2 is: 7.76004e+09
+ the total events of merged sino is: 7.83843e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-91/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06452e+07
+ the total events of sino_2 is: 5.01398e+09
+ the total events of merged sino is: 5.06463e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-92/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.83848e+07
+ the total events of sino_2 is: 7.83843e+09
+ the total events of merged sino is: 7.91681e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-92/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06459e+07
+ the total events of sino_2 is: 5.06463e+09
+ the total events of merged sino is: 5.11527e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-93/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 7.8388e+07
+ the total events of sino_2 is: 7.91681e+09
+ the total events of merged sino is: 7.9952e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs
+...done
+...done
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-93/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+BrainPET_Sinograms::read_flatSinogram_from_stream() FLOATS expected
+ the total events of sino_1 is: 5.06452e+07
+ the total events of sino_2 is: 5.11527e+09
+ the total events of merged sino is: 5.16592e+09
+INFO: file IS writeable:
+/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs
+...done
+...done
+------------start to run simulation !--------
+------------end to run simulation !--------
+------------start to Lor to sino !--------
+------------end to Lor to sino !--------
+------------start to sino merge !--------
+------------start to sino merge !--------
+------------end to sino merge !--------

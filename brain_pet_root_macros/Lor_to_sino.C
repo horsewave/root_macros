@@ -39,11 +39,10 @@ using namespace std;
 void Lor_to_sino()
 {
 
-  gROOT->Reset();
-  //main_1();
+
+ //  Just convert the LOR to sino and do nothing else
   main_2();
 
-  //main_norm();
 
   gApplication->Terminate();
 
@@ -71,8 +70,8 @@ void main_2(){
 
   // saved sino data
   // string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/run-3/" ;
-  int file_num = 21;
-  for (i = 3; i < file_num; ++i) {
+  int file_num = 94;
+  for (i = 49; i < file_num; ++i) {
     stringstream ss;
     ss << i;
     string str_i = ss.str();

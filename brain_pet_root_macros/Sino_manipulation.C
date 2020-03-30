@@ -59,10 +59,10 @@ void Sino_manipulation()
 {
 
 	// string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_scatter.fs";
-	string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs";
-sino_get_total_events(input_folder);
+	// string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/merged/HM1BP081F-BI_gpuSimu_0_true.fs";
+// sino_get_total_events(input_folder);
 
-// merge_multi_sinos();
+merge_multi_sinos();
 //main_4();
 
   //main_2() ;
@@ -134,12 +134,14 @@ void merge_two_sinos()
 //void merge_multi_sinos( string sub_folder_1,string sub_folder_2,string sub_folder_merge)
 void merge_multi_sinos( )
 {
-  merge_two_sinos();
+	// // merge run-1 and run-2
+	merge_two_sinos();
 
   string input_folder = "/home/mabo/software/data/patient_data/FDG/HM1BP081F-BI/scatterMCS/";
   string sub_folder_merge = "merged/" ;
-  int file_num = 21;
-  for (i = 3; i < file_num; ++i) {
+  int run_start  = 3;
+	int file_num = 94;
+  for (i = run_start; i < file_num; ++i) {
 
     stringstream ss;
     ss << i;
